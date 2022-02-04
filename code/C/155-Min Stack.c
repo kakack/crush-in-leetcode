@@ -35,7 +35,7 @@
 // Methods pop, top and getMin operations will always be called on non-empty stacks.
 // At most 3 * 10^4 calls will be made to push, pop, top, and getMin.
 
-ttypedef struct {
+typedef struct {
     int* min;
     int* origin;
     int minSize;
