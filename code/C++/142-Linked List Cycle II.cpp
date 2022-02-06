@@ -31,31 +31,57 @@ class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
         
-        ListNode *fast=head;
-        ListNode *slow=head;
+        ListNode *fast = head;
+        ListNode *slow = head;
         
-        while(fast!=NULL&&slow!=NULL){
-            fast=fast->next;
-            slow=slow->next;
-            if(fast!=NULL)
-              fast=fast->next;
+        while(fast != NULL && slow != NULL){
+            fast = fast->next;
+            slow = slow->next;
+            if (fast != NULL)
+              fast = fast->next;
               
-            if(fast==slow)
+            if (fast == slow)
               break;
         }
         
         //已找到LOOP并相遇或者fast已到尽头null了
         
-        if(fast==NULL)
+        if (fast == NULL)
           return NULL;
           
-        slow=head;
-        while(slow!=fast){
-            slow=slow->next;
-            fast=fast->next;
+        slow = head;
+        while (slow != fast){
+            slow = slow->next;
+            fast = fast->next;
         }
         
         return fast;
         
+    }
+};
+
+
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        ListNode *fast = head;
+        ListNode *slow = head;
+        while (fast) {
+            slow = slow->next;
+            if (!fast->next) {
+                return NULL;
+            } else {
+                fast = fast->next->next;
+            }
+            if (fast == slow) {
+                ListNode *tmp = head;
+                while (tmp != slow) {
+                    tmp = tmp->next;
+                    slow = slow->next;
+                }
+                return slow;
+            }
+        }
+        return NULL;
     }
 };

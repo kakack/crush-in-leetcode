@@ -22,19 +22,16 @@ public:
         ListNode *fast = head;
         ListNode *slow = head;
         
-        if(head==NULL||head->next==NULL)
+        if(head == NULL || head->next == NULL)
          return false;
          
         while(fast && fast->next){
             
-            fast=fast->next->next;
-            slow=slow->next;
-            if(fast==slow)
+            fast = fast->next->next;
+            slow = slow->next;
+            if(fast == slow)
              return true;
         }
-        
         return false;
-
-        
     }
 };

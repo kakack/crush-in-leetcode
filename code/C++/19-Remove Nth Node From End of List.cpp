@@ -21,29 +21,48 @@ Try to do this in one pass.
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
 class Solution {
 public:
-    ListNode *removeNthFromEnd(ListNode *head, int n) {
-        
-       ListNode *p=head,*q=head;
-       
-       for(int i=0;i<n;i++){
-         q=q->next;
-         
-         if(q==NULL)
-            return head->next;
-       }
-        
-       
-       while(q->next!=NULL){
-           p=p->next;
-           q=q->next;
-       }
-       
-          p->next=p->next->next;
-       
-       return head;
-       
-        
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode *pre = new ListNode(-1);
+        pre->next = head;
+        ListNode *cur = pre, *end = pre;
+        for (int i = 0; i < n; i ++) {
+            end = end->next;
+        }
+        while (end->next) {
+            cur = cur->next;
+            end = end->next;
+        }
+        cur->next = cur->next->next; 
+        return pre->next;
     }
 };
+
+// class Solution {
+// public:
+//     ListNode *removeNthFromEnd(ListNode *head, int n) {
+        
+//        ListNode *p=head,*q=head;
+       
+//        for(int i=0;i<n;i++){
+//          q=q->next;
+         
+//          if(q==NULL)
+//             return head->next;
+//        }
+        
+       
+//        while(q->next!=NULL){
+//            p=p->next;
+//            q=q->next;
+//        }
+       
+//           p->next=p->next->next;
+       
+//        return head;
+       
+        
+//     }
+// };
