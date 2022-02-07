@@ -31,6 +31,8 @@ Constraints:
 0 <= rowIndex <= 33
 */
 
+// C^m_n = C^(m-1)_n * (n - m + 1)/m
+
 #include "vector"
 using namespace std;
 
