@@ -31,8 +31,8 @@
 // 1 <= truckSize <= 10^6
 
 
-int cmp(int* a, int* b) {
-    return b[1] - a[1];
+int cmp(int** a, int** b) {
+    return (*b)[1] - (*a)[1];
 }
 
 int maximumUnits(int** boxTypes, int boxTypesSize, int* boxTypesColSize, int truckSize){

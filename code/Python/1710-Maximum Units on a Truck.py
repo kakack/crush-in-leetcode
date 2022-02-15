@@ -29,3 +29,17 @@
 # 1 <= boxTypes.length <= 1000
 # 1 <= numberOfBoxesi, numberOfUnitsPerBoxi <= 1000
 # 1 <= truckSize <= 10^6
+
+class Solution:
+    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
+        boxTypes = sorted(boxTypes, key = lambda x: x[1], reverse = True)
+        i, ans = 0, 0
+        while i < len(boxTypes):
+            if truckSize > boxTypes[i][0]:
+                ans += boxTypes[i][0] * boxTypes[i][1]
+                truckSize -= boxTypes[i][0]
+                i += 1
+            else:
+                ans += truckSize * boxTypes[i][1]
+                break
+        return ans
