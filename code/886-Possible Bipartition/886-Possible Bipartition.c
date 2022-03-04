@@ -27,3 +27,41 @@
 // 1 <= dislikes[i][j] <= n
 // ai < bi
 // All the pairs of dislikes are unique.
+
+#define MAX_BUF_LEN 5000
+
+int find(int *f, int a) {
+    while (f[a] != a) {
+        f[a] = f[f[a]];
+        a = f[a];
+    }
+    return a;
+}
+
+void unioned(int *f, int a, int b) {
+    if (find(f, a) == find(f, b)) {
+        return;
+    }
+    f[find(f, a)] = find(f, b);
+}
+
+bool possibleBipartition(int N, int** dislikes, int dislikesSize, int* dislikesColSize) {
+    int* f = malloc(sizeof(int) * (2 * N + 1));
+    for (int i = 0; i < 2 * N + 1; i ++) {
+        f[i] = i;
+    }
+
+    int a, b ,da, db;
+    for (int i = 0 ; i < dislikesSize; i ++) {
+        a = dislikes[i][0];
+        b = dislikes[i][1];
+        da = a + N;
+        db = b + N;
+        if (find(f, a) == find(f, b)) {
+            return false;
+        }
+        unioned(f, a, db);
+        unioned(f, b, da);
+    }
+    return true;
+}
