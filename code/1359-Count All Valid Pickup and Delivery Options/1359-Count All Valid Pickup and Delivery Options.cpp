@@ -28,9 +28,22 @@
 
 // 1 <= n <= 500
 
+
+// f[i]=(2i−1)i * f[i−1]
+
 class Solution {
+private:
+    static constexpr int mod = 1000000007;
+
 public:
     int countOrders(int n) {
-        
+        if (n == 1) {
+            return 1;
+        }
+        int res = 1;
+        for (int i = 2; i <= n; i ++) {
+            res = (long long)res * (i * 2 - 1) % mod * i % mod;
+        }
+        return res;
     }
 };

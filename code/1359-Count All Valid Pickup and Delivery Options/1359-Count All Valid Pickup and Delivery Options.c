@@ -28,8 +28,15 @@
 
 // 1 <= n <= 500
 
-
+int const mod = 1000000007;
 
 int countOrders(int n){
-
+    if (n == 1) {
+        return 1;
+    }
+    int res = 1;
+    for (int i = 2; i <= n; i ++) {
+        res = (long long)res * (i * 2 - 1) % mod * i % mod;
+    }
+    return res;
 }
