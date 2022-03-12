@@ -50,7 +50,7 @@ public:
     // dfs
     void dfs(Node* node, vector<int>* res) {
         if (node != nullptr) {
-            res.push_back(node->val);
+            res->push_back(node->val);
             for (auto n: node->children) {
                 dfs(n, res);
             }
