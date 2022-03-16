@@ -31,3 +31,38 @@ int singleNumber(int* nums, int numsSize){
     }
     return ans;
 }
+
+
+// UT hash写法
+
+typedef struct {
+    int key, count;
+    UT_hash_handle hh;
+} HashItem;
+
+int singleNumber(int* nums, int numsSize){
+    struct HashItem* Index = NULL;
+    for (int i = 0; i < numsSize; i ++) {
+        struct HashItem* pEntry = NULL;
+        HASH_FIND_INT(Index, nums + i, pEntry);
+        if (pEntry == NULL) {
+            pEntry = (struct HashItem*)malloc(sizeof(struct HashItem));
+            pEntry->key = nums[i];
+            pEntry->count = 1;
+            HASH_ADD_INT(Index, key, pEntry);
+        } else {
+            pEntry->count ++;
+        }
+    }
+
+    struct HashItem *iter, *tmp;
+    HASH_ITER(hh, Index, iter, tmp) {
+        if (iter->count == 1) {
+            return iter->key;
+        } else {
+            HASH_DEL(Index, iter);
+            free(iter);
+        }
+    }
+    return 0;
+}
