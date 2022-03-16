@@ -18,9 +18,9 @@ class Solution {
 public:
     int cal(int num){
         int res = 0;
-        while(num){
-            res+=(num%10)*(num%10);
-            num = num/10;
+        while (num){
+            res += (num % 10) * (num % 10);
+            num /= 10; 
         }
         return res;
     }
@@ -28,12 +28,12 @@ public:
     bool isHappy(int n) {
        set<int> tmp;
     
-        while(n!=1){
-            if(tmp.find(n)==tmp.end())
+        while (n != 1){
+            if (tmp.find(n) == tmp.end())
                 tmp.insert(n);
             else
                 return false;
-            n=cal(n);
+            n = cal(n);
         }
         return true;
     }
