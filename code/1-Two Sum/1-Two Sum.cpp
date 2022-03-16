@@ -14,23 +14,20 @@ Output: index1=1, index2=2
 
 class Solution {
 public:
-    vector<int> twoSum(vector<int> &numbers, int target) {
-        map<int, int> mapping;  
-        vector<int> result;
-        
-        for(int i=0;i<numbers.size();i++){
-            mapping[numbers[i]] = i;
-        }
-        
-        for(int i=0;i<numbers.size();i++){
-            int searched = target-numbers[i];
-            if(mapping.find(searched)!=mapping.end()&&i!=mapping[searched]){//这边注意有一个case是[3,1,2,4], 6。不能给人弄出俩1来
-                result.push_back(i+1);
-                result.push_back(mapping[searched]+1);
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> numsMap;
+        int n = nums.size();
+        vector<int> res;
+        for (int i = 0; i < n; i ++) {
+            int diff = target - nums[i];
+            if (numsMap.find(diff) != numsMap.end()) {
+                res.push_back(numsMap[diff]);
+                res.push_back(i);
                 break;
+            } else {
+                numsMap[nums[i]] = i;
             }
         }
-        
-        return result;
+        return res;
     }
 };

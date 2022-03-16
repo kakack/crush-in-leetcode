@@ -25,3 +25,40 @@ int firstUniqChar(char * s){
     }
     return -1;
 }
+
+// hash
+
+typedef struct {
+    char key;
+    int cnt;
+    int idx;
+    UT_hash_handle hh;
+} HashItem;
+
+int firstUniqChar(char * s){
+    HashItem * chrMap = NULL;
+    int n = strlen(s);
+    for (int i = 0; i < n; i ++) {
+        char c = s[i];
+        HashItem * pEntry = NULL;
+        HASH_FIND(hh, chrMap, &c, sizeof(char), pEntry);
+        if (pEntry == NULL) {
+            pEntry = (HashItem*)malloc(sizeof(HashItem));
+            pEntry->key = c;
+            pEntry->cnt = 1;
+            pEntry->idx = i;
+            HASH_ADD(hh, chrMap, key, sizeof(char), pEntry);
+        } else {
+            pEntry->cnt ++;
+        }
+    }
+    HashItem *iter = NULL, *curr = NULL;
+    int res = -1;
+    HASH_ITER(hh, chrMap, iter, curr) {
+        if (iter->cnt == 1) {
+            res = iter->idx;
+            break;
+        }
+    }
+    return res;
+}

@@ -46,3 +46,33 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     }
     return NULL;
 }
+
+// 哈希表写法
+
+typedef struct {
+    int key;
+    int index;
+    UT_hash_handle hh;
+} HashItem;
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    HashItem *numMap = NULL;
+    int *res = (int*)malloc(sizeof(int) * 2);
+    for (int i = 0; i < numsSize; i ++) {
+        HashItem *pEntry = NULL;
+        int diff = target - nums[i];
+        HASH_FIND_INT(numMap, &diff, pEntry);
+        if (pEntry != NULL) {
+            res[0] = pEntry->index;
+            res[1] = i;
+            break;
+        } else {
+            pEntry = (HashItem*)malloc(sizeof(HashItem));
+            pEntry->key = nums[i];
+            pEntry->index = i;
+            HASH_ADD_INT(numMap, key, pEntry);
+        }
+    }
+    *returnSize = 2;
+    return res;
+}

@@ -42,7 +42,7 @@ bool isIsomorphic(char * s, char * t){
             tmp1 = malloc(sizeof(struct HashTable));
             tmp1->key = x;
             tmp1->val = y;
-            HASH_ADD_STR(hh, s2t, key,sizeof(char), tmp1);
+            HASH_ADD_STR(hh, s2t, key, sizeof(char), tmp1);
         } else {
             if (tmp1->val != y) {
                 return false;
@@ -52,7 +52,7 @@ bool isIsomorphic(char * s, char * t){
             tmp2 = malloc(sizeof(struct HashTable));
             tmp2->key = y;
             tmp2->val = x;
-            HASH_ADD_STR(hh, t2s, key,sizeof(char), tmp2);
+            HASH_ADD_STR(hh, t2s, key, sizeof(char), tmp2);
         } else {
             if (tmp2->val != x) {
                 return false;
