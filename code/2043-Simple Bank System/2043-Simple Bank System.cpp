@@ -40,62 +40,48 @@
 // 0 <= balance[i], money <= 10^12
 // At most 104 calls will be made to each function transfer, deposit, withdraw.
 
-typedef struct {
-    long long * account;
-    int cnt;
-} Bank;
-
-
-Bank* bankCreate(long long* balance, int balanceSize) {
-    Bank* obj = (Bank*)malloc(sizeof(Bank));
-    obj->account = (long long*)malloc(sizeof(long long) * balanceSize);
-    for (int i = 0; i < balanceSize; i ++) {
-        obj->account[i] = balance[i];
+class Bank {
+private:
+    vector<long long> accountList;
+    int actSize;
+public:
+    Bank(vector<long long>& balance) {
+        accountList = balance;
+        actSize = balance.size();
     }
-    obj->cnt = balanceSize;
-    return obj;
-}
-
-bool bankTransfer(Bank* obj, int account1, int account2, long long money) {
-    if (account1 > obj->cnt || account2 > obj->cnt || money > obj->account[account1 - 1]) {
-        return false;
-    }
-    obj->account[account1 - 1] -= money;
-    obj->account[account2 - 1] += money;
-    return true;
-}
-
-bool bankDeposit(Bank* obj, int account, long long money) {
-    if (account > obj->cnt) {
-        return false;
-    } else {
-        obj->account[account - 1] += money;
+    
+    bool transfer(int account1, int account2, long long money) {
+        if (account1 > actSize || account2 > actSize || money > accountList[account1 - 1]) {
+            return false;
+        }
+        accountList[account1 - 1] -= money;
+        accountList[account2 - 1] += money;
         return true;
     }
-}
-
-bool bankWithdraw(Bank* obj, int account, long long money) {
-    if (account > obj->cnt || money > obj->account[account - 1]) {
-        return false;
-    } else {
-        obj->account[account - 1] -= money;
-        return true;
+    
+    bool deposit(int account, long long money) {
+        if (account > actSize) {
+            return false;
+        } else {
+            accountList[account - 1] += money;
+            return true;
+        }
     }
-}
-
-void bankFree(Bank* obj) {
-    free(obj->account);
-    free(obj);
-}
+    
+    bool withdraw(int account, long long money) {
+        if (account > actSize || money > accountList[account - 1]) {
+            return false;
+        } else {
+            accountList[account - 1] -= money;
+            return true;
+        }
+    }
+};
 
 /**
- * Your Bank struct will be instantiated and called as such:
- * Bank* obj = bankCreate(balance, balanceSize);
- * bool param_1 = bankTransfer(obj, account1, account2, money);
- 
- * bool param_2 = bankDeposit(obj, account, money);
- 
- * bool param_3 = bankWithdraw(obj, account, money);
- 
- * bankFree(obj);
-*/
+ * Your Bank object will be instantiated and called as such:
+ * Bank* obj = new Bank(balance);
+ * bool param_1 = obj->transfer(account1,account2,money);
+ * bool param_2 = obj->deposit(account,money);
+ * bool param_3 = obj->withdraw(account,money);
+ */
