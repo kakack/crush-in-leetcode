@@ -81,8 +81,4 @@ char *** groupStrings(char ** strings, int stringsSize, int* returnSize, int** r
         }
     }
     return res;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4735bc987d32b4cf151c40efbeb64f30833d9224
