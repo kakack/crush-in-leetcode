@@ -1,4 +1,4 @@
-Implement the RandomizedSet class:
+// Implement the RandomizedSet class:
 
 // RandomizedSet() Initializes the RandomizedSet object.
 // bool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.
@@ -33,82 +33,53 @@ Implement the RandomizedSet class:
 // At most 2 * 10^5 calls will be made to insert, remove, and getRandom.
 // There will be at least one element in the data structure when getRandom is called.
 
-typedef struct {
-    int key;
-    UT_hash_handle hh;
-}HashItem;
-
-typedef struct {
+class RandomizedSet {
+private:
+    unordered_set<int> mp;
     int cnt;
-    HashItem *mp;
-} RandomizedSet;
 
-
-RandomizedSet* randomizedSetCreate() {
-    RandomizedSet *obj = (RandomizedSet*)malloc(sizeof(RandomizedSet));
-    obj->cnt = 0;
-    obj->mp = NULL;
-    return obj;
-}
-
-bool randomizedSetInsert(RandomizedSet* obj, int val) {
-    HashItem *pEntry = NULL;
-    HASH_FIND_INT(obj->mp, &val, pEntry);
-    if (pEntry == NULL) {
-        pEntry = (HashItem*)malloc(sizeof(HashItem));
-        pEntry->key = val;
-        HASH_ADD_INT(obj->mp, key, pEntry);
-        obj->cnt ++;
-        return true;
-    } else {
-        return false;
+public:
+    RandomizedSet() {
+        cnt = 0;
     }
-}
-
-bool randomizedSetRemove(RandomizedSet* obj, int val) {
-    HashItem *pEntry = NULL;
-    HASH_FIND_INT(obj->mp, &val, pEntry);
-    if (pEntry != NULL) {
-        HASH_DEL(obj->mp, pEntry);
-        obj->cnt --;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-int randomizedSetGetRandom(RandomizedSet* obj) {
-    int iterNum = rand() % obj->cnt;
-    int iters = 0;
-    HashItem *iter =NULL, *tmp = NULL;
-    HASH_ITER(hh, obj->mp, iter, tmp) {
-        if (iters == iterNum) {
-            return iter->key;
+    
+    bool insert(int val) {
+        if (mp.count(val)) {
+            return false;
         } else {
-            iters ++;
+            mp.emplace(val);
+            cnt ++;
+            return true;
         }
     }
-    return 0;
-}
-
-void randomizedSetFree(RandomizedSet* obj) {
-    HashItem *iter = NULL, *tmp = NULL;
-    HASH_ITER(hh, obj->mp, iter, tmp) {
-        HASH_DEL(obj->mp, iter);
-        free(iter);
+    
+    bool remove(int val) {
+        if (!mp.count(val)) {
+            return false;
+        } else {
+            mp.erase(val);
+            cnt --;
+            return true;
+        }
     }
-    free(obj->mp);
-    free(obj);
-}
+    
+    int getRandom() {
+        int iter = 0, iterNum = rand() % cnt;
+        for (auto it = mp.begin(); it != mp.end(); it ++) {
+            if (iter == iterNum) {
+                return *it;
+            } else {
+                iter ++;
+            }
+        }
+        return 0;
+    }
+};
 
 /**
- * Your RandomizedSet struct will be instantiated and called as such:
- * RandomizedSet* obj = randomizedSetCreate();
- * bool param_1 = randomizedSetInsert(obj, val);
- 
- * bool param_2 = randomizedSetRemove(obj, val);
- 
- * int param_3 = randomizedSetGetRandom(obj);
- 
- * randomizedSetFree(obj);
-*/
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet* obj = new RandomizedSet();
+ * bool param_1 = obj->insert(val);
+ * bool param_2 = obj->remove(val);
+ * int param_3 = obj->getRandom();
+ */
