@@ -24,4 +24,18 @@ class Solution(object):
         return max(res, len(s)-start)
         # 小心没重复的substring
 
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        mp = set()
+        n = len(s)
+        start, res = -1, 0
+        for i in range(n):
+            if  i != 0:
+                mp.remove(s[i - 1])
+            while start + 1 < n and  s[start + 1] not in mp:
+                mp.add(s[start + 1])
+                start += 1
+            res = max(res, start - i + 1)
+        return res
         

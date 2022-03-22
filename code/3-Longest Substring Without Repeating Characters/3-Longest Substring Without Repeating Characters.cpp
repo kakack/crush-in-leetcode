@@ -8,30 +8,18 @@ Given a string, find the length of the longest substring without repeating chara
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-    int hash[256];
-    for (int i=0; i<256; i++) {
-        hash[i]=-1;
-    }
-    
-    int start = 0, res = 0;
-    
-    int i;
-    for (i=0; i<s.length(); i++) {
-        if(hash[s[i]]!=-1){
-            if (res<i-start) {
-                res = i - start;
+        unordered_set<char> mp;
+        int start = -1, res = 0, n = s.size();
+        for (int i = 0; i < n; i ++) {
+            if (i != 0) {
+                mp.erase(s[i - 1]);
+            } 
+            while (start + 1 < n && !mp.count(s[start + 1])) {
+                mp.emplace(s[start + 1]);
+                start ++;
             }
-            
-            for (int j=start; j<hash[s[i]]; j++) {
-                hash[j]=-1;
-            }
-            if(hash[  s[i] ] + 1  > start ){
-                start = hash[ s[i] ] +1;
-            }
+            res = max(res, start - i + 1);
         }
-        hash[s[i]]=i;
-    }
-    if(res<i-start) res=i-start;
-    return res;
+        return res;
     }
 };
