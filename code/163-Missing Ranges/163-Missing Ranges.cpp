@@ -34,29 +34,21 @@
 // lower <= nums[i] <= upper
 // All the values of nums are unique.
 
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-char ** findMissingRanges(int* nums, int numsSize, int lower, int upper, int* returnSize){
-    char **res = (char**)malloc(sizeof(char*) * (numsSize + 1));
-    *returnSize = 0;
-    int *newNum = (int*)malloc(sizeof(int) * (numsSize + 1));
-    for (int i = 0; i < numsSize; i ++) {
-        newNum[i] = nums[i];
+class Solution {
+public:
+    vector<string> findMissingRanges(vector<int>& nums, int lower, int upper) {
+        int last = lower - 1;
+        nums.push_back(upper + 1);
+        int n = nums.size();
+        vector<string> res;
+       for (int num: nums) {
+           if (num - last > 2) {
+               res.push_back(to_string(last + 1) + "->" + to_string(num - 1));
+           }  else if (num - last == 2) {
+               res.push_back(to_string(last + 1));
+           }
+           last = num;
+       }
+        return res;
     }
-    newNum[numsSize] = upper + 1;
-    int last = lower - 1;
-    for (int i = 0; i < numsSize + 1; i ++) {
-        if (newNum[i] - last > 2) {
-            res[*returnSize] = (char*)malloc(sizeof(char) * 60);
-            sprintf(res[*returnSize], "%d->%d", last + 1, newNum[i] - 1);
-            (*returnSize) ++;
-        } else if (newNum[i] - last == 2) {
-            res[*returnSize] = (char*)malloc(sizeof(char) * 60);
-            sprintf(res[*returnSize], "%d", last + 1);
-            (*returnSize) ++;
-        }
-        last = newNum[i];
-    }
-    return res;
-}
+};
