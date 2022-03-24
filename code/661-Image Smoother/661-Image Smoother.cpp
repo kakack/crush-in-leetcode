@@ -32,40 +32,32 @@
 // 1 <= m, n <= 200
 // 0 <= img[i][j] <= 255
 
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
-const int directions[9][2] = {
+class Solution {
+private:
+    const int directions[9][2] = {
         {-1, 1}, {0, 1}, {1, 1},
         {-1, 0}, {0, 0}, {1, 0},
         {-1, -1}, {0, -1}, {1, -1}
-};
-
-int** imageSmoother(int** img, int imgSize, int* imgColSize, int* returnSize, int** returnColumnSizes){
-    int m = imgSize, n = imgColSize[0];
-    *returnSize = imgSize;
-    (*returnColumnSizes) = (int*)malloc(sizeof(int) * m);
-    int **res = (int**)malloc(sizeof (int*) * m);
-    for (int i = 0; i < m; i ++) {
-        res[i] = (int*)malloc(sizeof(int) * n);
-        memset(res[i], 0, sizeof(int) * n);
-        (*returnColumnSizes)[i] = n;
-    }
-    for (int i = 0; i < m; i ++) {
-        for (int j = 0; j < n; j ++) {
-            int cnt = 0, sum = 0;
-            for (int k = 0; k < 9; k ++) {
-                int x = i + directions[k][0];
-                int y = j + directions[k][1];
-                if (x >= 0 && x < m && y >= 0 && y < n) {
-                    cnt ++;
-                    sum += img[x][y];
-                } 
+    };
+public:
+    vector<vector<int>> imageSmoother(vector<vector<int>>& img) {
+        int m = img.size(), n = img[0].size();
+        vector<vector<int>> res(m, vector<int>(n));
+        
+        for (int i = 0; i < m; i ++) {
+            for (int j = 0; j < n; j ++) {
+                int cnt = 0, sum = 0;
+                for (int k = 0; k < 9; k ++) {
+                    int x = i + directions[k][0];
+                    int y = j + directions[k][1];
+                    if (x >= 0 && x < m && y >= 0 && y < n) {
+                        cnt ++;
+                        sum += img[x][y];
+                    } 
+                }
+                res[i][j] = sum / cnt;
             }
-            res[i][j] = sum / cnt;
         }
+        return res;
     }
-    return res;
-}
+};
