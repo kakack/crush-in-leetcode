@@ -34,31 +34,34 @@
 // Follow up:
 // Can you think of a solution with O(n) time complexity?
 
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
- *     struct ListNode *next;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
-
-struct ListNode* sortLinkedList(struct ListNode* head){
-    if (head == NULL || head->next == NULL) {
+class Solution {
+public:
+    ListNode* sortLinkedList(ListNode* head) {
+        if (head == nullptr || head->next == nullptr) {
+            return head;
+        }
+        ListNode *pre = head, *cur = head->next;
+        while (cur != nullptr) {
+            if (cur->val >= 0) {
+                pre = pre->next;
+                cur = cur->next;
+            } else {
+                pre->next = cur->next;
+                cur->next = head;
+                head = cur;
+                cur = pre->next;
+            }
+        }
         return head;
     }
-    struct ListNode *pre = head, *cur = head->next;
-    while (cur != NULL) {
-        if (cur->val >= 0) {
-            pre = pre->next;
-            cur = cur->next;
-        } else {
-            pre->next = cur->next;
-            cur->next = head;
-            head = cur;
-            cur = pre->next;
-        }
-    }
-    return head;
-}
+};
