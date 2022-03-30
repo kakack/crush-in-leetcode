@@ -1,4 +1,4 @@
-// A teacher is writing a test with n true/false questions, with 'T' denoting true and 'F' denoting false. He wants to confuse the students by maximizing the number of consecutive questions with the same answer (multiple trues or multiple falses in a row).
+A teacher is writing a test with n true/false questions, with 'T' denoting true and 'F' denoting false. He wants to confuse the students by maximizing the number of consecutive questions with the same answer (multiple trues or multiple falses in a row).
 
 // You are given a string answerKey, where answerKey[i] is the original answer to the ith question. In addition, you are given an integer k, the maximum number of times you may perform the following operation:
 
@@ -36,20 +36,24 @@
 // answerKey[i] is either 'T' or 'F'
 // 1 <= k <= n
 
-int maxConsecutiveAnswersChar(char * answerKey, int k, char t){
-    int n = strlen(answerKey);
-    int left = 0, lsum = 0, rsum = 0, res = 0;
-    for (int right = 0; right < n; right ++) {
-        rsum += answerKey[right] == t;
-        while (lsum < rsum - k) {
-            lsum += answerKey[left] == t;
-            left ++;
+class Solution {
+private:
+    int maxConsecutiveAnswersChar(string answerKey, int k, char t) {
+        int n = answerKey.size();
+        int lsum = 0, rsum = 0, left = 0, res = 0;
+        for (int right = 0; right < n; right ++) {
+            rsum += answerKey[right] == t;
+            while (lsum < rsum - k) {
+                lsum += answerKey[left] == t;
+                left ++;
+            }
+            res = fmax(res, right - left + 1);
         }
-        res = fmax(res, right - left + 1);
-    }
-    return res;
-}
+        return res;
+    } 
 
-int maxConsecutiveAnswers(char * answerKey, int k){
-    return fmax(maxConsecutiveAnswersChar(answerKey, k, 'T'), maxConsecutiveAnswersChar(answerKey, k, 'F'));
-}
+public:
+    int maxConsecutiveAnswers(string answerKey, int k) {
+        return fmax(maxConsecutiveAnswersChar(answerKey, k, 'T'), maxConsecutiveAnswersChar(answerKey, k, 'F'));
+    }
+};
