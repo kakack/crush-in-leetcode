@@ -28,3 +28,17 @@
 
 // How can we prove that at least one duplicate number must exist in nums?
 // Can you solve the problem in linear runtime complexity?
+
+int findDuplicate(int* nums, int numsSize){
+    int slow = 0, fast = 0;
+    do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while (slow != fast);
+    slow = 0;
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    return slow;
+}
