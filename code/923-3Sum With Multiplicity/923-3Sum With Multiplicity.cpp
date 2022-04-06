@@ -30,14 +30,9 @@
 // 0 <= arr[i] <= 100
 // 0 <= target <= 300
 
-
-int cmp(const int * a, const int * b) {
-    return (*a) - (*b);
-}
-
-int threeSumMulti(int* arr, int arrSize, int target){
-    long MOD = pow(10, 9) + 7;
-    sort(arr, arrSize, sizeof(int), cmp);
-    
-
-}
+class Solution {
+public:
+    int threeSumMulti(vector<int>& arr, int target) {
+        
+    }
+};
