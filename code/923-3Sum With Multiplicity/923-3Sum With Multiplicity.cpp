@@ -33,6 +33,22 @@
 class Solution {
 public:
     int threeSumMulti(vector<int>& arr, int target) {
-        
+        int sum = 0;
+        unordered_map<int, int> cnt;
+        for (int i = 1; i < arr.size(); i ++) {
+            int prev = arr[i - 1];
+            if (cnt.find(prev) == cnt.end()) {
+                cnt[prev] = 0;
+            }
+            cnt[prev] ++;
+            for (int j = i + 1; j < arr.size(); j ++) {
+                int item = target - arr[i] - arr[j];
+                if (cnt.find(item) != cnt.end()) {
+                    sum += cnt[item];
+                }
+                sum = sum % 1000000007;
+            }
+        }
+        return sum;
     }
 };

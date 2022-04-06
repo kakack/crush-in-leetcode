@@ -31,13 +31,37 @@
 // 0 <= target <= 300
 
 
-int cmp(const int * a, const int * b) {
-    return (*a) - (*b);
-}
+typedef struct {
+    int key;
+    int cnt;
+    UT_hash_handle hh;
+} HashItem;
+
 
 int threeSumMulti(int* arr, int arrSize, int target){
-    long MOD = pow(10, 9) + 7;
-    sort(arr, arrSize, sizeof(int), cmp);
-    
-
+    int sum = 0;
+    HashItem *hm = NULL;
+    for (int i = 1; i < arrSize; i ++) {
+        int prev = arr[i - 1];
+        HashItem * pEntry = NULL;
+        HASH_FIND_INT(hm, &prev, pEntry);
+        if (pEntry == NULL) {
+            pEntry = (HashItem*)malloc(sizeof(HashItem));
+            pEntry->key = prev;
+            pEntry->cnt = 1;
+            HASH_ADD_INT(hm, key, pEntry);
+        } else {
+            pEntry->cnt ++;
+        }
+        for (int j = i + 1; j < arrSize; j ++) {
+            int item = target - arr[i] - arr[j];
+            HashItem *tmp = NULL;
+            HASH_FIND_INT(hm, &item, tmp);
+            if (tmp != NULL) {
+                sum += tmp->cnt;
+            }
+            sum = sum % 1000000007;
+        }
+    }
+    return sum;
 }
