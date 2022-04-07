@@ -17,18 +17,22 @@ and followed by 2's.
 Could you come up with an one-pass algorithm using only constant space?
 */
 
-class Solution {
-public:
-    void sortColors(vector<int>& nums) {
-        int red = 0, blue = nums.size() - 1;
-        for (int i = 0; i <= blue;) {
-            if (nums[i] == 0) {
-                swap(nums[i ++], nums[red ++]);
-            } else if (nums[i] == 2) {
-                swap(nums[i], nums[blue --]);
-            } else {
-                i ++;
-            }
+
+void swap(int * a, int * b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void sortColors(int* nums, int numsSize){
+    int red = 0, blue = numsSize - 1;
+    for (int i = 0; i <= blue;) {
+        if (nums[i] == 0) {
+            swap(&nums[i ++], &nums[red ++]);
+        } else if (nums[i] == 2) {
+            swap(&nums[i], &nums[blue --]);
+        } else {
+            i ++;
         }
     }
-};
+}
