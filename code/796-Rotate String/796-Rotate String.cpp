@@ -20,12 +20,9 @@
 // 1 <= s.length, goal.length <= 100
 // s and goal consist of lowercase English letters.
 
-bool rotateString(char * s, char * goal){
-    int n = strlen(s), m = strlen(goal);
-    if (m != n) {
-        return false;
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        return s.size() == goal.size() && (s + s).find(goal) != string::npos;
     }
-    char * str = (char*)malloc(sizeof(char) * (m + n + 1));
-    sprintf(str, "%s%s", goal, goal);
-    return strstr(str, s) != NULL;
-}
+};
