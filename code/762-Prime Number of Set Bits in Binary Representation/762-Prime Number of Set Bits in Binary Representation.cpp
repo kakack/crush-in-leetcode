@@ -42,10 +42,11 @@ public:
     int countPrimeSetBits(int left, int right) {
         int res = 0;
         for (int i = left; i <= right; i ++) {
-            if (primes.find(__builtin_popcount(i)) != primes.end()) {
+            if (find(primes.begin(), primes.end(), __builtin_popcount(i)) != primes.end()) {
                 res ++;
             }
         }
         return res;
     }
 };
+
