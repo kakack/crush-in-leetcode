@@ -34,35 +34,25 @@
 // -1000 <= grid[i][j] <= 1000
 // 0 <= k <= 100
 
-
-
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
-
-void swap(int *a, int *b) {
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
-int** shiftGrid(int** grid, int gridSize, int* gridColSize, int k, int* returnSize, int** returnColumnSizes){
-    int row = gridSize;
-    int col = gridColSize[0];
-    *returnSize = row;
-    *returnColumnSizes = (int*)malloc(sizeof(int) * row);
-    for (int i = 0; i < row;  i ++) {
-        (*returnColumnSizes)[i] = col;
+class Solution {
+private:
+    void swap(int *a, int *b) {
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
     }
-    for (int i = 0; i < k; i ++) {
-        int prev = grid[row - 1][col - 1];
-        for (int r = 0; r < row; r ++) {
-            for (int c = 0; c < col; c ++) {
-                swap(&prev, &grid[r][c]);
+public:
+    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+        int row = grid.size();
+        int col = grid[0].size();
+        for (int i = 0; i < k; i ++) {
+            int prev = grid[row - 1][col - 1];
+            for (int r = 0; r < row; r ++) {
+                for (int c = 0; c < col; c ++) {
+                    swap(&prev, &grid[r][c]);
+                }
             }
         }
+        return grid;
     }
-    return grid;
-}
+};
