@@ -34,23 +34,17 @@
 // 1 <= s.length <= 1000
 // s contains only lowercase English letters.
 
-
-
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* numberOfLines(int* widths, int widthsSize, char * s, int* returnSize){
-    int *res = (int*)malloc(sizeof(int) * 2);
-    *returnSize = 2;
-    int n = strlen(s), lines = 1, width = 0;
-    for (int i = 0; i < n; i ++) {
-        width += widths[s[i] - 'a'];
-        if (width > 100) {
-            lines ++;
-            width = widths[s[i] - 'a']; 
+class Solution {
+public:
+    vector<int> numberOfLines(vector<int>& widths, string s) {
+        int n = s.size(), lines = 1, width = 0;
+        for (int i  = 0; i < n; i ++) {
+            width += widths[s[i] - 'a'];
+            if (width > 100) {
+                lines ++;
+                width = widths[s[i] - 'a'];
+            }
         }
+        return {lines, width};
     }
-    res[0] = lines;
-    res[1] = width;
-    return res;
-}
+};
