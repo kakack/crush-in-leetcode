@@ -33,50 +33,27 @@
 // 1 <= words[i].length <= 16
 // words[i] only consists of lowercase English letters.
 
-int cmp(const char **a, const char **b) {
-    return strlen(*a) - strlen(*b);
-}
-
-typedef struct {
-    char key[17];
-    int val;
-    UT_hash_handle hh;
-} HashItem;
-
-int longestStrChain(char ** words, int wordsSize){
-    qsort(words, wordsSize, sizeof(char*), cmp);
-    int n = wordsSize;
-    HashItem *mp = NULL;
-    int ans = 1;
-    for (int i = 0; i < n; i ++) {
-        HashItem *pEntry = (HashItem*)malloc(sizeof(HashItem));
-        strcpy(pEntry->key, words[i]);
-        pEntry->val = 1;
-        HASH_ADD_STR(mp, key, pEntry);
-    }
-    for (int i = n - 1; i >= 0; i --) {
-        int m = strlen(words[i]);
-        HashItem *wd = NULL;
-        char access[17];
-        strcpy(access, words[i]);
-        HASH_FIND_STR(mp, access, wd);
-        int wdVal = wd->val;
-        for (int j = 0; j < m; j ++) {
-            char cmp[17];
-            strcpy(cmp, words[i]);
-            strcpy(cmp + j, words[i] + j + 1);
-            HashItem *tmp = NULL;
-            HASH_FIND_STR(mp, &cmp, tmp);
-            if (tmp != NULL) {
-                tmp->val = fmax(tmp->val, wdVal + 1);
-                ans = fmax(ans, tmp->val);
+class Solution {
+public:
+    int longestStrChain(vector<string>& words) {
+        sort(words.begin(), words.end(), [](string a, string b) -> bool {
+            return a.size() < b.size();
+        });
+        int n = words.size();
+        unordered_map<string, int> mp;
+        int ans = 1;
+        for (string s: words) {
+            mp[s] = 1;
+        }
+        for (int i = n - 1; i >= 0; i --) {
+            for (int j = 0; j < words[i].size(); j ++) {
+                string cmp = words[i].substr(0, j) + words[i].substr(j + 1);
+                if (mp.count(cmp)) {
+                    mp[cmp] = max(mp[cmp], mp[words[i]] + 1);
+                    ans = max(ans, mp[cmp]);
+                }
             }
         }
+        return ans;
     }
-    // HashItem *cur, *iter;
-    // HASH_ITER(hh, mp, cur, iter) {
-    //     free(cur);
-    // }
-    // free(mp);
-    return ans;
-}
+};
