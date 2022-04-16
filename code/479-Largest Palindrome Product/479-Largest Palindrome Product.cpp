@@ -21,7 +21,7 @@ class Solution {
 public:
     int largestPalindrome(int n) {
         if (n == 1) {
-            return 9
+            return 9;
         }
         int upper = pow(10, n) - 1;
         for (int left = upper; ;left --) {
