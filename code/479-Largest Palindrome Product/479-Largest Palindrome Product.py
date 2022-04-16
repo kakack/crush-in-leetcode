@@ -25,8 +25,8 @@ class Solution:
         for left in range(upper, upper // 10, -1):
             p, x = left, left
             while x:
-                p = p * 10 + x% 10
-                x //= 19
+                p = p * 10 + x % 10
+                x //= 10
             x = upper
             while x * x >= p:
                 if p % x == 0:
