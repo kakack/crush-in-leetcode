@@ -25,33 +25,28 @@
 // s[i] and c are lowercase English letters.
 // It is guaranteed that c occurs at least once in s.
 
-
-
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* shortestToChar(char * s, char c, int* returnSize){
-    int n = strlen(s);
-    *returnSize = n;
-    int * ans = (int*)malloc(sizeof(int) * n);
-    int * pos = (int*)malloc(sizeof(int) * n);
-    int pos_top = 0;
-    for (int i = 0; i < n; i ++) {
-        if (s[i] == c) {
-            pos[pos_top ++] = i;
-        }
-    }
-    int anc_idx = 0;
-    for (int i = 0; i < n; i ++) {
-        int anc = pos[anc_idx];
-        if (i >= anc && anc_idx < pos_top - 1) {
-            int anc_ = pos[anc_idx + 1];
-            if (abs(i - anc) > abs(i - anc_)) {
-                anc = anc_;
-                anc_idx ++;
+class Solution {
+public:
+    vector<int> shortestToChar(string s, char c) {
+        int n = s.size();
+        vector<int> ans(n), pos;
+        for (int i = 0; i < n; i ++) {
+            if (s[i] == c) {
+                pos.push_back(i);
             }
         }
-        ans[i] = abs(i - anc);
+        int anc_idx = 0, a_len = pos.size();
+        for (int i = 0; i < n; i ++) {
+            int anc = pos[anc_idx];
+            if (i >= anc && anc_idx < a_len - 1) {
+                int anc_ = pos[anc_idx + 1];
+                if (abs(i - anc) > abs(i - anc_)) {
+                    anc = anc_;
+                    anc_idx ++;
+                }
+            }
+            ans[i] = abs(i - anc);
+        }
+        return ans;
     }
-    return ans;
-}
+};
