@@ -29,50 +29,30 @@
 // sentence has no leading or trailing spaces.
 // All the words in sentence are separated by a single space.
 
-#define MAX_LATIN_LEN 2048
-
-
-char * toGoatLatin(char * sentence){
-    int vowels[256];
-    memset(vowels, 0, sizeof(vowels));
-    vowels['a'] = 1;
-    vowels['e'] = 1;
-    vowels['i'] = 1;
-    vowels['o'] = 1;
-    vowels['u'] = 1;
-    vowels['A'] = 1;
-    vowels['E'] = 1;
-    vowels['I'] = 1;
-    vowels['O'] = 1;
-    vowels['U'] = 1;
-    int n = strlen(sentence), i = 0, cnt = 1;
-    char *ans = (char*)malloc(sizeof(char) * MAX_LATIN_LEN);
-    int pos = 0;
-    while (i < n) {
-        int j = i;
-        while (j < n && sentence[j] != ' ') {
-            j ++;
+class Solution {
+public:
+    string toGoatLatin(string sentence) {
+        unordered_set<char> vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+        int n = sentence.size();
+        int i = 0, cnt = 1;
+        string ans;
+        while (i < n) {
+            int j = i;
+            while (j < n && sentence[j] != ' ') {
+                j ++;
+            }
+            cnt ++;
+            if (cnt != 2) {
+                ans += ' ';
+            }
+            if (vowels.count(sentence[i])) {
+                ans += sentence.substr(i, j - i) + 'm' + string(cnt, 'a');
+            }
+            else {
+                ans += sentence.substr(i + 1, j - i - 1) + sentence[i] + 'm' + string(cnt, 'a');
+            }
+            i = j + 1;
         }
-        cnt ++;
-        if (cnt != 2) {
-            ans[pos ++] = ' ';
-        }
-        if (vowels[sentence[i]]) {
-            memcpy(ans + pos, sentence + i, sizeof(char) * (j - i));
-            pos += j - i;
-            ans[pos ++] = 'm';
-            memset(ans + pos, 'a', cnt);
-            pos += cnt;
-        } else {
-            memcpy(ans + pos, sentence + i + 1, sizeof(char) * (j - i - 1));
-            pos += j - i - 1;
-            ans[pos ++] = sentence[i];
-            ans[pos ++] = 'm';
-            memset(ans + pos, 'a', cnt);
-            pos += cnt;
-        }
-        i = j + 1;
+        return ans;
     }
-    ans[pos] = 0;
-    return ans;
-}
+};
