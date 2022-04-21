@@ -32,35 +32,54 @@
 
 /*
 // Definition for a Node.
-struct Node {
+class Node {
+public:
     int val;
-    struct Node* left;
-    struct Node* right;
+    Node* left;
+    Node* right;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+        left = NULL;
+        right = NULL;
+    }
+
+    Node(int _val, Node* _left, Node* _right) {
+        val = _val;
+        left = _left;
+        right = _right;
+    }
 };
 */
 
-void inorder(struct Node *node, struct Node **first, struct Node **last) {
-    if (node != NULL) {
-        inorder(node->left, first, last);
-        if (*last != NULL) {
-            (*last)->right = node;
-            node->left = *last;
-        } else {
-            *first = node;
+class Solution {
+public:
+    Node* first = NULL;
+    Node* last = NULL;
+    
+    void inorder(Node* node) {
+        if (node) {
+            inorder(node->left);
+            if (last) {
+                last->right = node;
+                node->left = last;
+            } else {
+                first = node;
+            }
+            last = node;
+            inorder(node->right);
         }
-        *last = node;
-        inorder(node->right, first, last);
     }
-}
-
-struct Node* treeToDoublyList(struct Node *root) {
-    if (root == NULL) {
-        return NULL;
+    Node* treeToDoublyList(Node* root) {
+        if (!root) {
+            return NULL;
+        }
+        inorder(root);
+        last->right = first;
+        first->left = last;
+        return first;
+        
     }
-    struct Node *first = NULL;
-    struct Node *last = NULL;
-    inorder(root, &first, &last);
-    last->right = first;
-    first->left = last;
-    return first;
-}
+};
