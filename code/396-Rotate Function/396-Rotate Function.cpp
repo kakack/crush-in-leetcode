@@ -31,19 +31,20 @@
 // 1 <= n <= 10^5
 // -100 <= nums[i] <= 100
 
-
-
-int maxRotateFunction(int* nums, int numsSize){
-    int n = numsSize;
-    int numSum = 0, fRes = 0;
-    for (int i = 0; i < n; i ++) {
-        numSum += nums[i];
-        fRes += i * nums[i];
+class Solution {
+public:
+    int maxRotateFunction(vector<int>& nums) {
+        int numSum = accumulate(nums.begin(), nums.end(), 0);
+        int n = nums.size();
+        int fRes = 0;
+        for (int i = 0; i < n; i ++) {
+            fRes += i * nums[i];
+        }
+        int res = fRes;
+        for (int i = 1; i < n; i ++) {
+            fRes += numSum - n * nums[n - i];
+            res = max(res, fRes);
+        }
+        return res;
     }
-    int res = fRes;
-    for (int i = 1; i < n; i ++) {
-        fRes += numSum - n * nums[n - i];
-        res = fmax(res, fRes);
-    }
-    return res;
-}
+};
