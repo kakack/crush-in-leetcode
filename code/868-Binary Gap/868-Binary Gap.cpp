@@ -1,4 +1,4 @@
-Given a positive integer n, find and return the longest distance between any two adjacent 1's in the binary representation of n. If there are no two adjacent 1's, return 0.
+// Given a positive integer n, find and return the longest distance between any two adjacent 1's in the binary representation of n. If there are no two adjacent 1's, return 0.
 
 // Two 1's are adjacent if there are only 0's separating them (possibly no 0's). The distance between two 1's is the absolute difference between their bit positions. For example, the two 1's in "1001" have a distance of 3.
 
@@ -30,18 +30,21 @@ Given a positive integer n, find and return the longest distance between any two
 
 // 1 <= n <= 10^9
 
-int binaryGap(int n){
-    int res = 0, bit = 0;
-    while (n) {
-        if (n % 2 == 1) {
-            if (bit != 0) {
-                res = fmax(res, bit);
+class Solution {
+public:
+    int binaryGap(int n) {
+        int res = 0, bit = 0;
+        while (n) {
+            if (n % 2 == 1) {
+                if (bit != 0) {
+                    res = max(res, bit);
+                }
+                bit = 1;
+            } else if (bit != 0) {
+                bit ++;
             }
-            bit = 1;
-        } else if (bit != 0) {
-            bit ++;
+            n >>= 1;
         }
-        n >>= 1;
+        return res;
     }
-    return res;
-}
+};
