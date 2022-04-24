@@ -69,108 +69,46 @@
 // There will be at most 2 * 10^4 calls in total to checkIn, checkOut, and getAverageTime.
 // Answers within 10^(-5) of the actual value will be accepted.
 
-#define MAX_LEN 12
+class UndergroundSystem {
+public:
+    using Start = pair <string, int>;
+    using StartEnd = pair <string, string>;
+    using SumAndAmount = pair <int, int>;
 
-typedef struct {
-    int id;
-    char startName[MAX_LEN];
-    int starttime;
-    UT_hash_handle hh;
-} StartInfo;
-
-typedef struct {
-    char stations[2 * MAX_LEN];
-    int sum;
-    int amount;
-    UT_hash_handle hh;
-} Table;
-
-
-typedef struct {
-    StartInfo *startInfo;
-    Table *table;
-} UndergroundSystem;
-
-
-UndergroundSystem* undergroundSystemCreate() {
-    UndergroundSystem *obj = (UndergroundSystem*)malloc(sizeof(UndergroundSystem));
-    obj->startInfo = NULL;
-    obj->table = NULL;
-    return obj;
-}
-
-void undergroundSystemCheckIn(UndergroundSystem* obj, int id, char * stationName, int t) {
-    StartInfo *pEntry = (StartInfo*)malloc(sizeof(StartInfo));
-    pEntry->id = id;
-    strcpy(pEntry->startName, stationName);
-    pEntry->starttime = t;
-    HASH_ADD_INT(obj->startInfo, id, pEntry);
-}
-
-void undergroundSystemCheckOut(UndergroundSystem* obj, int id, char * stationName, int t) {
-    StartInfo *pEntry1 = NULL;
-    HASH_FIND_INT(obj->startInfo, &id, pEntry1);
-    if (pEntry1 != NULL) {
-        int startTime = pEntry1->starttime;
-        char stationInfo[2 * MAX_LEN];
-        strcpy(stationInfo, pEntry1->startName);
-        strcat(stationInfo, "_");
-        strcat(stationInfo, stationName);
-        Table *pEntry2 = NULL;
-        HASH_FIND_STR(obj->table, stationInfo, pEntry2);
-        if (pEntry2 == NULL) {
-            pEntry2 = (Table*)malloc(sizeof(Table));
-            memcpy(pEntry2->stations, stationInfo, strlen(stationInfo) + 1);
-            pEntry2->amount = 1;
-            pEntry2->sum = t - startTime;
-            HASH_ADD_STR(obj->table, stations, pEntry2);
-        } else {
-            (pEntry2->amount) ++;
-            pEntry2->sum += t - startTime;
+    struct StartEndHash {
+        int operator() (const StartEnd& x) const{
+            return hash <string> () (x.first + x.second);
         }
-        HASH_DEL(obj->startInfo, pEntry1);
-        free(pEntry1);
-        pEntry1 = NULL;
-    }
-}
+    };
+    
+    unordered_map <int, Start> startInfo;
+    unordered_map <StartEnd, SumAndAmount, StartEndHash> table;
 
-double undergroundSystemGetAverageTime(UndergroundSystem* obj, char * startStation, char * endStation) {
-    char stationInfo[2 * MAX_LEN];
-    strcpy(stationInfo, startStation);
-    strcat(stationInfo, "_");
-    strcat(stationInfo, endStation);
-    printf("%s\n",stationInfo);
-    Table *pEntry = NULL;
-    HASH_FIND_STR(obj->table, stationInfo, pEntry);
-    if (pEntry != NULL) {
-        return (double)(pEntry->sum)/(pEntry->amount);
+    UndergroundSystem() {
+        
     }
-    return -1;
-}
-
-void undergroundSystemFree(UndergroundSystem* obj) {
-    StartInfo *tmp = NULL, *curr = NULL;
-    HASH_ITER(hh, obj->startInfo, tmp, curr) {
-        HASH_DEL(obj->startInfo, tmp);
-        free(tmp);
+    
+    void checkIn(int id, string stationName, int t) {
+        startInfo[id] = {stationName, t};
     }
-    free(obj->startInfo);
-    Table *tmp_ = NULL, *curr_ = NULL;
-    HASH_ITER(hh, obj->table, tmp_, curr_) {
-        HASH_DEL(obj->table, tmp_);
-        free(tmp_);
+    
+    void checkOut(int id, string stationName, int t) {
+        auto startTime = startInfo[id].second;
+        table[{startInfo[id].first, stationName}].first += t - startTime;
+        table[{startInfo[id].first, stationName}].second ++;
     }
-    free(obj->table);
-}
+    
+    double getAverageTime(string startStation, string endStation) {
+        auto sum = table[{startStation, endStation}].first;
+        auto amount = table[{startStation, endStation}].second;
+        return double(sum) / amount;
+    }
+};
 
 /**
- * Your UndergroundSystem struct will be instantiated and called as such:
- * UndergroundSystem* obj = undergroundSystemCreate();
- * undergroundSystemCheckIn(obj, id, stationName, t);
- 
- * undergroundSystemCheckOut(obj, id, stationName, t);
- 
- * double param_3 = undergroundSystemGetAverageTime(obj, startStation, endStation);
- 
- * undergroundSystemFree(obj);
-*/
+ * Your UndergroundSystem object will be instantiated and called as such:
+ * UndergroundSystem* obj = new UndergroundSystem();
+ * obj->checkIn(id,stationName,t);
+ * obj->checkOut(id,stationName,t);
+ * double param_3 = obj->getAverageTime(startStation,endStation);
+ */
