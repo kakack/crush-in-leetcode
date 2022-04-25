@@ -38,54 +38,57 @@
 // Follow up: How would you extend your design to be generic and work with all types, not just integer?
 
 /*
- *	struct Iterator {
- *		// Returns true if the iteration has more elements.
- *		bool (*hasNext)();
+ * Below is the interface for Iterator, which is already defined for you.
+ * **DO NOT** modify the interface for Iterator.
+ *
+ *  class Iterator {
+ *		struct Data;
+ * 		Data* data;
+ *  public:
+ *		Iterator(const vector<int>& nums);
+ * 		Iterator(const Iterator& iter);
  *
  * 		// Returns the next element in the iteration.
- *		int (*next)();
+ *		int next();
+ *
+ *		// Returns true if the iteration has more elements.
+ *		bool hasNext() const;
  *	};
  */
 
-struct PeekingIterator {
-    int nextElement;
-    struct Iterator* iterator;
+class PeekingIterator : public Iterator {
+private:
     bool flag;
+    int nextElement;
+public:
+	PeekingIterator(const vector<int>& nums) : Iterator(nums) {
+	    // Initialize any member here.
+	    // **DO NOT** save a copy of nums and manipulate it directly.
+	    // You should only use the Iterator interface methods.
+        flag = Iterator::hasNext();
+        if (flag) {
+            nextElement = Iterator::next();
+        }
+	    
+	}
+	
+    // Returns the next element in the iteration without advancing the iterator.
+	int peek() {
+        return nextElement;
+	}
+	
+	// hasNext() and next() should behave the same as in the Iterator interface.
+	// Override them if needed.
+	int next() {
+	    int ret = nextElement;
+        flag = Iterator::hasNext();
+        if (flag) {
+            nextElement = Iterator::next();
+        }
+        return ret;
+	}
+	
+	bool hasNext() const {
+	    return flag;
+	}
 };
-
-struct PeekingIterator* Constructor(struct Iterator* iter) {
-    struct PeekingIterator* piter = malloc(sizeof(struct PeekingIterator));
-    piter->iterator = iter;
-    piter->flag = iter->hasNext();
-    if (piter->flag) {
-        piter->nextElement = iter->next();
-    }
-    return piter;
-}
-
-int peek(struct PeekingIterator* obj) {
-    return obj->nextElement;
-}
-
-int next(struct PeekingIterator* obj) {
-    int ret = obj->nextElement;
-    if (obj->flag) {
-        obj->flag = obj->iterator->hasNext();
-        obj->nextElement = obj->iterator->next();
-    } 
-    return ret;
-}
-
-bool hasNext(struct PeekingIterator* obj) {
-    return obj->flag;
-}
-
-
-/**
- * Your PeekingIterator struct will be instantiated and called as such:
- * PeekingIterator* obj = peekingIteratorCreate(arr, arrSize);
- * int param_1 = peek(obj);
- * int param_2 = next(obj);
- * bool param_3 = hasNext(obj);
- * peekingIteratorFree(obj);
-*/
