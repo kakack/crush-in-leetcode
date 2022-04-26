@@ -52,7 +52,7 @@ struct Edge {
     int len;
     int x;
     int y;
-}
+};
 
 int cmp(struct Edge *a, struct Edge *b) {
     return a->len - b->len;
