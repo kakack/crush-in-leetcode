@@ -30,7 +30,7 @@ class Solution(object):
 
         for i in range(len(words) - 1):
             word1 = words[i]
-            word2 = words[i+1]
+            word2 = words[i + 1]
 
             # Find the first difference word1[k] != word2[k].
             for k in range(min(len(word1), len(word2))):
