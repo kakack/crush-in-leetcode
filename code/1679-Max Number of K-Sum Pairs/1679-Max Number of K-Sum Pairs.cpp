@@ -29,26 +29,24 @@
 // 1 <= nums[i] <= 10^9
 // 1 <= k <= 10^9
 
-int cmp(int *a, int *b) {
-    return *a - *b;
-}
-
-
-
-int maxOperations(int* nums, int numsSize, int k){
-    qsort(nums, numsSize, sizeof(int), cmp);
-    int res = 0, left = 0, right = numsSize - 1;
-    while (left < right) {
-        int tmp = nums[left] + nums[right];
-        if (tmp == k) {
-            left ++;
-            right --;
-            res ++;
-        } else if (tmp < k) {
-            left ++;
-        } else {
-            right --;
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        int left = 0, right = nums.size() - 1;
+        int res = 0;
+        while (left < right) {
+            int tmp = nums[left] + nums[right];
+            if (tmp == k) {
+                left ++;
+                right --;
+                res ++;
+            } else if (tmp < k) {
+                left ++;
+            } else {
+                right --;
+            }
         }
+        return res;
     }
-    return res;
-}
+};
