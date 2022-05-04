@@ -37,41 +37,32 @@
 
 // 1 <= k <= n <= 500
 
-int findTheWinner(int n, int k){
-    struct ListNode *head = NULL;
-    struct ListNode *tail = NULL;
-      for (int i = 1; i <= n; i++) {
-        struct ListNode * node = (struct ListNode *)malloc(sizeof(struct ListNode));
-        node->val = i;
-        node->next = NULL;
-        if (!head) {
-            head = node;
-            tail = node;
-        } else {
-            tail->next = node;
-            tail = tail->next;
-        }
-    }
-    while (head != tail) {
-        for (int i = 1; i < k; i ++) {
-            struct ListNode *node = head;
-            head = head->next;
-            tail->next = node;
-            tail = tail->next;
-            tail->next = NULL;
-        }
-        struct ListNode * node = head;
-        head = head->next;
-        free(node);
-    }
-    int res = head->val;
-    free(head);
-    return res;
-}
 
-int findTheWinner(int n, int k){
-    if (n == 1) {
-        return 1;
+class Solution {
+public:
+    int findTheWinner(int n, int k) {
+        queue<int> qu;
+        for (int i = 1; i <= n; i++) {
+            qu.emplace(i);
+        }
+        while (qu.size() > 1) {
+            for (int i = 1; i < k; i++) {
+                qu.emplace(qu.front());
+                qu.pop();
+            }
+            qu.pop();
+        }
+        return qu.front();
     }
-    return (k + findTheWinner(n - 1, k) - 1) % n + 1;
-}
+};
+
+
+class Solution {
+public:
+    int findTheWinner(int n, int k) {
+        if (n == 1) {
+            return 1;
+        }
+        return (k + findTheWinner(n - 1, k) - 1) % n + 1;
+    }
+};
