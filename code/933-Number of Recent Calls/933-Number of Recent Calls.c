@@ -28,4 +28,43 @@
 
 // 1 <= t <= 10^9
 // Each test case will call ping with strictly increasing values of t.
-// At most 104 calls will be made to ping.
+// At most 10^4 calls will be made to ping.
+
+
+
+
+typedef struct {
+    int *queue;
+    int head;
+    int tail;
+} RecentCounter;
+
+
+RecentCounter* recentCounterCreate() {
+    RecentCounter *obj = (RecentCounter*)malloc(sizeof(RecentCounter));
+    obj->head = 0;
+    obj->tail = 0;
+    obj->queue = (int*)malloc(sizeof(int) * 10001);
+    return obj;
+}
+
+int recentCounterPing(RecentCounter* obj, int t) {
+    obj->queue[obj->tail ++] = t;
+    while (obj->queue[obj->head] < t - 3000) {
+        obj->head ++;
+    }
+    return obj->tail - obj->head;
+}
+
+void recentCounterFree(RecentCounter* obj) {
+    free(obj->queue);
+    free(obj);
+}
+
+/**
+ * Your RecentCounter struct will be instantiated and called as such:
+ * RecentCounter* obj = recentCounterCreate();
+ * int param_1 = recentCounterPing(obj, t);
+ 
+ * recentCounterFree(obj);
+*/

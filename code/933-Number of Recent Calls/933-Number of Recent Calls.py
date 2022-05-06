@@ -29,3 +29,29 @@
 # 1 <= t <= 10^9
 # Each test case will call ping with strictly increasing values of t.
 # At most 104 calls will be made to ping.
+
+# class RecentCounter:
+
+#     def __init__(self):
+#         self.calls = list()
+
+#     def ping(self, t: int) -> int:
+#         self.calls.append(t)
+#         while t > self.calls[0] + 3000:
+#             self.calls.remove(self.calls[0])
+#         return len(self.calls)        
+
+class RecentCounter:
+    def __init__(self):
+        self.q = deque()
+
+    def ping(self, t: int) -> int:
+        self.q.append(t)
+        while self.q[0] < t - 3000:
+            self.q.popleft()
+        return len(self.q)
+
+
+# Your RecentCounter object will be instantiated and called as such:
+# obj = RecentCounter()
+# param_1 = obj.ping(t)
