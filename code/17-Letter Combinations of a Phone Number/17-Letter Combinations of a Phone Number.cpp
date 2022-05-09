@@ -26,7 +26,7 @@ public:
         }
         
         for(char c: keyword[digits[cur] - '0'])
-           dfs(digits, cur+1, path+c, result);
+           dfs(digits, cur + 1, path + c, result);
     }
     
     vector<string> letterCombinations(string digits) {
