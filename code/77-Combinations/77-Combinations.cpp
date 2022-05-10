@@ -30,7 +30,7 @@ public:
           
         for(int i = start; i <= n; i++){
             path.push_back(i);
-            dfs(n,k,i+1,cur+1,path,result);
+            dfs(n, k, i + 1, cur + 1, path, result);
             path.pop_back();
         }
     }
