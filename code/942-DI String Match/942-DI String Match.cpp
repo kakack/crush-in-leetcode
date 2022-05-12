@@ -25,22 +25,19 @@
 // 1 <= s.length <= 10^5
 // s[i] is either 'I' or 'D'.
 
-
-
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* diStringMatch(char * s, int* returnSize){
-    int low = 0, high = strlen(s), n = strlen(s);
-    int * res = malloc(sizeof(int) * (n + 1));
-    for (int i = 0; i < n; i ++) {
-        if (s[i] == 'I') {
-            res[i] = low ++;
-        } else {
-            res[i] = high --;
+class Solution {
+public:
+    vector<int> diStringMatch(string s) {
+        int low = 0, high = s.size(), n = s.size();
+        vector<int>  res(n + 1);
+        for (int i = 0; i < n; i ++) {
+            if (s[i] == 'I') {
+                res[i] = low ++;
+            } else {
+                res[i] = high --;
+            }
         }
+        res[n] = low;
+        return res;
     }
-    res[n] = low;
-    *returnSize = n + 1;
-    return res;
-}
+};
