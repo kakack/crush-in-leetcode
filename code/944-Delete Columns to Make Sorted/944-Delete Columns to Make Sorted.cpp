@@ -46,18 +46,19 @@
 // 1 <= strs[i].length <= 1000
 // strs[i] consists of lowercase English letters.
 
-
-
-int minDeletionSize(char ** strs, int strsSize){
-    int m = strsSize, n = strlen(strs[0]);
-    int ans = 0;
-    for (int i = 0; i < n; i ++) {
-        for (int j = 1; j < m; j ++) {
-            if (strs[j - 1][i] > strs[j][i]) {
-                ans ++;
-                break;
+class Solution {
+public:
+    int minDeletionSize(vector<string>& strs) {
+        int m = strs.size(), n = strs[0].size();
+        int ans = 0;
+        for (int i = 0; i < n; i ++) {
+            for (int j = 1; j < m; j ++) {
+                if (strs[j - 1][i] > strs[j][i]) {
+                    ans ++;
+                    break;
+                }
             }
         }
+        return ans;
     }
-    return ans;
-}
+};
