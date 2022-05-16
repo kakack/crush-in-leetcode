@@ -31,37 +31,37 @@
 // 1 <= n <= 100
 // grid[i][j] is 0 or 1
 
-
-
-const int directions[8][2] = {
+class Solution {
+private:
+    const int directions[8][2] = {
         {-1, 0}, {-1, 1}, {0, 1}, {1, 1}, 
         {1, 0}, {1, -1}, {0, -1}, {-1, -1}
         };
 
-int shortestPathBinaryMatrix(int** grid, int gridSize, int* gridColSize){
-    if (grid[0][0] != 0) {
-        return -1;
-    }
-    int n = gridSize;
-    int res[n][n];
-    memset(res, -1, sizeof(int) * n * n);
-    int q[n * n][2];
-    int head = 0, tail = 0;
-    q[tail][0] = 0;
-    q[tail ++][1] = 0;
-    res[0][0] = 1;
-    while (head < tail) {
-        int x = q[head][0];
-        int y = q[head ++][1];
-        for (int i = 0; i < 8; i ++) {
-            int next_x = x + directions[i][0];
-            int next_y = y + directions[i][1];
-            if (next_x >= 0 && next_x < n && next_y >= 0 && next_y < n && grid[next_x][next_y]==0 && res[next_x][next_y] == -1) {
-                q[tail][0] = next_x;
-                q[tail ++][1] = next_y;
-                res[next_x][next_y] = res[x][y] + 1;
+public:
+    int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
+        if (grid[0][0] != 0) {
+            return -1;
+        }
+        int n = grid.size();
+        int res[n][n];
+        memset(res, -1, sizeof(int) * n * n);
+        queue<pair<int, int>> q;
+        q.push(make_pair(0, 0));
+        res[0][0] = 1;
+        while (!q.empty()) {
+            int x = q.front().first;
+            int y = q.front().second;
+            q.pop();
+            for (int i = 0; i < 8; i ++) {
+                int next_x = x + directions[i][0];
+                int next_y = y + directions[i][1];
+                if (next_x >= 0 && next_x < n && next_y >= 0 && next_y < n && grid[next_x][next_y]==0 && res[next_x][next_y] == -1) {
+                    q.push(make_pair(next_x,next_y));
+                    res[next_x][next_y] = res[x][y] + 1;
+                }
             }
         }
+        return res[n - 1][n - 1];
     }
-    return res[n - 1][n - 1];
-}
+};
