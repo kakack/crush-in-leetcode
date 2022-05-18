@@ -26,21 +26,22 @@
 // All the integers in each column are sorted in ascending order.
 // -10^9 <= target <= 10^9
 
-
-
-bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target){
-    int m = matrixSize;
-    int n = matrixColSize[0];
-    int x = 0;
-    int y = n - 1;
-    while (x < m && y >= 0) {
-        if (matrix[x][y] == target) {
-            return true;
-        } else if (matrix[x][y] > target) {
-            y --;
-        } else {
-            x ++;
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int x = 0;
+        int y = n - 1;
+        while (x < m && y >= 0) {
+            if (matrix[x][y] == target) {
+                return true;
+            } else if (matrix[x][y] > target) {
+                y --;
+            } else {
+                x ++;
+            }
         }
+        return false;
     }
-    return false;
-}
+};
