@@ -25,16 +25,14 @@
 // 1 <= nums.length <= 10^5
 // -10^9 <= nums[i] <= 10^9
 
-
-int cmp(int *a, int *b) {
-    return *a - *b;
-}
-
-int minMoves2(int* nums, int numsSize){
-    qsort(nums, numsSize, sizeof(int), cmp);
-    int res = 0, x = nums[numsSize / 2];
-    for (int i = 0; i < numsSize; i ++) {
-        res += abs(nums[i] - x);
+class Solution {
+public:
+    int minMoves2(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size(), res = 0, x = nums[n / 2];
+        for (int i = 0; i < n; i ++) {
+            res += abs(nums[i] - x);
+        } 
+        return res;
     }
-    return res;
-}
+};
