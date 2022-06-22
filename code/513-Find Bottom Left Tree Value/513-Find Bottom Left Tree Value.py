@@ -25,6 +25,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
+# dfs
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         curVal = curHeight = 0
@@ -40,3 +43,16 @@ class Solution:
                 curVal = node.val
         dfs(root, 0)
         return curVal
+    
+# bfs
+class Solution:
+    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
+        q = deque([root])
+        while q:
+            node = q.popleft()
+            if node.right:
+                q.append(node.right)
+            if node.left:
+                q.append(node.left)
+            ans = node.val
+        return ans

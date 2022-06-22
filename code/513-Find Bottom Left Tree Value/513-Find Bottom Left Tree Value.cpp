@@ -30,6 +30,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+ // dfs
 class Solution {
 public:
     void dfs(TreeNode *node, int height, int &curVal, int &curHeight) {
@@ -49,5 +51,28 @@ public:
         int curVal, curHeight = 0;
         dfs(root, 0, curVal, curHeight);
         return curVal;    
+    }
+};
+
+// bfs
+
+class Solution {
+public:
+    int findBottomLeftValue(TreeNode* root) {
+        int res;
+        queue<TreeNode *> q;
+        q.push(root);
+        while (!q.empty()) {
+            auto p = q.front();
+            q.pop();
+            if (p->right) {
+                q.push(p->right);
+            }
+            if (p->left) {
+                q.push(p->left);
+            }
+            res = p->val;
+        }
+        return res;  
     }
 };
