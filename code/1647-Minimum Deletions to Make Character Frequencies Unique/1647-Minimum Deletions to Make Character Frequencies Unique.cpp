@@ -40,7 +40,7 @@ public:
             cnt[s[i] - 'a'] ++;
         }
         for (int i = 0; i < 26; i ++) {
-            while (cnt[i] > 0 && dict.find(cnt[i]) != dict.end()) {
+            while (cnt[i] > 0 && dict.count(cnt[i])) {
                 cnt[i] --;
                 res ++;
             }
