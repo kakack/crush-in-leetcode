@@ -33,3 +33,20 @@
 # 1 <= verticalCuts[i] < w
 # All the elements in horizontalCuts are distinct.
 # All the elements in verticalCuts are distinct.
+
+class Solution:
+    def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:
+        MOD = 10 ** 9 + 7
+        horizontalCuts.sort()
+        verticalCuts.sort()
+        hei, wei, pre = 0, 0, 0
+        for i in horizontalCuts:
+            hei = max(hei, i - pre)
+            pre = i
+        hei = max(hei, h - pre)
+        pre = 0
+        for i in verticalCuts:
+            wei = max(wei, i - pre)
+            pre = i
+        wei = max(wei, w - pre)
+        return hei * wei % MOD
