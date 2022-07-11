@@ -19,13 +19,8 @@
 #         self.left = None
 #         self.right = None
 
-from collections import deque
-class Solution(object):
-    def rightSideView(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         right_most_value = dict()
         max_depth = -1
 
