@@ -30,6 +30,9 @@
 # 0 <= nums[i] <= 10^6
 # 1 <= k <= n * (n - 1) / 2
 
+from bisect import bisect_left
+
+
 class Solution:
     def smallestDistancePair(self, nums: List[int], k: int) -> int:
         def count(mid: int) -> int:
