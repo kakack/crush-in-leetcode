@@ -54,4 +54,32 @@ public:
         postorder(root, res);
         return res;
     }
+
+// 迭代
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> stk;
+        if (root == nullptr) {
+            return res;
+        }
+        TreeNode* prev = nullptr;
+        while (root != nullptr || !stk.empty()) {
+            while (root != nullptr) {
+                stk.push(root);
+                root = root->left;
+            }
+            root = stk.top();
+            stk.pop();
+            if (root->right == nullptr || root->right == prev) {
+                res.push_back(root->val);
+                prev = root;
+                root = nullptr;
+            } else {
+                stk.push(root);
+                root = root->right;
+            }
+        }
+        return res;
+    }
 };
+
