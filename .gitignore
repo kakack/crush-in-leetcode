@@ -162,6 +162,7 @@ dmypy.json
 *.app
 
 ./.vscode
+./.idea/
 .DS_Store
 *.xml
 *.iml
