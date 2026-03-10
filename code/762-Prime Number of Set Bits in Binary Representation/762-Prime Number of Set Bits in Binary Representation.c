@@ -1,9 +1,17 @@
+/*
+LeetCode 762 - Prime Number of Set Bits in Binary Representation
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given two integers left and right, return the count of numbers in the inclusive range [left, right] having a prime number of set bits in their binary representation.
 
 // Recall that the number of set bits an integer has is the number of 1's present when written in binary.
 
 // For example, 21 written in binary is 10101, which has 3 set bits.
- 
+
 
 // Example 1:
 
@@ -28,7 +36,7 @@
 // 14 -> 1110 (3 set bits, 3 is prime)
 // 15 -> 1111 (4 set bits, 4 is not prime)
 // 5 numbers have a prime number of set bits.
- 
+
 
 // Constraints:
 

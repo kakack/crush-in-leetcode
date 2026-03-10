@@ -1,3 +1,11 @@
+"""
+LeetCode 655 - Print Binary Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # Given the root of a binary tree, construct a 0-indexed m x n string matrix res that represents a formatted layout of the tree. The formatted layout matrix should be constructed using the following rules:
 
 # The height of the tree is height and the number of rows m should be equal to height + 1.
@@ -8,24 +16,24 @@
 # Any empty cells should contain the empty string "".
 # Return the constructed matrix res.
 
- 
+
 
 # Example 1:
 
 
 # Input: root = [1,2]
-# Output: 
+# Output:
 # [["","1",""],
 #  ["2","",""]]
 # Example 2:
 
 
 # Input: root = [1,2,3,null,4]
-# Output: 
+# Output:
 # [["","","","1","","",""],
 #  ["","2","","","","3",""],
 #  ["","","4","","","",""]]
- 
+
 
 # Constraints:
 
@@ -51,10 +59,9 @@ class Solution:
         res = [[""] * width for _ in range(height)]
         def fill(root, i, l, r):
             if not root:
-                return 
+                return
             res[i][(l + r) // 2] = str(root.val)
             fill(root.left, i + 1, l, (l + r) // 2)
             fill(root.right, i + 1, (l + r + 1) // 2, r)
         fill(root, 0, 0, width)
         return res
-        

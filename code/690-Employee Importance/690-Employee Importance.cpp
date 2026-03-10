@@ -1,4 +1,12 @@
 /*
+LeetCode 690 - Employee Importance
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+/*
 You are given a data structure of employee information, which includes the employee's unique id, their importance value and their direct subordinates' id.
 
 For example, employee 1 is the leader of employee 2, and employee 2 is the leader of employee 3. They have importance value 15, 10 and 5, respectively. Then employee 1 has a data structure like [1, 15, [2]], and employee 2 has [2, 10, [3]], and employee 3 has [3, 5, []]. Note that although employee 3 is also a subordinate of employee 1, the relationship is not direct.

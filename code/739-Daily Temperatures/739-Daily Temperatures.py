@@ -1,3 +1,11 @@
+"""
+LeetCode 739 - Daily Temperatures
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+"""
 # Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.
 #
 # For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].

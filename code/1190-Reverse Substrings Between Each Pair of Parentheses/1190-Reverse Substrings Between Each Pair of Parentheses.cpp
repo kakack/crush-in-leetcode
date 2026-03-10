@@ -1,4 +1,12 @@
 /*
+LeetCode 1190 - Reverse Substrings Between Each Pair of Parentheses
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
+/*
 You are given a string s that consists of lower case English letters and brackets.
 
 Reverse the strings in each pair of matching parentheses, starting from the innermost one.

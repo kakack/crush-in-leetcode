@@ -1,3 +1,11 @@
+/*
+LeetCode 705 - Design HashSet
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Design a HashSet without using any built-in hash table libraries.
 
 // Implement MyHashSet class:
@@ -5,7 +13,7 @@
 // void add(key) Inserts the value key into the HashSet.
 // bool contains(key) Returns whether the value key exists in the HashSet or not.
 // void remove(key) Removes the value key in the HashSet. If key does not exist in the HashSet, do nothing.
- 
+
 
 // Example 1:
 
@@ -25,7 +33,7 @@
 // myHashSet.contains(2); // return True
 // myHashSet.remove(2);   // set = [1]
 // myHashSet.contains(2); // return False, (already removed)
- 
+
 
 // Constraints:
 
@@ -79,10 +87,10 @@ void myHashSetFree(MyHashSet* obj) {
  * Your MyHashSet struct will be instantiated and called as such:
  * MyHashSet* obj = myHashSetCreate();
  * myHashSetAdd(obj, key);
- 
+
  * myHashSetRemove(obj, key);
- 
+
  * bool param_3 = myHashSetContains(obj, key);
- 
+
  * myHashSetFree(obj);
 */

@@ -1,8 +1,16 @@
+"""
+LeetCode 743 - Network Delay Time
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given a network of n nodes, labeled from 1 to n. You are also given times, a list of travel times as directed edges times[i] = (ui, vi, wi), where ui is the source node, vi is the target node, and wi is the time it takes for a signal to travel from source to target.
 #
 # We will send a signal from a given node k. Return the time it takes for all the n nodes to receive the signal. If it is impossible for all the n nodes to receive the signal, return -1.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -17,7 +25,7 @@
 #
 # Input: times = [[1,2,1]], n = 2, k = 2
 # Output: -1
-#  
+#
 #
 # Constraints:
 #

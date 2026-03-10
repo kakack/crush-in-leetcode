@@ -1,3 +1,11 @@
+/*
+LeetCode 736 - Parse Lisp Expression
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // You are given a string expression representing a Lisp-like expression to return the integer value of.
 
 // The syntax for these expressions is given as follows.
@@ -9,7 +17,7 @@
 // A mult expression takes the form "(mult e1 e2)" where mult is always the string "mult", there are always two expressions e1, e2 and the result is the multiplication of the evaluation of e1 and the evaluation of e2.
 // For this question, we will use a smaller subset of variable names. A variable starts with a lowercase letter, then zero or more lowercase letters or digits. Additionally, for your convenience, the names "add", "let", and "mult" are protected and will never be used as variable names.
 // Finally, there is the concept of scope. When an expression of a variable name is evaluated, within the context of that evaluation, the innermost scope (in terms of parentheses) is checked first for the value of that variable, and then outer scopes are checked sequentially. It is guaranteed that every expression is legal. Please see the examples for more details on the scope.
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 // Output: 5
 // Explanation: The first (add x y) evaluates as 3, and is assigned to x.
 // The second (add x y) evaluates as 3+2 = 5.
- 
+
 
 // Constraints:
 

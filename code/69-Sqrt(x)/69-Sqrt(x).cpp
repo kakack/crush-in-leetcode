@@ -1,4 +1,12 @@
 /*
+LeetCode 69 - Sqrt(x)
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Sqrt(x)
 
 Implement int sqrt(int x).
@@ -15,16 +23,16 @@ public:
         double y=(double)x;
         if(x==0)
          return 0;
-         
+
         else{
-        
+
             for(int i=0;i<100;i++){
                 y=(y+x/y)/2;
             }
         }
-        
+
         return int(y);
-             
+
     }
 };
 
@@ -33,31 +41,31 @@ public:
 //class Solution {
 //public:
 //    int sqrt(int x) {
-//        
+//
 //    if(x==1)
 //     return 1;
 //
 //	long floor=0;
 //	long ceil=(long)x;
 //	long mid=(long)x/2;
-//	       
+//
 //	while(true){
-//	           
+//
 //	   if(mid*mid==x||(mid*mid<x&&(mid+1)*(mid+1)>x))
 //	      break;
-//	   
+//
 //	   else if(mid*mid<x){
 //	      floor=mid;
 //	      mid=(ceil+floor)/2;
 //	   }
-//	           
+//
 //	   else {
 //	      ceil=mid;
 //	      mid=(ceil+floor)/2;
 //	           }
 //	       }
-//       
+//
 //       return mid;
-//        
+//
 //    }
 //};

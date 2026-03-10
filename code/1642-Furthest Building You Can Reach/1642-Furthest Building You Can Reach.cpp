@@ -1,3 +1,11 @@
+/*
+LeetCode 1642 - Furthest Building You Can Reach
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // You are given an integer array heights representing the heights of buildings, some bricks, and some ladders.
 
 // You start your journey from building 0 and move to the next building by possibly using bricks or ladders.
@@ -8,7 +16,7 @@
 // If the current building's height is less than the next building's height, you can either use one ladder or (h[i+1] - h[i]) bricks.
 // Return the furthest building index (0-indexed) you can reach if you use the given ladders and bricks optimally.
 
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 
 // Input: heights = [14,3,19,3], bricks = 17, ladders = 0
 // Output: 3
- 
+
 
 // Constraints:
 

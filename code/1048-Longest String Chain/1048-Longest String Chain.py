@@ -1,3 +1,11 @@
+"""
+LeetCode 1048 - Longest String Chain
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # You are given an array of words where each word consists of lowercase English letters.
 
 # wordA is a predecessor of wordB if and only if we can insert exactly one letter anywhere in wordA without changing the order of the other characters to make it equal to wordB.
@@ -7,7 +15,7 @@
 
 # Return the length of the longest possible word chain with words chosen from the given list of words.
 
- 
+
 
 # Example 1:
 
@@ -25,7 +33,7 @@
 # Output: 1
 # Explanation: The trivial word chain ["abcd"] is one of the longest word chains.
 # ["abcd","dbqca"] is not a valid word chain because the ordering of the letters is changed.
- 
+
 
 # Constraints:
 

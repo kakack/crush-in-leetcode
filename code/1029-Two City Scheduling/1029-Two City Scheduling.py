@@ -1,14 +1,22 @@
+"""
+LeetCode 1029 - Two City Scheduling
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # A company is planning to interview 2n people. Given the array costs where costs[i] = [aCosti, bCosti], the cost of flying the ith person to city a is aCosti, and the cost of flying the ith person to city b is bCosti.
 
 # Return the minimum cost to fly every person to a city such that exactly n people arrive in each city.
 
- 
+
 
 # Example 1:
 
 # Input: costs = [[10,20],[30,200],[400,50],[30,20]]
 # Output: 110
-# Explanation: 
+# Explanation:
 # The first person goes to city A for a cost of 10.
 # The second person goes to city A for a cost of 30.
 # The third person goes to city B for a cost of 50.
@@ -23,7 +31,7 @@
 
 # Input: costs = [[515,563],[451,713],[537,709],[343,819],[855,779],[457,60],[650,359],[631,42]]
 # Output: 3086
- 
+
 
 # Constraints:
 

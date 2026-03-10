@@ -1,4 +1,12 @@
 /*
+LeetCode 1049 - Last Stone Weight II
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 You are given an array of integers stones where stones[i] is the weight of the ith stone.
 
 We are playing a game with the stones. On each turn, we choose any two stones and smash them together. Suppose the stones have weights x and y with x <= y. The result of this smash is:

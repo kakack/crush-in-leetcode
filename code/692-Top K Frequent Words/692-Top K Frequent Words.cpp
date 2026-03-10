@@ -1,4 +1,12 @@
 /*
+LeetCode 692 - Top K Frequent Words
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 Given a non-empty list of words, return the k most frequent elements.
 
 Your answer should be sorted by frequency from highest to lowest. If two words have the same frequency, then the word with the lower alphabetical order comes first.

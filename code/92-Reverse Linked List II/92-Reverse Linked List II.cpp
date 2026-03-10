@@ -1,4 +1,12 @@
 /*
+LeetCode 92 - Reverse Linked List II
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
+/*
 Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
 
 

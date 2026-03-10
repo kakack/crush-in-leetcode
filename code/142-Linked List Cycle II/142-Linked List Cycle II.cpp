@@ -1,5 +1,13 @@
 /*
-Linked List Cycle II 
+LeetCode 142 - Linked List Cycle II
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
+/*
+Linked List Cycle II
 
 Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 
@@ -30,33 +38,33 @@ fast走过总长度是：
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        
+
         ListNode *fast = head;
         ListNode *slow = head;
-        
+
         while(fast != NULL && slow != NULL){
             fast = fast->next;
             slow = slow->next;
             if (fast != NULL)
               fast = fast->next;
-              
+
             if (fast == slow)
               break;
         }
-        
+
         //已找到LOOP并相遇或者fast已到尽头null了
-        
+
         if (fast == NULL)
           return NULL;
-          
+
         slow = head;
         while (slow != fast){
             slow = slow->next;
             fast = fast->next;
         }
-        
+
         return fast;
-        
+
     }
 };
 

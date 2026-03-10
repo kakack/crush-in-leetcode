@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 228 - Summary Ranges
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+"""
+r"""
 @author: Kaka Chen
 @license: (C) Copyright Personal Uncommercial Limited.
 @contact: kakachen1990@gmail.com
@@ -15,7 +23,7 @@ Each range [a,b] in the list should be output as:
 
 "a->b" if a != b
 "a" if a == b
- 
+
 
 Example 1:
 
@@ -46,7 +54,7 @@ Example 5:
 
 Input: nums = [0]
 Output: ["0"]
- 
+
 
 Constraints:
 

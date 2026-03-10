@@ -1,6 +1,14 @@
+/*
+LeetCode 318 - Maximum Product of Word Lengths
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.
 
- 
+
 
 // Example 1:
 
@@ -17,7 +25,7 @@
 // Input: words = ["a","aa","aaa","aaaa"]
 // Output: 0
 // Explanation: No such pair of words.
- 
+
 
 // Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 785 - Is Graph Bipartite
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // There is an undirected graph with n nodes, where each node is numbered between 0 and n - 1. You are given a 2D array graph, where graph[u] is an array of nodes that node u is adjacent to. More formally, for each v in graph[u], there is an undirected edge between node u and node v. The graph has the following properties:
 
 // There are no self-edges (graph[u] does not contain u).
@@ -8,7 +16,7 @@
 
 // Return true if and only if it is bipartite.
 
-//  
+//
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 // Input: graph = [[1,3],[0,2],[1,3],[0,2]]
 // Output: true
 // Explanation: We can partition the nodes into two sets: {0, 2} and {1, 3}.
-//  
+//
 
 // Constraints:
 
@@ -48,7 +56,7 @@ public:
         if (F[x] == x) {
             return x;
         }
-        return F[x] = Find(F[x]); 
+        return F[x] = Find(F[x]);
     }
 
     void Union(int a, int b) {

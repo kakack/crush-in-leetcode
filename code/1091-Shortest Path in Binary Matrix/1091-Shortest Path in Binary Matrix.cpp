@@ -1,3 +1,11 @@
+/*
+LeetCode 1091 - Shortest Path in Binary Matrix
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // Given an n x n binary matrix grid, return the length of the shortest clear path in the matrix. If there is no clear path, return -1.
 
 // A clear path in a binary matrix is a path from the top-left cell (i.e., (0, 0)) to the bottom-right cell (i.e., (n - 1, n - 1)) such that:
@@ -6,7 +14,7 @@
 // All the adjacent cells of the path are 8-directionally connected (i.e., they are different and they share an edge or a corner).
 // The length of a clear path is the number of visited cells of this path.
 
- 
+
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 
 // Input: grid = [[1,0,0],[1,1,0],[1,1,0]]
 // Output: -1
- 
+
 
 // Constraints:
 
@@ -34,7 +42,7 @@
 class Solution {
 private:
     const int directions[8][2] = {
-        {-1, 0}, {-1, 1}, {0, 1}, {1, 1}, 
+        {-1, 0}, {-1, 1}, {0, 1}, {1, 1},
         {1, 0}, {1, -1}, {0, -1}, {-1, -1}
         };
 

@@ -1,4 +1,12 @@
 /*
+LeetCode 1584 - Min Cost to Connect All Points
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 You are given an array points representing integer coordinates of some points on a 2D-plane, where points[i] = [xi, yi].
 
 The cost of connecting two points [xi, yi] and [xj, yj] is the manhattan distance between them: |xi - xj| + |yi - yj|, where |val| denotes the absolute value of val.

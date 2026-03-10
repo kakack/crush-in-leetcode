@@ -1,3 +1,11 @@
+/*
+LeetCode 2055 - Plates Between Candles
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // There is a long table with a line of plates and candles arranged on top of it. You are given a 0-indexed string s consisting of characters '*' and '|' only, where a '*' represents a plate and a '|' represents a candle.
 
 // You are also given a 0-indexed 2D integer array queries where queries[i] = [lefti, righti] denotes the substring s[lefti...righti] (inclusive). For each query, you need to find the number of plates between candles that are in the substring. A plate is considered between candles if there is at least one candle to its left and at least one candle to its right in the substring.
@@ -5,7 +13,7 @@
 // For example, s = "||**||**|*", and a query [3, 8] denotes the substring "*||**|". The number of plates between candles in this substring is 2, as each of the two plates has at least one candle in the substring to its left and right.
 // Return an integer array answer where answer[i] is the answer to the ith query.
 
- 
+
 
 // Example 1:
 
@@ -23,7 +31,7 @@
 // Explanation:
 // - queries[0] has nine plates between candles.
 // - The other queries have zero plates between candles.
- 
+
 
 // Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 1021 - Remove Outermost Parentheses
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
 
 // For example, "", "()", "(())()", and "(()(()))" are all valid parentheses strings.
@@ -7,30 +15,30 @@ A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A 
 
 // Return s after removing the outermost parentheses of every primitive string in the primitive decomposition of s.
 
- 
+
 
 // Example 1:
 
 // Input: s = "(()())(())"
 // Output: "()()()"
-// Explanation: 
+// Explanation:
 // The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
 // After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
 // Example 2:
 
 // Input: s = "(()())(())(()(()))"
 // Output: "()()()()(())"
-// Explanation: 
+// Explanation:
 // The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
 // After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
 // Example 3:
 
 // Input: s = "()()"
 // Output: ""
-// Explanation: 
+// Explanation:
 // The input string is "()()", with primitive decomposition "()" + "()".
 // After removing outer parentheses of each part, this is "" + "" = "".
- 
+
 
 // Constraints:
 
@@ -46,7 +54,7 @@ char * removeOuterParentheses(char * s){
     char *stack = (char *)malloc(sizeof(char) * n);
     int pos = 0, top = 0;
     for (int i = 0; i < n; i ++) {
-        char c = s[i]; 
+        char c = s[i];
         if (c == ')') {
             top --;
         }

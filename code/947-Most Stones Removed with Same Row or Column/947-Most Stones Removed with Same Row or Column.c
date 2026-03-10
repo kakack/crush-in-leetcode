@@ -1,4 +1,12 @@
 /*
+LeetCode 947 - Most Stones Removed with Same Row or Column
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 On a 2D plane, we place n stones at some integer coordinate points. Each coordinate point may have at most one stone.
 
 A stone can be removed if it shares either the same row or the same column as another stone that has not been removed.
@@ -45,7 +53,7 @@ No two stones are at the same coordinate point.
 int find(int* f, int x) {
     if (f[x] == x) {
         return x;
-    } 
+    }
     return find(f, f[x]);
 }
 

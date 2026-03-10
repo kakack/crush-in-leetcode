@@ -1,3 +1,11 @@
+/*
+LeetCode 147 - Insertion Sort List
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // Given the head of a singly linked list, sort the list using insertion sort, and return the sorted list's head.
 
 // The steps of the insertion sort algorithm:
@@ -8,7 +16,7 @@
 // The following is a graphical example of the insertion sort algorithm. The partially sorted list (black) initially contains only the first element in the list. One element (red) is removed from the input data and inserted in-place into the sorted list with each iteration.
 
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: head = [-1,5,3,4,0]
 // Output: [-1,0,3,4,5]
- 
+
 
 // Constraints:
 

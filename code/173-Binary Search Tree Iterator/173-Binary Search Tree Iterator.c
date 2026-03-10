@@ -1,4 +1,12 @@
 /*
+LeetCode 173 - Binary Search Tree Iterator
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 
 Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
 
@@ -72,7 +80,7 @@ Could you implement next() and hasNext() to run in average O(1) time and use O(h
 typedef struct {
     int *res;
     int size;
-    int idx; 
+    int idx;
 } BSTIterator;
 
 int getTreeSize(struct TreeNode* root) {
@@ -122,8 +130,8 @@ void bSTIteratorFree(BSTIterator* obj) {
  * Your BSTIterator struct will be instantiated and called as such:
  * BSTIterator* obj = bSTIteratorCreate(root);
  * int param_1 = bSTIteratorNext(obj);
- 
+
  * bool param_2 = bSTIteratorHasNext(obj);
- 
+
  * bSTIteratorFree(obj);
 */

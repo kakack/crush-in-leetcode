@@ -1,3 +1,11 @@
+/*
+LeetCode 97 - Interleaving String
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2.
 
 // An interleaving of two strings s and t is a configuration where they are divided into non-empty substrings such that:
@@ -8,7 +16,7 @@
 // The interleaving is s1 + t1 + s2 + t2 + s3 + t3 + ... or t1 + s1 + t2 + s2 + t3 + s3 + ...
 // Note: a + b is the concatenation of strings a and b.
 
- 
+
 
 // Example 1:
 
@@ -23,14 +31,14 @@
 
 // Input: s1 = "", s2 = "", s3 = ""
 // Output: true
- 
+
 
 // Constraints:
 
 // 0 <= s1.length, s2.length <= 100
 // 0 <= s3.length <= 200
 // s1, s2, and s3 consist of lowercase English letters.
- 
+
 
 // Follow up: Could you solve it using only O(s2.length) additional memory space?
 

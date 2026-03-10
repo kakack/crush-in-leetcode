@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 1379 - Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
+r"""
 @author: Kai Chen
 @file: 1379-Find a Corresponding Node of a Binary Tree in a Clone of That Tree.py
 @time: 2020/9/29 19:55

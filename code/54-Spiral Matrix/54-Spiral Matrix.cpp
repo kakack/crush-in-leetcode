@@ -1,7 +1,15 @@
 /*
+LeetCode 54 - Spiral Matrix
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
- 
+
 
 Example 1:
 
@@ -13,7 +21,7 @@ Example 2:
 
 Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 Output: [1,2,3,4,8,12,11,10,9,5,6,7]
- 
+
 
 Constraints:
 
@@ -37,7 +45,7 @@ public:
 
         const int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         vector<vector<bool>> visited(rows, vector<bool>(cols, false));
-        
+
         int row = 0, col = 0;
         int directionIndex = 0;
 

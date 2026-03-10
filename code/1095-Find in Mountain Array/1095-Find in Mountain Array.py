@@ -1,3 +1,11 @@
+"""
+LeetCode 1095 - Find in Mountain Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # (This problem is an interactive problem.)
 #
 # You may recall that an array A is a mountain array if and only if:
@@ -14,7 +22,7 @@
 # MountainArray.length() returns the length of the array.
 # Submissions making more than 100 calls to MountainArray.get will be judged Wrong Answer.  Also, any solutions that attempt to circumvent the judge will result in disqualification.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -26,7 +34,7 @@
 # Input: array = [0,1,2,4,2,1], target = 3
 # Output: -1
 # Explanation: 3 does not exist in the array, so we return -1.
-#  
+#
 #
 # Constraints:
 #

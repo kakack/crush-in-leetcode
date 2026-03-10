@@ -1,3 +1,11 @@
+"""
+LeetCode 866 - Prime Palindrome
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Given an integer n, return the smallest prime palindrome greater than or equal to n.
 
 # An integer is prime if it has exactly two divisors: 1 and itself. Note that 1 is not a prime number.
@@ -8,7 +16,7 @@
 # For example, 101 and 12321 are palindromes.
 # The test cases are generated so that the answer always exists and is in the range [2, 2 * 108].
 
- 
+
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 
 # Input: n = 13
 # Output: 101
- 
+
 
 # Constraints:
 
@@ -54,17 +62,17 @@ class Solution:
     def primePalindrome(self, n: int) -> int:
         def is_prime(n):
             return n > 1 and all(n % d for d in xrange(2, int(n**.5) + 1))
-        
+
         def reverse(n):
             ans = 0
             while n:
                 ans = 10 * ans + n % 10
                 n /= 10
             return ans
-        
+
         while 1:
             if n == reverse(n) and is_prime(n):
                 return n
             n += 1
             if 10 ** 7 < n < 10 ** 8:
-                n = 10 ** 8 
+                n = 10 ** 8

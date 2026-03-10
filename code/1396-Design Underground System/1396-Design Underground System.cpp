@@ -1,3 +1,11 @@
+/*
+LeetCode 1396 - Design Underground System
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // An underground railway system is keeping track of customer travel times between different stations. They are using this data to calculate the average time it takes to travel from one station to another.
 
 // Implement the UndergroundSystem class:
@@ -14,7 +22,7 @@
 // There will be at least one customer that has traveled from startStation to endStation before getAverageTime is called.
 // You may assume all calls to the checkIn and checkOut methods are consistent. If a customer checks in at time t1 then checks out at time t2, then t1 < t2. All events happen in chronological order.
 
- 
+
 
 // Example 1:
 
@@ -59,7 +67,7 @@
 // undergroundSystem.checkIn(2, "Leyton", 21);
 // undergroundSystem.checkOut(2, "Paradise", 30); // Customer 2 "Leyton" -> "Paradise" in 30-21 = 9
 // undergroundSystem.getAverageTime("Leyton", "Paradise"); // return 6.66667, (5 + 6 + 9) / 3 = 6.66667
- 
+
 
 // Constraints:
 
@@ -80,24 +88,24 @@ public:
             return hash <string> () (x.first + x.second);
         }
     };
-    
+
     unordered_map <int, Start> startInfo;
     unordered_map <StartEnd, SumAndAmount, StartEndHash> table;
 
     UndergroundSystem() {
-        
+
     }
-    
+
     void checkIn(int id, string stationName, int t) {
         startInfo[id] = {stationName, t};
     }
-    
+
     void checkOut(int id, string stationName, int t) {
         auto startTime = startInfo[id].second;
         table[{startInfo[id].first, stationName}].first += t - startTime;
         table[{startInfo[id].first, stationName}].second ++;
     }
-    
+
     double getAverageTime(string startStation, string endStation) {
         auto sum = table[{startStation, endStation}].first;
         auto amount = table[{startStation, endStation}].second;

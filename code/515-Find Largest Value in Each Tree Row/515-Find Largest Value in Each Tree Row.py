@@ -1,6 +1,14 @@
+"""
+LeetCode 515 - Find Largest Value in Each Tree Row
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
 
- 
+
 
 # Example 1:
 
@@ -11,7 +19,7 @@
 
 # Input: root = [1,2,3]
 # Output: [1,3]
- 
+
 
 # Constraints:
 

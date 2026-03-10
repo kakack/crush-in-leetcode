@@ -1,6 +1,14 @@
+/*
+LeetCode 144 - Binary Tree Preorder Traversal
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
 // Given the root of a binary tree, return the preorder traversal of its nodes' values.
 
- 
+
 
 // Example 1:
 
@@ -15,13 +23,13 @@
 
 // Input: root = [1]
 // Output: [1]
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [0, 100].
 // -100 <= Node.val <= 100
- 
+
 
 // Follow up: Recursive solution is trivial, could you do it iteratively?
 

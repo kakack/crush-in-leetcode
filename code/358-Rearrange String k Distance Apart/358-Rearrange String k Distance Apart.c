@@ -1,6 +1,14 @@
+/*
+LeetCode 358 - Rearrange String k Distance Apart
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a string s and an integer k, rearrange s such that the same characters are at least distance k from each other. If it is not possible to rearrange the string, return an empty string "".
 
-//  
+//
 
 // Example 1:
 
@@ -17,7 +25,7 @@
 // Input: s = "aaadbbcc", k = 2
 // Output: "abacabcd"
 // Explanation: The same letters are at least a distance of 2 from each other.
-//  
+//
 
 // Constraints:
 
@@ -64,7 +72,7 @@ char * rearrangeString(char * s, int k)
 
     if (s == NULL) {
         return "";
-    } 
+    }
 
     int len = strlen(s);
     for (int i = 0; i < len; i++) {

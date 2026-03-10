@@ -1,8 +1,16 @@
+"""
+LeetCode 700 - Search in a Binary Search Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # You are given the root of a binary search tree (BST) and an integer val.
 
 # Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null.
 
- 
+
 
 # Example 1:
 
@@ -14,7 +22,7 @@
 
 # Input: root = [4,2,7,1,3], val = 5
 # Output: []
- 
+
 
 # Constraints:
 

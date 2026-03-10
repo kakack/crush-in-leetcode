@@ -1,3 +1,11 @@
+/*
+LeetCode 1379 - Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // Given two binary trees original and cloned and given a reference to a node target in the original tree.
 
 // The cloned tree is a copy of the original tree.
@@ -6,7 +14,7 @@
 
 // Note that you are not allowed to change any of the two trees or the target node and the answer must be a reference to a node in the cloned tree.
 
- 
+
 
 // Example 1:
 
@@ -24,14 +32,14 @@
 
 // Input: tree = [8,null,6,null,5,null,4,null,3,null,2,null,1], target = 4
 // Output: 4
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [1, 10^4].
 // The values of the nodes of the tree are unique.
 // target node is a node from the original tree and is not null.
- 
+
 
 // Follow up: Could you solve the problem if repeated values on the tree are allowed?
 

@@ -1,10 +1,18 @@
+/*
+LeetCode 398 - Random Pick Index
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 Given an integer array nums with possible duplicates, randomly output the index of a given target number. You can assume that the given target number must exist in the array.
 
 // Implement the Solution class:
 
 // Solution(int[] nums) Initializes the object with the array nums.
 // int pick(int target) Picks a random index i from nums where nums[i] == target. If there are multiple valid i's, then each index should have an equal probability of returning.
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@ Given an integer array nums with possible duplicates, randomly output the index 
 // solution.pick(3); // It should return either index 2, 3, or 4 randomly. Each index should have equal probability of returning.
 // solution.pick(1); // It should return 0. Since in the array only nums[0] is equal to 1.
 // solution.pick(3); // It should return either index 2, 3, or 4 randomly. Each index should have equal probability of returning.
- 
+
 
 // Constraints:
 
@@ -53,7 +61,7 @@ void hashInsert(HashItem **obj, int key, int idx) {
         HASH_ADD_INT(*obj, key, pEntry);
     }
     if (pEntry->size == pEntry->capacity) {
-        pEntry->capacity *= 2; 
+        pEntry->capacity *= 2;
         pEntry->array = realloc(pEntry->array, pEntry->capacity * sizeof(int));
     }
     pEntry->array[(pEntry->size)++] = idx;
@@ -91,7 +99,7 @@ void solutionFree(Solution* obj) {
  * Your Solution struct will be instantiated and called as such:
  * Solution* obj = solutionCreate(nums, numsSize);
  * int param_1 = solutionPick(obj, target);
- 
+
  * solutionFree(obj);
 */
 

@@ -1,4 +1,12 @@
 /*
+LeetCode 331 - Verify Preorder Serialization of a Binary Tree
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as #.
 
      _9_

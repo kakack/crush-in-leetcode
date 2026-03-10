@@ -1,4 +1,12 @@
 /*
+LeetCode 547 - Number of Provinces
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+/*
 There are n cities. Some of them are connected, while some are not. If city a is connected directly with city b, and city b is connected directly with city c, then city a is connected indirectly with city c.
 
 A province is a group of directly or indirectly connected cities and no other cities outside of the group.

@@ -1,3 +1,11 @@
+"""
+LeetCode 269 - Alien Dictionary
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # There is a new alien language that uses the English alphabet. However, the order among the letters is unknown to you.
 
 # You are given a list of strings words from the alien language's dictionary, where the strings in words are sorted lexicographically by the rules of this new language.
@@ -6,7 +14,7 @@
 
 # A string s is lexicographically smaller than a string t if at the first letter where they differ, the letter in s comes before the letter in t in the alien language. If the first min(s.length, t.length) letters are the same, then s is smaller if and only if s.length < t.length.
 
-#  
+#
 
 # Example 1:
 
@@ -21,7 +29,7 @@
 # Input: words = ["z","x","z"]
 # Output: ""
 # Explanation: The order is invalid, so return "".
-#  
+#
 
 # Constraints:
 

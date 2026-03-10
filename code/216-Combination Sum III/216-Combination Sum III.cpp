@@ -1,10 +1,18 @@
+/*
+LeetCode 216 - Combination Sum III
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // # -*- coding: utf-8 -*
 // @author: Kai Chen
 // @file: 216-Combination Sum III.py
 // @time: 2020/9/11 11:02
 // @desc:
-// Find all possible combinations of k numbers that add up to a number n, 
-// given that only numbers from 1 to 9 can be used and 
+// Find all possible combinations of k numbers that add up to a number n,
+// given that only numbers from 1 to 9 can be used and
 // each combination should be a unique set of numbers.
 
 // Note:

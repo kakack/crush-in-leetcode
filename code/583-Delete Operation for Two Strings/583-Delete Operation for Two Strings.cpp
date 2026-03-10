@@ -1,8 +1,16 @@
+/*
+LeetCode 583 - Delete Operation for Two Strings
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.
 
 // In one step, you can delete exactly one character in either string.
 
- 
+
 
 // Example 1:
 
@@ -13,7 +21,7 @@
 
 // Input: word1 = "leetcode", word2 = "etco"
 // Output: 4
- 
+
 
 // Constraints:
 

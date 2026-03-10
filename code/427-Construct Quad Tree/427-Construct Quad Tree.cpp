@@ -1,3 +1,11 @@
+/*
+LeetCode 427 - Construct Quad Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // Given a n * n matrix grid of 0's and 1's only. We want to represent the grid with a Quad-Tree.
 
 // Return the root of the Quad-Tree representing the grid.
@@ -32,7 +40,7 @@
 
 // If the value of isLeaf or val is True we represent it as 1 in the list [isLeaf, val] and if the value of isLeaf or val is False we represent it as 0.
 
- 
+
 
 // Example 1:
 
@@ -53,7 +61,7 @@
 // The topRight have different values so we divide it into 4 sub-grids where each has the same value.
 // Explanation is shown in the photo below:
 
- 
+
 
 // Constraints:
 
@@ -70,7 +78,7 @@ public:
     Node* topRight;
     Node* bottomLeft;
     Node* bottomRight;
-    
+
     Node() {
         val = false;
         isLeaf = false;
@@ -79,7 +87,7 @@ public:
         bottomLeft = NULL;
         bottomRight = NULL;
     }
-    
+
     Node(bool _val, bool _isLeaf) {
         val = _val;
         isLeaf = _isLeaf;
@@ -88,7 +96,7 @@ public:
         bottomLeft = NULL;
         bottomRight = NULL;
     }
-    
+
     Node(bool _val, bool _isLeaf, Node* _topLeft, Node* _topRight, Node* _bottomLeft, Node* _bottomRight) {
         val = _val;
         isLeaf = _isLeaf;

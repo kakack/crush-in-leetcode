@@ -1,3 +1,11 @@
+/*
+LeetCode 155 - Min Stack
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 // Implement the MinStack class:
@@ -7,7 +15,7 @@
 // void pop() removes the element on the top of the stack.
 // int top() gets the top element of the stack.
 // int getMin() retrieves the minimum element in the stack.
-//  
+//
 
 // Example 1:
 
@@ -27,7 +35,7 @@
 // minStack.pop();
 // minStack.top();    // return 0
 // minStack.getMin(); // return -2
-//  
+//
 
 // Constraints:
 
@@ -85,12 +93,12 @@ void minStackFree(MinStack* obj) {
  * Your MinStack struct will be instantiated and called as such:
  * MinStack* obj = minStackCreate();
  * minStackPush(obj, val);
- 
+
  * minStackPop(obj);
- 
+
  * int param_3 = minStackTop(obj);
- 
+
  * int param_4 = minStackGetMin(obj);
- 
+
  * minStackFree(obj);
 */

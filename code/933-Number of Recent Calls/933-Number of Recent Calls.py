@@ -1,3 +1,11 @@
+"""
+LeetCode 933 - Number of Recent Calls
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
 # You have a RecentCounter class which counts the number of recent requests within a certain time frame.
 
 # Implement the RecentCounter class:
@@ -6,7 +14,7 @@
 # int ping(int t) Adds a new request at time t, where t represents some time in milliseconds, and returns the number of requests that has happened in the past 3000 milliseconds (including the new request). Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
 # It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
 
- 
+
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 # recentCounter.ping(100);   // requests = [1, 100], range is [-2900,100], return 2
 # recentCounter.ping(3001);  // requests = [1, 100, 3001], range is [1,3001], return 3
 # recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
- 
+
 
 # Constraints:
 
@@ -39,7 +47,7 @@
 #         self.calls.append(t)
 #         while t > self.calls[0] + 3000:
 #             self.calls.remove(self.calls[0])
-#         return len(self.calls)        
+#         return len(self.calls)
 
 class RecentCounter:
     def __init__(self):

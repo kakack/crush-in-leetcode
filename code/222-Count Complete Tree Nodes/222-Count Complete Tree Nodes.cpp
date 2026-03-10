@@ -1,4 +1,12 @@
 /*
+LeetCode 222 - Count Complete Tree Nodes
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
+/*
 Given a complete binary tree, count the number of nodes.
 
 Note:
@@ -8,7 +16,7 @@ In a complete binary tree every level, except possibly the last, is completely f
 
 Example:
 
-Input: 
+Input:
     1
    / \
   2   3

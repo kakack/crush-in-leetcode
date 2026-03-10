@@ -1,4 +1,12 @@
 /*
+LeetCode 803 - Bricks Falling When Hit
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 You are given an m x n binary grid, where each 1 represents a brick and 0 represents an empty space. A brick is stable if:
 
 It is directly connected to the top of the grid, or
@@ -9,7 +17,7 @@ Return an array result, where each result[i] is the number of bricks that will f
 
 Note that an erasure may refer to a location with no brick, and if it does, no bricks drop.
 
- 
+
 
 Example 1:
 
@@ -43,7 +51,7 @@ Next, we erase the underlined brick at (1,0), resulting in the grid:
  [0,0,0,0]]
 Once again, all remaining bricks are still stable, so no bricks fall.
 Hence the result is [0,0].
- 
+
 
 Constraints:
 
@@ -79,9 +87,9 @@ public:
         int a = find(x), b = find(y);
         if(a != b){
             if(cnt[a] < cnt[b]){
-                p[a] = b; 
+                p[a] = b;
                 cnt[b] += cnt[a];
-            }   
+            }
             else{
                 p[b] = a;
                 cnt[a] += cnt[b];
@@ -96,7 +104,7 @@ public:
             cnt[i] = 1;
         }
     }
-    
+
     int get(int x, int y)
     {
         return x * m + y;
@@ -110,12 +118,12 @@ public:
         //## step1 全部击碎 后维护集合关系
         // 把砖头🧱打掉
         for(auto &h : hits)  grid[h[0]][h[1]] = 0;
-        // 开始集合初始化 0 ～n*m 
+        // 开始集合初始化 0 ～n*m
         int roof = n * m; // 屋顶元素的下标
         p.resize(n * m + 1 );  // 0 ～ n * m
         cnt.resize(n * m  + 1);
         init(n * m + 1);
-        
+
         // 合并集合
         for(int i = 0; i < m; i ++)
             if(grid[0][i] == 1) merge(i, roof);
@@ -124,9 +132,9 @@ public:
             for(int j = 0; j < m; j ++)
                 if(grid[i][j] == 1)
                 {
-                    if(grid[i - 1][j] == 1) 
+                    if(grid[i - 1][j] == 1)
                         merge(get(i, j), get(i - 1, j));
-                    if(j > 0 && grid[i][j - 1] == 1) 
+                    if(j > 0 && grid[i][j - 1] == 1)
                         merge(get(i, j), get(i, j - 1));
                 }
 
@@ -137,7 +145,7 @@ public:
 
             if(_grid[x][y] == 0) continue; // 本身是0，而不是打掉而造成的0
             // 补之前
-            int before = cnt[find(roof)]; 
+            int before = cnt[find(roof)];
 
             // 开始补操作
             if(x == 0) merge(y, roof);
@@ -151,10 +159,10 @@ public:
             int cur = cnt[find(roof)];
             res[i] = max(0, cur - before - 1);
 
-            grid[x][y] = 1; 
+            grid[x][y] = 1;
         }
 
         return res;
-        
+
     }
 };

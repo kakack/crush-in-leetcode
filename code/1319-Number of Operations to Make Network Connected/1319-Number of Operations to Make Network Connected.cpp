@@ -1,4 +1,12 @@
 /*
+LeetCode 1319 - Number of Operations to Make Network Connected
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+/*
 There are n computers numbered from 0 to n-1 connected by ethernet cables connections forming a network where connections[i] = [a, b] represents a connection between computers a and b. Any computer can reach any other computer directly or indirectly through the network.
 
 Given an initial computer network connections. You can extract certain cables between two directly connected computers, and place them between any pair of disconnected computers to make them directly connected. Return the minimum number of times you need to do this in order to make all the computers connected. If it's not possible, return -1.
@@ -60,7 +68,7 @@ public:
                 dfs(v);
             }
         }
-    } 
+    }
     int makeConnected(int n, vector<vector<int>>& connections) {
         if (connections.size() < n - 1) {
             return -1;
@@ -79,7 +87,7 @@ public:
                 dfs(i);
                 ans ++;
             }
-            
+
         }
         return ans - 1;
     }

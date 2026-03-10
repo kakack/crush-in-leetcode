@@ -1,3 +1,11 @@
+/*
+LeetCode 18 - 4Sum
+
+解题步骤（自动整理）
+1. 先排序以便利用有序性缩小搜索空间
+2. 使用双指针从两端/区间收缩，按比较结果移动指针
+3. 在遍历过程中维护最优解并处理重复元素（如需要）
+*/
 Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
 
 // 0 <= a, b, c, d < n
@@ -5,7 +13,7 @@ Given an array nums of n integers, return an array of all the unique quadruplets
 // nums[a] + nums[b] + nums[c] + nums[d] == target
 // You may return the answer in any order.
 
- 
+
 
 // Example 1:
 
@@ -15,7 +23,7 @@ Given an array nums of n integers, return an array of all the unique quadruplets
 
 // Input: nums = [2,2,2,2,2], target = 8
 // Output: [[2,2,2,2]]
- 
+
 
 // Constraints:
 
@@ -26,7 +34,7 @@ Given an array nums of n integers, return an array of all the unique quadruplets
 class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
-        vector<vector<int>> res; 
+        vector<vector<int>> res;
         int n = nums.size();
         if (n < 4) {
             return res;

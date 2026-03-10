@@ -1,3 +1,11 @@
+/*
+LeetCode 46 - Permutations
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
 /*Permutations
 Given a collection of numbers, return all possible permutations.
 
@@ -17,18 +25,18 @@ All the integers of nums are unique.
 class Solution {
 public:
     vector<vector<int> > permute(vector<int> &num) {
-        
+
         vector<vector<int> > res;
         vector<int> solution;
-        
+
         if(num.size()==0)
           return res;
            vector<int> visit(num.size(), 0);
-        
+
         generate(num, 0, visit, solution, res);
         return res;
     }
-    
+
  private:
     void generate(vector<int> &num, int step, vector<int> &visit, vector<int> &solution, vector<vector<int> > &res){
         if(step==num.size())//满了
@@ -36,7 +44,7 @@ public:
              res.push_back(solution);
              return ;
          }
-         
+
          for(int i =0; i< num.size(); i++){
              {
                  if(visit[i]==0){
@@ -48,7 +56,7 @@ public:
                  }
              }
          }
-    } 
+    }
 };
 
 
@@ -66,7 +74,7 @@ class Solution {
             }
         }
     }
-    
+
 public:
     vector<vector<int>> permute(vector<int>& nums) {
         backtrack(0, nums);

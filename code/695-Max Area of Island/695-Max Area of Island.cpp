@@ -1,10 +1,18 @@
+/*
+LeetCode 695 - Max Area of Island
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
 // You are given an m x n binary matrix grid. An island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
 
 // The area of an island is the number of cells with a value 1 in the island.
 
 // Return the maximum area of an island in grid. If there is no island, return 0.
 
- 
+
 
 // Example 1:
 
@@ -16,7 +24,7 @@
 
 // Input: grid = [[0,0,0,0,0,0,0,0]]
 // Output: 0
- 
+
 
 // Constraints:
 
@@ -27,7 +35,7 @@
 
 class Solution {
 private:
-    int directions[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}}; 
+    int directions[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     int dfs(vector<vector<int>>& grid, int cur_i, int cur_j) {
         if (cur_i < 0 || cur_j < 0 || cur_i == grid.size() || cur_j == grid[0].size() || grid[cur_i][cur_j] != 1) {
             return 0;

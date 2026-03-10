@@ -1,3 +1,11 @@
+/*
+LeetCode 116 - Populating Next Right Pointers in Each Node
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:
 
 // struct Node {
@@ -10,7 +18,7 @@
 
 // Initially, all next pointers are set to NULL.
 
- 
+
 
 // Example 1:
 
@@ -22,13 +30,13 @@
 
 // Input: root = []
 // Output: []
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [0, 212 - 1].
 // -1000 <= Node.val <= 1000
- 
+
 
 // Follow-up:
 

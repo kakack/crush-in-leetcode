@@ -1,3 +1,11 @@
+/*
+LeetCode 256 - Paint House
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // There is a row of n houses, where each house can be painted one of three colors: red, blue, or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.
 
 // The cost of painting each house with a certain color is represented by an n x 3 cost matrix costs.
@@ -5,7 +13,7 @@
 // For example, costs[0][0] is the cost of painting house 0 with the color red; costs[1][2] is the cost of painting house 1 with color green, and so on...
 // Return the minimum cost to paint all houses.
 
-//  
+//
 
 // Example 1:
 
@@ -17,7 +25,7 @@
 
 // Input: costs = [[7,6,2]]
 // Output: 2
-//  
+//
 
 // Constraints:
 

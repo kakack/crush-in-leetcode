@@ -1,4 +1,12 @@
 /*
+LeetCode 10 - Regular Expression Matching
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+/*
 Regular Expression Matching
 
 Implement regular expression matching with support for '.' and '*'.
@@ -27,9 +35,9 @@ class Solution {
 public:
     bool isMatch(const char *s, const char *p) {
         if(*p=='\0') return *s=='\0';
-        
+
         //如果*p的下一个不是‘*’，那么必须符合
-        
+
         if(*(p+1)!='*'){
           if(*p==*s||(*p=='.'&&*s!='\0'))//那么只要当前这个满足，就可以暂定认为是满足的，继续往下一个去比较
              return isMatch(s+1,p+1);

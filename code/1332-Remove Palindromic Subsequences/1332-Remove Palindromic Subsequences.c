@@ -1,3 +1,11 @@
+/*
+LeetCode 1332 - Remove Palindromic Subsequences
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 You are given a string s consisting only of letters 'a' and 'b'. In a single step you can remove one palindromic subsequence from s.
 
 // Return the minimum number of steps to make the given string empty.
@@ -6,7 +14,7 @@ You are given a string s consisting only of letters 'a' and 'b'. In a single ste
 
 // A string is called palindrome if is one that reads the same backward as well as forward.
 
- 
+
 
 // Example 1:
 
@@ -17,15 +25,15 @@ You are given a string s consisting only of letters 'a' and 'b'. In a single ste
 
 // Input: s = "abb"
 // Output: 2
-// Explanation: "abb" -> "bb" -> "". 
+// Explanation: "abb" -> "bb" -> "".
 // Remove palindromic subsequence "a" then "bb".
 // Example 3:
 
 // Input: s = "baabb"
 // Output: 2
-// Explanation: "baabb" -> "b" -> "". 
+// Explanation: "baabb" -> "b" -> "".
 // Remove palindromic subsequence "baab" then "b".
- 
+
 
 // Constraints:
 

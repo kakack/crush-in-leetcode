@@ -1,11 +1,19 @@
 /*
+LeetCode 456 - 132 Pattern
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
+/*
 Given an array of n integers nums, a 132 pattern is a subsequence of three integers nums[i], nums[j] and nums[k] such that i < j < k and nums[i] < nums[k] < nums[j].
 
 Return true if there is a 132 pattern in nums, otherwise, return false.
 
 Follow up: The O(n^2) is trivial, could you come up with the O(n logn) or the O(n) solution?
 
- 
+
 
 Example 1:
 
@@ -22,7 +30,7 @@ Example 3:
 Input: nums = [-1,3,2,0]
 Output: true
 Explanation: There are three 132 patterns in the sequence: [-1, 3, 2], [-1, 3, 0] and [-1, 2, 0].
- 
+
 
 Constraints:
 
@@ -70,13 +78,13 @@ int main(int argc, char const *argv[])
 {
     Solution s;
     int nums[4] = {3, 1, 4, 2};
-    vector<int> ipt(nums, nums + 4); 
+    vector<int> ipt(nums, nums + 4);
     if (s.find132pattern(ipt)){
         cout<< "True"<<endl;
     } else
     {
         cout << "False"<<endl;
     }
-    
+
     return 0;
 }

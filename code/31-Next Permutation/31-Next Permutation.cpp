@@ -1,4 +1,12 @@
 /*
+LeetCode 31 - Next Permutation
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 Next Permutation
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
@@ -23,7 +31,7 @@ public:
     void nextPermutation(vector<int> &num) {
         int i,j,len=num.size();
 	//bool flg=true;
-	
+
 	for (i=len-2;i>=0;i--) {
 		if(num[i+1]>num[i]){
 		//	flg=false;

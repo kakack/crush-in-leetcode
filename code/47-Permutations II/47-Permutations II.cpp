@@ -1,5 +1,13 @@
+/*
+LeetCode 47 - Permutations II
 
-/*Permutations II 
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+
+/*Permutations II
 
 Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
@@ -13,21 +21,21 @@ public:
     vector<vector<int> > permuteUnique(vector<int> &num) {
         vector<vector<int> > result;
         unordered_map<int, int> exist;
-        
+
         if(num.size() == 0)
           return result;
-        
+
         if(num.size() == 1){
-            
+
             result.push_back(num);
             return result;
         }
-        
-        
+
+
         //DFS
-        
+
         int length = num.size();
-        
+
         for(int i=length-1;i>=0;i--){
             vector<vector<int> > nextPer;
             vector<int> temp(num);
@@ -35,11 +43,11 @@ public:
             if(exist.find(curNum) != exist.end()) {
                 continue;
             }
-            
+
             else {
                 exist[curNum] = 1;
             }
-            
+
             temp.erase(temp.begin() + i);
             nextPer = permuteUnique(temp);//这条好屌, 从temp中获取所有不重复的permution
             for(int j = 0;j<nextPer.size();j++){
@@ -48,7 +56,7 @@ public:
                 result.push_back(temp_result);
             }
          }
-         
+
          return result;
     }
 };

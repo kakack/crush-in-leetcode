@@ -1,8 +1,16 @@
+/*
+LeetCode 200 - Number of Islands
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
 // Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
 
 // An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
- 
+
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 //   ["0","0","0","1","1"]
 // ]
 // Output: 3
- 
+
 
 // Constraints:
 

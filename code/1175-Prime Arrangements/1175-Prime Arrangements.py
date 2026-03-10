@@ -1,10 +1,18 @@
+"""
+LeetCode 1175 - Prime Arrangements
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Return the number of permutations of 1 to n so that prime numbers are at prime indices (1-indexed.)
 
 # (Recall that an integer is prime if and only if it is greater than 1, and cannot be written as a product of two positive integers both smaller than it.)
 
 # Since the answer may be large, return the answer modulo 10^9 + 7.
 
- 
+
 
 # Example 1:
 
@@ -15,7 +23,7 @@
 
 # Input: n = 100
 # Output: 682289015
- 
+
 
 # Constraints:
 

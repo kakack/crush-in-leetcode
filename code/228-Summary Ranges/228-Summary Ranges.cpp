@@ -1,4 +1,12 @@
 /*
+LeetCode 228 - Summary Ranges
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 You are given a sorted unique integer array nums.
 
 Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
@@ -7,7 +15,7 @@ Each range [a,b] in the list should be output as:
 
 "a->b" if a != b
 "a" if a == b
- 
+
 
 Example 1:
 
@@ -38,7 +46,7 @@ Example 5:
 
 Input: nums = [0]
 Output: ["0"]
- 
+
 
 Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 128 - Longest Consecutive Sequence
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 
 /*
 Longest Consecutive Sequence
@@ -19,16 +27,16 @@ public:
     int longestConsecutive(vector<int> &num) {
         unordered_map<int, bool> used;
         for (auto i : num) used[i] = false;
-        
+
         int longest = 0;
-          
+
         for (auto i : num) {
             if(used[i]) continue;
-            
+
             int length=1;
-            
+
             used[i]=true;
-            
+
             for(int j=i+1;used.find(j)!=used.end();j++){
                 used[j]=true;
                 length++;
@@ -37,13 +45,13 @@ public:
                 used[j]=true;
                 length++;
             }
-            
+
             longest=max(longest,length);
-            
+
         }
-        
+
         return longest;
-        
-        
+
+
     }
 };

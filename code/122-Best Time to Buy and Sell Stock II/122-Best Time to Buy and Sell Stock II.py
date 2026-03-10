@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 122 - Best Time to Buy and Sell Stock II
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kai Chen
 @file: 122-Best Time to Buy and Sell Stock II.py
 @time: 2020/7/6 15:52
@@ -28,7 +36,7 @@ Example 3:
 Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
- 
+
 
 Constraints:
 

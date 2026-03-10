@@ -1,10 +1,18 @@
+/*
+LeetCode 436 - Find Right Interval
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given an array of intervals, where intervals[i] = [starti, endi] and each starti is unique.
 
 // The right interval for an interval i is an interval j such that startj >= endi and startj is minimized. Note that i may equal j.
 
 // Return an array of right interval indices for each interval i. If no right interval exists for interval i, then put -1 at index i.
 
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 // Output: [-1,2,-1]
 // Explanation: There is no right interval for [1,4] and [3,4].
 // The right interval for [2,3] is [3,4] since start2 = 3 is the smallest start that is >= end1 = 3.
- 
+
 
 // Constraints:
 

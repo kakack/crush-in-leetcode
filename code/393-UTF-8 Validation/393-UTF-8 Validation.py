@@ -1,4 +1,12 @@
 # Given an integer array data representing the data, return whether it is a valid UTF-8 encoding.
+"""
+LeetCode 393 - UTF-8 Validation
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 
 # A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:
 
@@ -15,7 +23,7 @@
 #    0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 # Note: The input is an array of integers. Only the least significant 8 bits of each integer is used to store the data. This means each integer represents only 1 byte of data.
 
- 
+
 
 # Example 1:
 
@@ -31,7 +39,7 @@
 # The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes character.
 # The next byte is a continuation byte which starts with 10 and that's correct.
 # But the second continuation byte does not start with 10, so it is invalid.
- 
+
 
 # Constraints:
 
@@ -42,26 +50,26 @@ class Solution:
         MASK1, MASK2 = 1 << 7, (1 << 7) + (1 << 6)
         def isValid(num):
             return (num & MASK2) == MASK1
-        
+
         def getBytes(num):
             if (num & MASK1) == 0:
-                return 1 
+                return 1
             n, mask = 0, MASK1
             while (num & mask) != 0:
                 n += 1
                 if n > 4:
-                    return -1 
+                    return -1
                 mask >>= 1
             return n if n >= 2 else -1
-        
+
         m, pivot = len(data), 0
         while pivot < m:
             num = data[pivot]
             n = getBytes(num)
             if n < 0 or (pivot + n) > m:
-                return False 
+                return False
             for i in range(1, n):
                 if not isValid(data[pivot + i]):
-                    return False 
+                    return False
             pivot += n
         return True

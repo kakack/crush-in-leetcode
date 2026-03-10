@@ -1,3 +1,11 @@
+/*
+LeetCode 84 - Largest Rectangle in Histogram
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 /*Largest Rectangle in Histogram
 Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
@@ -23,43 +31,43 @@ return 10.
 using namespace std;
 
 int largestRectangleArea(vector<int> &height) {
-	
+
 	stack<int> s;
 	int sum = 0;
 	height.push_back(0);
-	
+
 	for (int i = 0;i < height.size();i++) {
 		cout<<"i="<<i<<endl;
-				
-		
+
+
 		if(s.empty()||height[i] > height[s.top()]){
-		   
+
 		   s.push(i);
-		
+
 		//   cout<<"插进去了"<<height[i]<<endl;
 		}
-		
+
 		else{
 			int tmp = s.top();
 			s.pop();
 		//	cout<<"拿出来了"<<height[tmp]<<endl;
-			sum = max(sum, height[tmp]*(s.empty()? i : i-s.top()-1));  
+			sum = max(sum, height[tmp]*(s.empty()? i : i-s.top()-1));
 		//	cout<<"算了一下是"<<height[tmp]*(s.empty()? i : i-s.top()-1)<<endl;
-			i--;  
+			i--;
 		}
-		
-		
+
+
 	}
 	return sum;
-	
-        
+
+
 }
 int main(int argc, char *argv[]) {
   int vi[8]={7,5,5,6,8,7,2,10};
   vector<int> h;
   for (int i=0;i<8;i++) {
 	 h.push_back(vi[i]);
-	
+
 }
   cout<<largestRectangleArea(h);
 }

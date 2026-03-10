@@ -1,3 +1,11 @@
+"""
+LeetCode 170 - Two Sum III - Data structure design
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # Design a data structure that accepts a stream of integers and checks if it has a pair of integers that sum up to a particular value.
 
 # Implement the TwoSum class:
@@ -5,7 +13,7 @@
 # TwoSum() Initializes the TwoSum object, with an empty array initially.
 # void add(int number) Adds number to the data structure.
 # boolean find(int value) Returns true if there exists any pair of numbers whose sum is equal to value, otherwise, it returns false.
-#  
+#
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 # twoSum.add(5);   // [1,3] --> [1,3,5]
 # twoSum.find(4);  // 1 + 3 = 4, return true
 # twoSum.find(7);  // No two integers sum up to 7, return false
-#  
+#
 
 # Constraints:
 

@@ -1,6 +1,14 @@
+/*
+LeetCode 954 - Array of Doubled Pairs
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given an integer array of even length arr, return true if it is possible to reorder arr such that arr[2 * i + 1] = 2 * arr[2 * i] for every 0 <= i < len(arr) / 2, or false otherwise.
 
- 
+
 
 // Example 1:
 
@@ -15,7 +23,7 @@
 // Input: arr = [4,-2,2,-4]
 // Output: true
 // Explanation: We can take two groups, [-2,-4] and [2,4] to form [-2,-4,2,4] or [2,4,-2,-4].
- 
+
 
 // Constraints:
 

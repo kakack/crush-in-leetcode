@@ -1,8 +1,16 @@
+/*
+LeetCode 1641 - Count Sorted Vowel Strings
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer n, return the number of strings of length n that consist only of vowels (a, e, i, o, u) and are lexicographically sorted.
 
 // A string s is lexicographically sorted if for all valid i, s[i] is the same as or comes before s[i+1] in the alphabet.
 
- 
+
 
 // Example 1:
 
@@ -20,11 +28,11 @@
 
 // Input: n = 33
 // Output: 66045
- 
+
 
 // Constraints:
 
-// 1 <= n <= 50 
+// 1 <= n <= 50
 
 
 class Solution {

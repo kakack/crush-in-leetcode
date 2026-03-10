@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 632 - Smallest Range Covering Elements from K Lists
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
+r"""
 @author: Kaka Chen
 @license: (C) Copyright Personal Uncommercial Limited.
 @contact: kakachen1990@gmail.com
@@ -10,7 +18,7 @@ You have k lists of sorted integers in ascending order. Find the smallest range 
 
 We define the range [a,b] is smaller than range [c,d] if b-a < d-c or a < c if b-a == d-c.
 
- 
+
 
 Example 1:
 
@@ -20,7 +28,7 @@ Explanation:
 List 1: [4, 10, 15, 24,26], 24 is in range [20,24].
 List 2: [0, 9, 12, 20], 20 is in range [20,24].
 List 3: [5, 18, 22, 30], 22 is in range [20,24].
- 
+
 
 Note:
 

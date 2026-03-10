@@ -1,3 +1,11 @@
+"""
+LeetCode 937 - Reorder Data in Log Files
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given an array of logs. Each log is a space-delimited string of words, where the first word is the identifier.
 
 # There are two types of logs:
@@ -11,7 +19,7 @@
 # The digit-logs maintain their relative ordering.
 # Return the final order of the logs.
 
- 
+
 
 # Example 1:
 
@@ -24,7 +32,7 @@
 
 # Input: logs = ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
 # Output: ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
- 
+
 
 # Constraints:
 

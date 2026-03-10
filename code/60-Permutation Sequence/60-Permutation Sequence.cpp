@@ -1,3 +1,11 @@
+/*
+LeetCode 60 - Permutation Sequence
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 /*Permutation Sequence
 The set [1,2,3,…,n] contains a total of n! unique permutations.
 
@@ -23,11 +31,11 @@ Note: Given n will be between 1 and 9 inclusive.
 
 class Solution {
 public:
-    const int fac[10] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};///阶乘  
-    
+    const int fac[10] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};///阶乘
+
     string getPermutation(int n, int k) {
         string res(n,'0');
-        
+
         bool vis[10];
         k--;
         for (int i = n-1; i >= 0; i--){
@@ -42,9 +50,9 @@ public:
             res[n-i-1] = '0'+j;
             vis[j] = 1;
             k%=fac[i];
-            
+
         }
         return res;
-         
+
     }
 };

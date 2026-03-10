@@ -1,8 +1,16 @@
+"""
+LeetCode 1247 - Minimum Swaps to Make Strings Equal
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given two strings s1 and s2 of equal length consisting of letters "x" and "y" only. Your task is to make these two strings equal to each other. You can swap any two characters that belong to different strings, which means: swap s1[i] and s2[j].
 
 # Return the minimum number of swaps required to make s1 and s2 equal, or return -1 if it is impossible to do so.
 
- 
+
 
 # Example 1:
 
@@ -20,7 +28,7 @@
 
 # Input: s1 = "xx", s2 = "xy"
 # Output: -1
- 
+
 
 # Constraints:
 

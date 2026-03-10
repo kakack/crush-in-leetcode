@@ -1,4 +1,12 @@
 /*
+LeetCode 576 - Out of Boundary Paths
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 There is an m x n grid with a ball. The ball is initially at the position [startRow, startColumn]. You are allowed to move the ball to one of the four adjacent cells in the grid (possibly out of the grid crossing the grid boundary). You can apply at most maxMove moves to the ball.
 
 Given the five integers m, n, maxMove, startRow, startColumn, return the number of paths to move the ball out of the grid boundary. Since the answer can be very large, return it modulo 109 + 7.
@@ -43,8 +51,8 @@ public:
         }
         dp[i][j][maxMove] = solve(dp, i - 1, j, m, n, maxMove - 1) + solve(dp, i + 1, j, m, n, maxMove - 1) + solve(dp, i, j - 1, m, n, maxMove - 1) + solve(dp, i, j + 1, m, n, maxMove - 1);
             return dp[i][j][maxMove];
-        } 
-    
+        }
+
     int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         vector<vector<vector<int >>> dp(m, vector<vector<int>>(n, vector<int>(maxMove + 1, -1)));
         return solve(dp, startRow, startColumn, m, n, maxMove) % 1000000007;

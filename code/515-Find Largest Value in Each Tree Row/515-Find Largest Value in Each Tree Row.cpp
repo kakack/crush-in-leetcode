@@ -1,6 +1,14 @@
+/*
+LeetCode 515 - Find Largest Value in Each Tree Row
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
 
- 
+
 
 // Example 1:
 
@@ -11,7 +19,7 @@
 
 // Input: root = [1,2,3]
 // Output: [1,3]
- 
+
 
 // Constraints:
 

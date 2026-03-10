@@ -1,3 +1,11 @@
+/*
+LeetCode 394 - Decode String
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Given an encoded string, return its decoded string.
 
 // The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
@@ -6,7 +14,7 @@
 
 // Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there will not be input like 3a or 2[4].
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: s = "2[abc]3[cd]ef"
 // Output: "abcabccdcdcdef"
- 
+
 
 // Constraints:
 

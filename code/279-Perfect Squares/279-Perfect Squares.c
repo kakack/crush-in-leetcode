@@ -1,8 +1,16 @@
+/*
+LeetCode 279 - Perfect Squares
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer n, return the least number of perfect square numbers that sum to n.
 
 // A perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, 1, 4, 9, and 16 are perfect squares while 3 and 11 are not.
 
-//  
+//
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 // Input: n = 13
 // Output: 2
 // Explanation: 13 = 4 + 9.
-//  
+//
 
 // Constraints:
 

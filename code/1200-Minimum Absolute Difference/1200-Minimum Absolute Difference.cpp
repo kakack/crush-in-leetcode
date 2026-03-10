@@ -1,3 +1,11 @@
+/*
+LeetCode 1200 - Minimum Absolute Difference
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an array of distinct integers arr, find all pairs of elements with the minimum absolute difference of any two elements.
 
 // Return a list of pairs in ascending order(with respect to pairs), each pair [a, b] follows
@@ -5,7 +13,7 @@
 // a, b are from arr
 // a < b
 // b - a equals to the minimum absolute difference of any two elements in arr
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: arr = [3,8,-10,23,19,-4,-14,27]
 // Output: [[-14,-10],[19,23],[23,27]]
- 
+
 
 // Constraints:
 

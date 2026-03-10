@@ -1,8 +1,16 @@
+"""
+LeetCode 1431 - Kids With the Greatest Number of Candies
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Given the array candies and the integer extraCandies, where candies[i] represents the number of candies that the ith kid has.
 #
 # For each kid check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them. Notice that multiple kids can have the greatest number of candies.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -23,7 +31,7 @@
 #
 # Input: candies = [12,1,12], extraCandies = 10
 # Output: [true,false,true]
-#  
+#
 #
 # Constraints:
 #

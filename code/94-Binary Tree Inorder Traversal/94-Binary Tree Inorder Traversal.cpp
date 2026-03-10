@@ -1,6 +1,14 @@
+/*
+LeetCode 94 - Binary Tree Inorder Traversal
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Given the root of a binary tree, return the inorder traversal of its nodes' values.
 
- 
+
 
 // Example 1:
 
@@ -15,13 +23,13 @@
 
 // Input: root = [1]
 // Output: [1]
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [0, 100].
 // -100 <= Node.val <= 100
- 
+
 
 // Follow up: Recursive solution is trivial, could you do it iteratively?
 

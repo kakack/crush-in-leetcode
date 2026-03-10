@@ -1,10 +1,18 @@
+/*
+LeetCode 110 - Balanced Binary Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // Given a binary tree, determine if it is height-balanced.
 
 // For this problem, a height-balanced binary tree is defined as:
 
 // a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: root = []
 // Output: true
- 
+
 
 // Constraints:
 

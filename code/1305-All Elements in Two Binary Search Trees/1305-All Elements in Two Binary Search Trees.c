@@ -1,6 +1,14 @@
+/*
+LeetCode 1305 - All Elements in Two Binary Search Trees
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
 // Given two binary search trees root1 and root2, return a list containing all the integers from both trees sorted in ascending order.
 
- 
+
 
 // Example 1:
 
@@ -12,7 +20,7 @@
 
 // Input: root1 = [1,null,8], root2 = [8,1]
 // Output: [1,1,8,8]
- 
+
 
 // Constraints:
 

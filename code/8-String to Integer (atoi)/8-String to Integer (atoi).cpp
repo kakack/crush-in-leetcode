@@ -1,4 +1,12 @@
 /*
+LeetCode 8 - String to Integer (atoi)
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 String to Integer (atoi)
 Implement atoi to convert a string to an integer.
 
@@ -24,38 +32,38 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 class Solution {
 public:
     int atoi(const char *str) {
-        
+
         int num = 0;
         int sig = 1;
         const int len = strlen(str);
         int i = 0;
-        
+
         while(str[i]==' ' && i<len)
            i++;
-           
-        if(str[i] == '+') 
+
+        if(str[i] == '+')
             i++;
         else if(str[i] == '-'){
             sig=-1;
             i++;
         }
-        
+
         for(;i<len;i++){
             if(str[i]<'0'||str[i]>'9')
               break;
             if(num>INT_MAX/10)
                return sig == 1? INT_MAX:INT_MIN;
-               
+
             else if(sig==1&&num==INT_MAX/10&&str[i]>'7')
                return INT_MAX;
             else if(sig==-1&&num==INT_MAX/10&&str[i]>'8')
                return INT_MIN;
-               
-               
+
+
             num = num*10 + str[i]-'0';
         }
-        
+
         return sig*num;
-        
+
     }
 };

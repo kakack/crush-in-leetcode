@@ -1,4 +1,12 @@
 /*
+LeetCode 706 - Design HashMap
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 Design a HashMap without using any built-in hash table libraries.
 
 Implement the MyHashMap class:
@@ -55,7 +63,7 @@ private:
 public:
     /** Initialize your data structure here. */
     MyHashMap(): data(base) {}
-    
+
     /** value will always be non-negative. */
     void put(int key, int value) {
         int h = hash(key);
@@ -67,7 +75,7 @@ public:
         }
         data[h].push_back(make_pair(key, value));
     }
-    
+
     /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
     int get(int key) {
         int h = hash(key);
@@ -78,7 +86,7 @@ public:
         }
         return -1;
     }
-    
+
     /** Removes the mapping of the specified value key if this map contains a mapping for the key */
     void remove(int key) {
         int h = hash(key);

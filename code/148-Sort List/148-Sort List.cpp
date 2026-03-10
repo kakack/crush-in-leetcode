@@ -1,10 +1,18 @@
 /*
+LeetCode 148 - Sort List
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 148. Sort List
 Given the head of a linked list, return the list after sorting it in ascending order.
 
 Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
 
- 
+
 
 Example 1:
 
@@ -20,7 +28,7 @@ Example 3:
 
 Input: head = []
 Output: []
- 
+
 
 Constraints:
 
@@ -87,7 +95,7 @@ public:
                 tmp->next =tmp2;
                 tmp2 = tmp2->next;
             }
-            tmp = tmp->next;            
+            tmp = tmp->next;
         }
         if (tmp1 != nullptr) {
             tmp->next = tmp1;

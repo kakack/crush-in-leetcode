@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 371 - Sum of Two Integers
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kai Chen
 @file: 371-Sum of Two Integers.py
 @time: 2020/8/7 10:21
@@ -34,7 +42,7 @@ class Solution(object):
         return a if a <= MAX_INT else ~((a % MIN_INT) ^ MAX_INT)
 
     """
-    a if a <= MAX_INT else ~((a % MIN_INT) ^ MAX_INT)   
+    a if a <= MAX_INT else ~((a % MIN_INT) ^ MAX_INT)
 ~((a % MIN_INT) ^ MAX_INT) 其实可以简化为~(a ^ mask) 为什么要对负数做这样的处理呢？ 因为在python中int不是32位的，输出是64位，所以一个负数比如-2, 64位表示就是0x00000000FFFFFFFE, 用python求取这个16进制的值int('0x00000000FFFFFFFE', 16), 得到的数字是4294967294 不是我们想要的-2，所以： a^mask是先对a的前32位取反，对应-2，就得到0x0000000000000002 再用～操作符对所以位置取反，对应-2，得到0xFFFFFFFFFFFFFFFE
 
 总结一下就是，由于oj系统python最后返回的是64位，如果不对负数特殊处理，那么负数的前32位是0，最后输出的是大于32位的正数

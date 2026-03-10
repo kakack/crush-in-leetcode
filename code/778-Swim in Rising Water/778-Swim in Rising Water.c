@@ -1,4 +1,12 @@
 /*
+LeetCode 778 - Swim in Rising Water
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 On an N x N grid, each square grid[i][j] represents the elevation at that point (i,j).
 
 Now rain starts to fall. At time t, the depth of the water everywhere is t. You can swim from a square to another 4-directionally adjacent square if and only if the elevation of both squares individually are at most t. You can swim infinite distance in zero time. Of course, you must stay within the boundaries of the grid during your swim.
@@ -94,7 +102,7 @@ int swimInWater(int** grid, int gridSize, int* gridColSize){
     int len = 0;
     int **cost = (int**)malloc(sizeof(int*) * 2 * m * n);
     DisjointSetUnion *dsu = initUnion(m * n);
-    
+
     /* 建立元素之间的连通关系, 相邻节点的最大值 */
     for (i = 0; i < m; i++) {
         for (j = 0; j < n; j++) {
@@ -113,7 +121,7 @@ int swimInWater(int** grid, int gridSize, int* gridColSize){
             }
         }
     }
-    
+
     /* 按连接关系从小到大排序, 再进行连通 */
     qsort(cost, len, sizeof(cost[0]), cmp);
     for (i = 0; i < len; i++) {

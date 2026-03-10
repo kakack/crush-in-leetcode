@@ -1,4 +1,12 @@
 /*
+LeetCode 232 - Implement Queue using Stacks
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/*
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
 Implement the MyQueue class:
@@ -54,7 +62,7 @@ private:
         }
     }
 public:
-    
+
     /** Initialize your data structure here. */
     MyQueue() {
 

@@ -1,6 +1,14 @@
+/*
+LeetCode 1213 - Intersection of Three Sorted Arrays
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given three integer arrays arr1, arr2 and arr3 sorted in strictly increasing order, return a sorted array of only the integers that appeared in all three arrays.
 
-//  
+//
 
 // Example 1:
 
@@ -11,7 +19,7 @@
 
 // Input: arr1 = [197,418,523,876,1356], arr2 = [501,880,1593,1710,1870], arr3 = [521,682,1337,1395,1764]
 // Output: []
-//  
+//
 
 // Constraints:
 

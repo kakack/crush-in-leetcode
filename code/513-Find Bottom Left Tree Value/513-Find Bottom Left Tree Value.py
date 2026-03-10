@@ -1,6 +1,14 @@
+"""
+LeetCode 513 - Find Bottom Left Tree Value
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
 # Given the root of a binary tree, return the leftmost value in the last row of the tree.
 
- 
+
 
 # Example 1:
 
@@ -12,7 +20,7 @@
 
 # Input: root = [1,2,3,4,null,5,6,null,null,7]
 # Output: 7
- 
+
 
 # Constraints:
 
@@ -43,7 +51,7 @@ class Solution:
                 curVal = node.val
         dfs(root, 0)
         return curVal
-    
+
 # bfs
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:

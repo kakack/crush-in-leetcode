@@ -1,8 +1,16 @@
+/*
+LeetCode 125 - Valid Palindrome
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
 
 // Given a string s, return true if it is a palindrome, or false otherwise.
 
-//  
+//
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 // Output: true
 // Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome.
-//  
+//
 
 // Constraints:
 
@@ -31,7 +39,7 @@ bool validLetter(char c) {
     int low = c - 'a';
     int high = c - 'A';
     int digit = c - '0';
-    return (low >=0 && low <= 25) || (high >= 0 && high <= 25) || (digit >= 0 && digit <= 9); 
+    return (low >=0 && low <= 25) || (high >= 0 && high <= 25) || (digit >= 0 && digit <= 9);
 }
 
 bool sameLetter(char a, char b) {
@@ -45,7 +53,7 @@ bool sameLetter(char a, char b) {
     } else {
         return false;
     }
-    
+
 }
 
 bool isPalindrome(char * s){

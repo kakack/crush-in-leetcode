@@ -1,10 +1,18 @@
+/*
+LeetCode 450 - Delete Node in a BST
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 Given a root node reference of a BST and a key, delete the node with the given key in the BST. Return the root node reference (possibly updated) of the BST.
 
 // Basically, the deletion can be divided into two stages:
 
 // Search for a node to remove.
 // If the node is found, delete the node.
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@ Given a root node reference of a BST and a key, delete the node with the given k
 
 // Input: root = [], key = 0
 // Output: []
- 
+
 
 // Constraints:
 
@@ -33,7 +41,7 @@ Given a root node reference of a BST and a key, delete the node with the given k
 // Each node has a unique value.
 // root is a valid binary search tree.
 // -10^5 <= key <= 10^5
- 
+
 
 // Follow up: Could you solve it with time complexity O(height of tree)?
 

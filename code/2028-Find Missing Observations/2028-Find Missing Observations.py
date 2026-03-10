@@ -1,3 +1,11 @@
+"""
+LeetCode 2028 - Find Missing Observations
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You have observations of n + m 6-sided dice rolls with each face numbered from 1 to 6. n of the observations went missing, and you only have the observations of m rolls. Fortunately, you have also calculated the average value of the n + m rolls.
 
 # You are given an integer array rolls of length m where rolls[i] is the value of the ith observation. You are also given the two integers mean and n.
@@ -8,7 +16,7 @@
 
 # Note that mean is an integer, so the sum of the n + m rolls should be divisible by n + m.
 
- 
+
 
 # Example 1:
 
@@ -25,7 +33,7 @@
 # Input: rolls = [1,2,3,4], mean = 6, n = 4
 # Output: []
 # Explanation: It is impossible for the mean to be 6 no matter what the 4 missing rolls are.
- 
+
 
 # Constraints:
 

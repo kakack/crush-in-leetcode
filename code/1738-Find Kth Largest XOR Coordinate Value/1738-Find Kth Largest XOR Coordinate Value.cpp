@@ -1,4 +1,12 @@
 /*
+LeetCode 1738 - Find Kth Largest XOR Coordinate Value
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 You are given a 2D matrix of size m x n, consisting of non-negative integers. You are also given an integer k.
 
 The value of coordinate (a, b) of the matrix is the XOR of all matrix[i][j] where 0 <= i <= a < m and 0 <= j <= b < n (0-indexed).

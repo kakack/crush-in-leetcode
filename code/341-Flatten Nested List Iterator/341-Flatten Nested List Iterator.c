@@ -1,4 +1,12 @@
 /*
+LeetCode 341 - Flatten Nested List Iterator
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 Given a nested list of integers, implement an iterator to flatten it.
 
 Each element is either an integer, or a list -- whose elements may also be integers or other lists.
@@ -46,12 +54,12 @@ Explanation: By calling next repeatedly until hasNext returns false,
  *
  * // Return the single integer that this NestedInteger holds, if it holds a single integer
  * // The result is undefined if this NestedInteger holds a nested list
- * 
+ *
  * int NestedIntegerGetInteger(struct NestedInteger *);
  *
  * // Return the nested list that this NestedInteger holds, if it holds a nested list
  * // The result is undefined if this NestedInteger holds a single integer
- * 
+ *
  * struct NestedInteger **NestedIntegerGetList(struct NestedInteger *);
  *
  * // Return the nested list's size that this NestedInteger holds, if it holds a nested list

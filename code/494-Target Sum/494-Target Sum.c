@@ -1,3 +1,11 @@
+/*
+LeetCode 494 - Target Sum
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // You are given an integer array nums and an integer target.
 
 // You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.
@@ -5,7 +13,7 @@
 // For example, if nums = [2, 1], you can add a '+' before 2 and a '-' before 1 and concatenate them to build the expression "+2-1".
 // Return the number of different expressions that you can build, which evaluates to target.
 
- 
+
 
 // Example 1:
 
@@ -21,7 +29,7 @@
 
 // Input: nums = [1], target = 1
 // Output: 1
- 
+
 
 // Constraints:
 

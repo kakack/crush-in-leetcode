@@ -1,3 +1,11 @@
+/*
+LeetCode 1396 - Design Underground System
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // An underground railway system is keeping track of customer travel times between different stations. They are using this data to calculate the average time it takes to travel from one station to another.
 
 // Implement the UndergroundSystem class:
@@ -14,7 +22,7 @@
 // There will be at least one customer that has traveled from startStation to endStation before getAverageTime is called.
 // You may assume all calls to the checkIn and checkOut methods are consistent. If a customer checks in at time t1 then checks out at time t2, then t1 < t2. All events happen in chronological order.
 
- 
+
 
 // Example 1:
 
@@ -59,7 +67,7 @@
 // undergroundSystem.checkIn(2, "Leyton", 21);
 // undergroundSystem.checkOut(2, "Paradise", 30); // Customer 2 "Leyton" -> "Paradise" in 30-21 = 9
 // undergroundSystem.getAverageTime("Leyton", "Paradise"); // return 6.66667, (5 + 6 + 9) / 3 = 6.66667
- 
+
 
 // Constraints:
 
@@ -167,10 +175,10 @@ void undergroundSystemFree(UndergroundSystem* obj) {
  * Your UndergroundSystem struct will be instantiated and called as such:
  * UndergroundSystem* obj = undergroundSystemCreate();
  * undergroundSystemCheckIn(obj, id, stationName, t);
- 
+
  * undergroundSystemCheckOut(obj, id, stationName, t);
- 
+
  * double param_3 = undergroundSystemGetAverageTime(obj, startStation, endStation);
- 
+
  * undergroundSystemFree(obj);
 */

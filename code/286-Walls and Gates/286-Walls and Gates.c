@@ -1,3 +1,11 @@
+/*
+LeetCode 286 - Walls and Gates
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // You are given an m x n grid rooms initialized with these three possible values.
 
 // -1 A wall or an obstacle.
@@ -5,7 +13,7 @@
 // INF Infinity means an empty room. We use the value 231 - 1 = 2147483647 to represent INF as you may assume that the distance to a gate is less than 2147483647.
 // Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, it should be filled with INF.
 
-//  
+//
 
 // Example 1:
 
@@ -16,7 +24,7 @@
 
 // Input: rooms = [[-1]]
 // Output: [[-1]]
-//  
+//
 
 // Constraints:
 

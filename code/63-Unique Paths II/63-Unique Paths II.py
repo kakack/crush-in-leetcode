@@ -1,3 +1,11 @@
+"""
+LeetCode 63 - Unique Paths II
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # You are given an m x n integer array grid. There is a robot initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m-1][n-1]). The robot can only move either down or right at any point in time.
 
 # An obstacle and space are marked as 1 or 0 respectively in grid. A path that the robot takes cannot include any square that is an obstacle.
@@ -6,7 +14,7 @@
 
 # The testcases are generated so that the answer will be less than or equal to 2 * 109.
 
- 
+
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 
 # Input: obstacleGrid = [[0,1],[0,0]]
 # Output: 1
- 
+
 
 # Constraints:
 

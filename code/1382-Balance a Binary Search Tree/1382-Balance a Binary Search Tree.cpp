@@ -1,8 +1,16 @@
+/*
+LeetCode 1382 - Balance a Binary Search Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // Given the root of a binary search tree, return a balanced binary search tree with the same node values. If there is more than one answer, return any of them.
 
 // A binary search tree is balanced if the depth of the two subtrees of every node never differs by more than 1.
 
- 
+
 
 // Example 1:
 
@@ -15,7 +23,7 @@
 
 // Input: root = [2,1,3]
 // Output: [2,1,3]
- 
+
 
 // Constraints:
 
@@ -36,7 +44,7 @@
 class Solution {
 public:
     vector<int> inorderSeq;
-    
+
     void getInorder(TreeNode* node) {
         if (node->left != nullptr) {
             getInorder(node->left);

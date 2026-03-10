@@ -1,24 +1,32 @@
+/*
+LeetCode 819 - Most Common Word
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given a string paragraph and a string array of the banned words banned, return the most frequent word that is not banned. It is guaranteed there is at least one word that is not banned, and that the answer is unique.
 
 // The words in paragraph are case-insensitive and the answer should be returned in lowercase.
 
- 
+
 
 // Example 1:
 
 // Input: paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.", banned = ["hit"]
 // Output: "ball"
-// Explanation: 
+// Explanation:
 // "hit" occurs 3 times, but it is a banned word.
-// "ball" occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. 
+// "ball" occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph.
 // Note that words in the paragraph are not case sensitive,
-// that punctuation is ignored (even if adjacent to words, such as "ball,"), 
+// that punctuation is ignored (even if adjacent to words, such as "ball,"),
 // and that "hit" isn't the answer even though it occurs more because it is banned.
 // Example 2:
 
 // Input: paragraph = "a.", banned = []
 // Output: "a"
- 
+
 
 // Constraints:
 

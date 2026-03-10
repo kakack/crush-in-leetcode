@@ -1,3 +1,11 @@
+"""
+LeetCode 2100 - Find Good Days to Rob the Bank
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You and a gang of thieves are planning on robbing a bank. You are given a 0-indexed integer array security, where security[i] is the number of guards on duty on the ith day. The days are numbered starting from 0. You are also given an integer time.
 
 # The ith day is a good day to rob the bank if:
@@ -9,7 +17,7 @@
 
 # Return a list of all days (0-indexed) that are good days to rob the bank. The order that the days are returned in does not matter.
 
- 
+
 
 # Example 1:
 
@@ -32,7 +40,7 @@
 # Explanation:
 # No day has 2 days before it that have a non-increasing number of guards.
 # Thus, no day is a good day to rob the bank, so return an empty list.
- 
+
 
 # Constraints:
 

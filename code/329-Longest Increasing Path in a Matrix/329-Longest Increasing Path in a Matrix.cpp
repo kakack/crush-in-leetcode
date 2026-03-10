@@ -1,8 +1,16 @@
+/*
+LeetCode 329 - Longest Increasing Path in a Matrix
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // Given an m x n integers matrix, return the length of the longest increasing path in matrix.
 
 // From each cell, you can either move in four directions: left, right, up, or down. You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: matrix = [[1]]
 // Output: 1
- 
+
 
 // Constraints:
 

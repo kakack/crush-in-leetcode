@@ -1,10 +1,18 @@
+"""
+LeetCode 449 - Serialize and Deserialize BST
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # Serialization is converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
 
 # Design an algorithm to serialize and deserialize a binary search tree. There is no restriction on how your serialization/deserialization algorithm should work. You need to ensure that a binary search tree can be serialized to a string, and this string can be deserialized to the original tree structure.
 
 # The encoded string should be as compact as possible.
 
- 
+
 
 # Example 1:
 
@@ -14,7 +22,7 @@
 
 # Input: root = []
 # Output: []
- 
+
 
 # Constraints:
 
@@ -37,7 +45,7 @@ class Codec:
         def postorder(root):
             return postorder(root.left) + postorder(root.right) + [root.val] if root else []
         return ' '.join(map(str, postorder(root)))
-        
+
 
     def deserialize(self, data: str) -> Optional[TreeNode]:
         """Decodes your encoded data to tree.
@@ -50,10 +58,10 @@ class Codec:
             root.right = helper(val, upper)
             root.left = helper(lower, val)
             return root
-        
+
         data = [int(x) for x in data.split(' ') if x]
         return helper()
-        
+
 
 # Your Codec object will be instantiated and called as such:
 # Your Codec object will be instantiated and called as such:

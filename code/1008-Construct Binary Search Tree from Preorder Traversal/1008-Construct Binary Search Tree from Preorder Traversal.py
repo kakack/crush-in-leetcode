@@ -1,3 +1,11 @@
+"""
+LeetCode 1008 - Construct Binary Search Tree from Preorder Traversal
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # Given an array of integers preorder, which represents the preorder traversal of a BST (i.e., binary search tree), construct the tree and return its root.
 
 # It is guaranteed that there is always possible to find a binary search tree with the given requirements for the given test cases.
@@ -6,7 +14,7 @@
 
 # A preorder traversal of a binary tree displays the value of the node first, then traverses Node.left, then traverses Node.right.
 
- 
+
 
 # Example 1:
 
@@ -17,7 +25,7 @@
 
 # Input: preorder = [1,3]
 # Output: [1,null,3]
- 
+
 
 # Constraints:
 

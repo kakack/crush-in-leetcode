@@ -1,8 +1,16 @@
+/*
+LeetCode 242 - Valid Anagram
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
- 
+
 
 // Example 1:
 
@@ -12,13 +20,13 @@
 
 // Input: s = "rat", t = "car"
 // Output: false
- 
+
 
 // Constraints:
 
 // 1 <= s.length, t.length <= 5 * 10^4
 // s and t consist of lowercase English letters.
- 
+
 
 // Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
@@ -64,15 +72,15 @@ public:
 //         map<string,int> anagrams;
 //         vector<string> result;
 //         string s;
-        
+
 //         for(int i=0;i<strs.size();i++){
 //             s=strs[i];
-            
+
 //             sort(s.begin(),s.end());
-            
+
 //             if(anagrams.find(s)==anagrams.end())//没找到
 //               anagrams[s]=i;
-              
+
 //             else{//已经有了
 //             if(anagrams[s]>=0)
 //               {
@@ -81,11 +89,11 @@ public:
 //               }
 //                 result.push_back(strs[i]);
 //             }
-            
-            
+
+
 //         }
-        
+
 //         return result;
-        
+
 //     }
 // };

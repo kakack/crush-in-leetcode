@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 384 - Shuffle an Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kai Chen
 @file: 384-Shuffle an Array.py
 @time: 2021/7/20 15:51
@@ -11,7 +19,7 @@ Implement the Solution class:
 Solution(int[] nums) Initializes the object with the integer array nums.
 int[] reset() Resets the array to its original configuration and returns it.
 int[] shuffle() Returns a random shuffling of the array.
- 
+
 
 Example 1:
 
@@ -29,7 +37,7 @@ solution.shuffle();    // Shuffle the array [1,2,3] and return its result.
 solution.reset();      // Resets the array back to its original configuration [1,2,3]. Return [1, 2, 3]
 solution.shuffle();    // Returns the random shuffling of array [1,2,3]. Example: return [1, 3, 2]
 
- 
+
 
 Constraints:
 

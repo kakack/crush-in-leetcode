@@ -1,3 +1,11 @@
+"""
+LeetCode 941 - Valid Mountain Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Given an array A of integers, return true if and only if it is a valid mountain array.
 #
 # Recall that A is a mountain array if and only if:
@@ -21,7 +29,7 @@
 #
 # Note:
 # - 0 <= A.length <= 10000
-# - 0 <= A[i] <= 10000 
+# - 0 <= A[i] <= 10000
 
 class Solution(object):
     def validMountainArray(self, A):

@@ -1,3 +1,11 @@
+"""
+LeetCode 806 - Number of Lines To Write String
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given a string s of lowercase English letters and an array widths denoting how many pixels wide each lowercase English letter is. Specifically, widths[0] is the width of 'a', widths[1] is the width of 'b', and so on.
 
 # You are trying to write s across several lines, where each line is no longer than 100 pixels. Starting at the beginning of s, write as many letters on the first line such that the total width does not exceed 100 pixels. Then, from where you stopped in s, continue writing as many letters as you can on the second line. Continue this process until you have written all of s.
@@ -6,7 +14,7 @@
 
 # result[0] is the total number of lines.
 # result[1] is the width of the last line in pixels.
- 
+
 
 # Example 1:
 
@@ -25,7 +33,7 @@
 # bbbcccdddaa  // 98 pixels wide
 # a            // 4 pixels wide
 # There are a total of 2 lines, and the last line is 4 pixels wide.
- 
+
 
 # Constraints:
 
@@ -43,4 +51,3 @@ class Solution:
                 lines += 1
                 width = widths[ord(s[i]) - ord('a')]
         return [lines, width]
-        

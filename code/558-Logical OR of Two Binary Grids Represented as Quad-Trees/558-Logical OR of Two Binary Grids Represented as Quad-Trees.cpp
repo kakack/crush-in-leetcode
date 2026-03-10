@@ -1,3 +1,11 @@
+/*
+LeetCode 558 - Logical OR of Two Binary Grids Represented as Quad-Trees
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // A Binary Matrix is a matrix in which all the elements are either 0 or 1.
 
 // Given quadTree1 and quadTree2. quadTree1 represents a n * n binary matrix and quadTree2 represents another n * n binary matrix.
@@ -34,11 +42,11 @@
 
 // If the value of isLeaf or val is True we represent it as 1 in the list [isLeaf, val] and if the value of isLeaf or val is False we represent it as 0.
 
- 
+
 
 // Example 1:
 
- 
+
 // Input: quadTree1 = [[0,1],[1,1],[1,1],[1,0],[1,0]]
 // , quadTree2 = [[0,1],[1,1],[0,1],[1,1],[1,0],null,null,null,null,[1,0],[1,0],[1,1],[1,1]]
 // Output: [[0,0],[1,1],[1,1],[1,1],[1,0]]
@@ -52,7 +60,7 @@
 // Output: [[1,0]]
 // Explanation: Each tree represents a binary matrix of size 1*1. Each matrix contains only zero.
 // The resulting matrix is of size 1*1 with also zero.
- 
+
 
 // Constraints:
 
@@ -69,7 +77,7 @@ public:
     Node* topRight;
     Node* bottomLeft;
     Node* bottomRight;
-    
+
     Node() {
         val = false;
         isLeaf = false;
@@ -78,7 +86,7 @@ public:
         bottomLeft = NULL;
         bottomRight = NULL;
     }
-    
+
     Node(bool _val, bool _isLeaf) {
         val = _val;
         isLeaf = _isLeaf;
@@ -87,7 +95,7 @@ public:
         bottomLeft = NULL;
         bottomRight = NULL;
     }
-    
+
     Node(bool _val, bool _isLeaf, Node* _topLeft, Node* _topRight, Node* _bottomLeft, Node* _bottomRight) {
         val = _val;
         isLeaf = _isLeaf;

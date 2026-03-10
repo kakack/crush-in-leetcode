@@ -1,3 +1,11 @@
+/*
+LeetCode 165 - Compare Version Numbers
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 /*Compare Version Numbers
 优化成x.y形式，x前方没0
 找.
@@ -24,7 +32,7 @@ public:
              return i;
         return s.length();
     }
-    
+
     bool compare(string s1, string s2){
         if(s1.length()>s2.length())
           return true;
@@ -39,16 +47,16 @@ public:
         }
         return true;
     }
-    
+
     int compareVersion(string version1, string version2) {
         if(findPoint(version1)==version1.length())
            version1 = version1 + ".0";
         if(findPoint(version2)==version2.length())
            version2 = version2 + ".0";
-        while(version1[0]=='0' && version1[1]!='.') 
+        while(version1[0]=='0' && version1[1]!='.')
 			version1 = version1.substr(1,version1.length()-1);
-        while(version2[0]=='0' && version2[1]!='.') 
-			version2 = version2.substr(1,version2.length()-1);  
+        while(version2[0]=='0' && version2[1]!='.')
+			version2 = version2.substr(1,version2.length()-1);
 
         if(version1 == version2)
           return 0;
@@ -57,17 +65,17 @@ public:
         string back1 = version1.substr(findPoint(version1)+1, version1.length()-findPoint(version1)-1);
         string forward2 = version2.substr(0, findPoint(version2));
         string back2 = version2.substr(findPoint(version2)+1, version2.length()-findPoint(version2)-1);
-        
+
         if(forward1 != forward2){
             //compare forward
             return compare(forward1,forward2)?1:-1;
-            
+
         }
         else{
             //compare back
             return compareVersion(back1,back2);
         }
-        
+
     }
 };
 

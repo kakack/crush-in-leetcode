@@ -1,3 +1,11 @@
+"""
+LeetCode 221 - Maximal Square
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
 #
 # Example:

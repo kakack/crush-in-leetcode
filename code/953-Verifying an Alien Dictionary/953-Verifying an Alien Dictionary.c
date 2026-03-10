@@ -1,8 +1,16 @@
+/*
+LeetCode 953 - Verifying an Alien Dictionary
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // In an alien language, surprisingly, they also use English lowercase letters, but possibly in a different order. The order of the alphabet is some permutation of lowercase letters.
 
 // Given a sequence of words written in the alien language, and the order of the alphabet, return true if and only if the given words are sorted lexicographically in this alien language.
 
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 // Input: words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
 // Output: false
 // Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" > "app", because 'l' > '∅', where '∅' is defined as the blank character which is less than any other character (More info).
- 
+
 
 // Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 310 - Minimum Height Trees
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // A tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any connected graph without simple cycles is a tree.
 
 // Given a tree of n nodes labelled from 0 to n - 1, and an array of n - 1 edges where edges[i] = [ai, bi] indicates that there is an undirected edge between the two nodes ai and bi in the tree, you can choose any node of the tree as the root. When you select a node x as the root, the result tree has height h. Among all possible rooted trees, those with minimum height (i.e. min(h))  are called minimum height trees (MHTs).
@@ -6,7 +14,7 @@
 
 // The height of a rooted tree is the number of edges on the longest downward path between the root and a leaf.
 
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 
 // Input: n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]
 // Output: [3,4]
- 
+
 
 // Constraints:
 
@@ -82,7 +90,7 @@ int* findMinHeightTrees(int n, int** edges, int edgesSize, int* edgesColSize, in
         node->next = adj[u];
         adj[u] = node;
     }
-    
+
     int * parent = (int *)malloc(sizeof(int) * n);
     /* 找到与节点 0 最远的节点 x */
     int x = findLongestNode(0, parent, adj, n);

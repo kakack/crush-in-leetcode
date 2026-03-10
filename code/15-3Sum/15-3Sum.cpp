@@ -1,5 +1,13 @@
 /*
-3Sum 
+LeetCode 15 - 3Sum
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
+3Sum
 
 Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
@@ -16,13 +24,13 @@ The solution set must not contain duplicate triplets.
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int> &num) {
-        
+
         vector<vector<int>> result;
         if (num.size() < 3) return result;
           sort(num.begin(), num.end());
-          
+
           auto last=num.end();
-          
+
           for(auto a = num.begin(); a < prev(last, 2);a = upper_bound(a, prev(last, 2), *a))
               for(auto b = next(a); b < prev(last);b = upper_bound(b, prev(last), *b)){
                   int target = 0 - *a - *b;
@@ -32,12 +40,12 @@ public:
                 //   for(int k=j+1;k<num.size();k++)
                 //     if(num[k]==target){
                 //       result.push_back(vector<int> {num[i],num[j],target });
-                //       break; 
+                //       break;
                 //     }   //这么暴力的超时了
-                
-                
+
+
             }
-          
+
         return result;
     }
 };

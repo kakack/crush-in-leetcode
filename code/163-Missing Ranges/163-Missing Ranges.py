@@ -1,3 +1,11 @@
+"""
+LeetCode 163 - Missing Ranges
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given an inclusive range [lower, upper] and a sorted unique integer array nums, where all elements are in the inclusive range.
 
 # A number x is considered missing if x is in the range [lower, upper] and x is not in nums.
@@ -8,7 +16,7 @@
 
 # "a->b" if a != b
 # "a" if a == b
-#  
+#
 
 # Example 1:
 
@@ -24,7 +32,7 @@
 # Input: nums = [-1], lower = -1, upper = -1
 # Output: []
 # Explanation: There are no missing ranges since there are no missing numbers.
-#  
+#
 
 # Constraints:
 

@@ -1,8 +1,16 @@
+"""
+LeetCode 52 - N-Queens II
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
 
 # Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 
- 
+
 
 # Example 1:
 
@@ -14,7 +22,7 @@
 
 # Input: n = 1
 # Output: 1
- 
+
 
 # Constraints:
 
@@ -38,7 +46,7 @@ class Solution:
                     diagonal1.remove(row - i)
                     diagonal2.remove(row + i)
                 return count
-                    
+
         columns = set()
         diagonal1 = set()
         diagonal2 = set()

@@ -1,3 +1,11 @@
+"""
+LeetCode 100 - Same Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # Given two binary trees, write a function to check if they are the same or not.
 #
 # Two binary trees are considered the same if they are structurally identical and the nodes have the same value.

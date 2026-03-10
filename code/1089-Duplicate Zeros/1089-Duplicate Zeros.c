@@ -1,8 +1,16 @@
+/*
+LeetCode 1089 - Duplicate Zeros
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a fixed-length integer array arr, duplicate each occurrence of zero, shifting the remaining elements to the right.
 
 // Note that elements beyond the length of the original array are not written. Do the above modifications to the input array in place and do not return anything.
 
- 
+
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 // Input: arr = [1,2,3]
 // Output: [1,2,3]
 // Explanation: After calling your function, the input array is modified to: [1,2,3]
- 
+
 
 // Constraints:
 

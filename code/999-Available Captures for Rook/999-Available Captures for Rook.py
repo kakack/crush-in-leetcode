@@ -1,3 +1,11 @@
+"""
+LeetCode 999 - Available Captures for Rook
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # On an 8 x 8 chessboard, there is one white rook.  There also may be empty squares, white bishops, and black pawns.  These are given as characters 'R', '.', 'B', and 'p' respectively. Uppercase characters represent white pieces, and lowercase characters represent black pieces.
 # # The rook moves as in the rules of Chess: it chooses one of four cardinal directions (north, east, west, and south), then moves in that direction until it chooses to stop, reaches the edge of the board, or captures an opposite colored pawn by moving to the same square it occupies.  Also, rooks cannot move into the same square as other friendly bishops.
 # # Return the number of pawns the rook can capture in one move.
@@ -19,7 +27,7 @@
 # # Output: 3
 # # Explanation:
 # # The rook can capture the pawns at positions b5, d6 and f5.
-# #  
+# #
 # #
 # # Note:
 # # - board.length == board[i].length == 8

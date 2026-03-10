@@ -1,3 +1,11 @@
+"""
+LeetCode 25 - Reverse Nodes in k-Group
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
 #
 # k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.

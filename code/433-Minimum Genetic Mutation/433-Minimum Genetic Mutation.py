@@ -1,3 +1,11 @@
+"""
+LeetCode 433 - Minimum Genetic Mutation
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
 # A gene string can be represented by an 8-character long string, with choices from 'A', 'C', 'G', and 'T'.
 
 # Suppose we need to investigate a mutation from a gene string start to a gene string end where one mutation is defined as one single character changed in the gene string.
@@ -9,7 +17,7 @@
 
 # Note that the starting point is assumed to be valid, so it might not be included in the bank.
 
- 
+
 
 # Example 1:
 
@@ -23,7 +31,7 @@
 
 # Input: start = "AAAAACCC", end = "AACCCCCC", bank = ["AAAACCCC","AAACCCCC","AACCCCCC"]
 # Output: 3
- 
+
 
 # Constraints:
 
@@ -53,4 +61,3 @@ class Solution:
                             bank.remove(nxt)
                             q.append((nxt, step + 1))
         return -1
-        

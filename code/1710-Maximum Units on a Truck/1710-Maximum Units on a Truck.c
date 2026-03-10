@@ -1,3 +1,11 @@
+/*
+LeetCode 1710 - Maximum Units on a Truck
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
 
 // numberOfBoxesi is the number of boxes of type i.
@@ -6,7 +14,7 @@
 
 // Return the maximum total number of units that can be put on the truck.
 
- 
+
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 
 // Input: boxTypes = [[5,10],[2,5],[4,7],[3,9]], truckSize = 10
 // Output: 91
- 
+
 
 // Constraints:
 

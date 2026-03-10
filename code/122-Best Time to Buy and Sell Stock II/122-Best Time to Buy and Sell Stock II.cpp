@@ -1,10 +1,18 @@
+/*
+LeetCode 122 - Best Time to Buy and Sell Stock II
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 
 // On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.
 
 // Find and return the maximum profit you can achieve.
 
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 // Input: prices = [7,6,4,3,1]
 // Output: 0
 // Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
- 
+
 
 // Constraints:
 

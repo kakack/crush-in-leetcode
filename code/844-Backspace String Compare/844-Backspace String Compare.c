@@ -1,8 +1,16 @@
+/*
+LeetCode 844 - Backspace String Compare
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
 
 // Note that after backspacing an empty text, the text will continue empty.
 
- 
+
 
 // Example 1:
 
@@ -19,13 +27,13 @@
 // Input: s = "a#c", t = "b"
 // Output: false
 // Explanation: s becomes "c" while t becomes "b".
- 
+
 
 // Constraints:
 
 // 1 <= s.length, t.length <= 200
 // s and t only contain lowercase letters and '#' characters.
- 
+
 
 // Follow up: Can you solve it in O(n) time and O(1) space?
 

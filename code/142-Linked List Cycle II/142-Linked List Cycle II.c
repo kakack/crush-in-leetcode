@@ -1,5 +1,13 @@
 /*
-Linked List Cycle II 
+LeetCode 142 - Linked List Cycle II
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
+/*
+Linked List Cycle II
 
 Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 

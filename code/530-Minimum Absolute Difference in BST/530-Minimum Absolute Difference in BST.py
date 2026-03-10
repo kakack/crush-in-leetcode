@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 530 - Minimum Absolute Difference in BST
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+"""
+r"""
 @author: Kai Chen
 @file: 530-Minimum Absolute Difference in BST.py
 @time: 2020/10/12 9:08

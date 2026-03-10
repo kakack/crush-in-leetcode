@@ -1,5 +1,13 @@
 /*
-Validate Binary Search Tree 
+LeetCode 98 - Validate Binary Search Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
+/*
+Validate Binary Search Tree
 Given a binary tree, determine if it is a valid binary search tree (BST).
 
 Assume a BST is defined as follows:
@@ -22,23 +30,23 @@ class Solution {
 public:
     // bool isValidBST(TreeNode *root) {
     //     return isValid(root, long.MIN_VALUE, long.MAX_VALUE);
-        
+
     // }
-    
+
     // bool isValid(TreeNode *root, int min, int max){
-        
-    //     if(root == NULL||(root->left==NULL&&root->right==NULL)) 
+
+    //     if(root == NULL||(root->left==NULL&&root->right==NULL))
     //       return true;
-        
+
     //     if(root->left==NULL&&root->right!=NULL)
     //       return root->val<root->right->val&&isValid(root->right, root->val,max);
-          
+
     //     else if(root->left!=NULL&&root->right==NULL)
     //       return root->val>root->left->val&&isValid(root->left, min, root->val);
-          
+
     //     else if(root->val>min&&root->val<max&&isValid(root->left, min, root->val)&&isValid(root->right, root->val, max))
     //      return true;
-         
+
     //     else
     //      return false;
     // }
@@ -46,7 +54,7 @@ public:
 
 /*
  *这个解法用了中序遍历，用两个全局变量来控制，每次中间的root跟左子树中最大值比
- */    
+ */
      bool first = true;
     int prev = 0;
 public:
@@ -74,5 +82,5 @@ public:
         return true;
     }
 
-    
+
 };

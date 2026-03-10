@@ -1,4 +1,12 @@
 /*
+LeetCode 872 - Leaf-Similar Trees
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
+/*
 Consider all the leaves of a binary tree, from left to right order, the values of those leaves form a leaf value sequence.
 
 
@@ -72,7 +80,7 @@ public:
         if (hasRight) {
             dfs(root->right, leaves);
         }
-    } 
+    }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
         vector<int> leaves1, leaves2;
         dfs(root1, leaves1);

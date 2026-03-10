@@ -1,3 +1,11 @@
+"""
+LeetCode 688 - Knight Probability in Chessboard
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # On an n x n chessboard, a knight starts at the cell (row, column) and attempts to make exactly k moves. The rows and columns are 0-indexed, so the top-left cell is (0, 0), and the bottom-right cell is (n - 1, n - 1).
 
 # A chess knight has eight possible moves it can make, as illustrated below. Each move is two cells in a cardinal direction, then one cell in an orthogonal direction.
@@ -9,7 +17,7 @@
 
 # Return the probability that the knight remains on the board after it has stopped moving.
 
- 
+
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 
 # Input: n = 1, k = 0, row = 0, column = 0
 # Output: 1.00000
- 
+
 
 # Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 103 - Binary Tree Zigzag Level Order Traversal
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 /*Binary Tree Zigzag Level Order Traversal
 Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 
@@ -28,27 +36,27 @@ class Solution {
 public:
     void travel(TreeNode *root, int level, vector<vector<int> > &result){
         if(!root) return;
-        
-        if(level>result.size()) 
+
+        if(level>result.size())
            result.push_back(vector<int>());
-        if(level%2==1)   
+        if(level%2==1)
           result[level-1].push_back(root->val);
         else
           result[level-1].insert(result[level-1].begin(),root->val);
-        
+
         travel(root->left,level+1,result);
         travel(root->right,level+1,result);
 
-        
+
     }
-    
+
     vector<vector<int> > zigzagLevelOrder(TreeNode *root) {
-        
+
         vector<vector<int> > result;
-        
+
         travel(root, 1, result);
-        
+
         return result;
-        
+
     }
 };

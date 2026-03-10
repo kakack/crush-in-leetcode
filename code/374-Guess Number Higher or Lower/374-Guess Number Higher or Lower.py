@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 374 - Guess Number Higher or Lower
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kaka Chen
 @license: (C) Copyright Personal Uncommercial Limited.
 @contact: kakachen1990@gmail.com
@@ -19,7 +27,7 @@ You call a pre-defined API int guess(int num), which returns 3 possible results:
 0: The number I picked is equal to your guess (i.e. pick == num).
 Return the number that I picked.
 
- 
+
 
 Example 1:
 
@@ -37,7 +45,7 @@ Example 4:
 
 Input: n = 2, pick = 2
 Output: 2
- 
+
 
 Constraints:
 

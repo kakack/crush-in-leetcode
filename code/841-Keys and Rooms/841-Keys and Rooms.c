@@ -1,16 +1,24 @@
+/*
+LeetCode 841 - Keys and Rooms
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // There are n rooms labeled from 0 to n - 1 and all the rooms are locked except for room 0. Your goal is to visit all the rooms. However, you cannot enter a locked room without having its key.
 
 // When you visit a room, you may find a set of distinct keys in it. Each key has a number on it, denoting which room it unlocks, and you can take all of them with you to unlock the other rooms.
 
 // Given an array rooms where rooms[i] is the set of keys that you can obtain if you visited room i, return true if you can visit all the rooms, or false otherwise.
 
- 
+
 
 // Example 1:
 
 // Input: rooms = [[1],[2],[3],[]]
 // Output: true
-// Explanation: 
+// Explanation:
 // We visit room 0 and pick up key 1.
 // We then visit room 1 and pick up key 2.
 // We then visit room 2 and pick up key 3.
@@ -21,7 +29,7 @@
 // Input: rooms = [[1,3],[3,0,1],[2],[0]]
 // Output: false
 // Explanation: We can not enter room number 2 since the only key that unlocks it is in that room.
- 
+
 
 // Constraints:
 
@@ -50,7 +58,7 @@ bool canVisitAllRooms(int** rooms, int roomsSize, int* roomsColSize){
                 que[tail ++] = rooms[key][i];
                 seen[rooms[key][i]] = 1;
             }
-        } 
+        }
     }
     for (int i = 0; i < roomsSize; i ++) {
         if (seen[i] == 0) {

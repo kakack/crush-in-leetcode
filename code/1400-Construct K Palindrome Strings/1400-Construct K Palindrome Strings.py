@@ -1,6 +1,14 @@
+"""
+LeetCode 1400 - Construct K Palindrome Strings
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # Given a string s and an integer k, return true if you can use all the characters in s to construct k palindrome strings or false otherwise.
 
- 
+
 
 # Example 1:
 
@@ -18,7 +26,7 @@
 # Input: s = "true", k = 4
 # Output: true
 # Explanation: The only possible solution is to put each character in a separate string.
- 
+
 
 # Constraints:
 

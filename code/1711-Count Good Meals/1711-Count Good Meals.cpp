@@ -1,4 +1,12 @@
 /*
+LeetCode 1711 - Count Good Meals
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 A good meal is a meal that contains exactly two different food items with a sum of deliciousness equal to a power of two.
 
 You can pick any two different foods to make a good meal.

@@ -1,6 +1,14 @@
+/*
+LeetCode 954 - Array of Doubled Pairs
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer array of even length arr, return true if it is possible to reorder arr such that arr[2 * i + 1] = 2 * arr[2 * i] for every 0 <= i < len(arr) / 2, or false otherwise.
 
- 
+
 
 // Example 1:
 
@@ -15,7 +23,7 @@
 // Input: arr = [4,-2,2,-4]
 // Output: true
 // Explanation: We can take two groups, [-2,-4] and [2,4] to form [-2,-4,2,4] or [2,4,-2,-4].
- 
+
 
 // Constraints:
 
@@ -64,7 +72,7 @@ bool canReorderDoubled(int* arr, int arrSize){
     qsort(vals, cntSize, sizeof(int), cmp);
     for (int i = 0; i < cntSize; i ++) {
         int c1 = 0, c2 = 0;
-        int key = vals[i]; 
+        int key = vals[i];
         HashItem *pEntry1 = NULL;
         HashItem *pEntry2 = NULL;
         HASH_FIND_INT(cnt, &key, pEntry1);

@@ -1,4 +1,12 @@
 /*
+LeetCode 703 - Kth Largest Element in a Stream
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/*
 Design a class to find the kth largest element in a stream. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 Implement KthLargest class:
@@ -49,7 +57,7 @@ public:
             add(x);
             /* code */
         }
-        
+
 
     }
 

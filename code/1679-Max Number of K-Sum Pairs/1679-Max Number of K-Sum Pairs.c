@@ -1,10 +1,18 @@
+/*
+LeetCode 1679 - Max Number of K-Sum Pairs
+
+解题步骤（自动整理）
+1. 先排序以便利用有序性缩小搜索空间
+2. 使用双指针从两端/区间收缩，按比较结果移动指针
+3. 在遍历过程中维护最优解并处理重复元素（如需要）
+*/
 // You are given an integer array nums and an integer k.
 
 // In one operation, you can pick two numbers from the array whose sum equals k and remove them from the array.
 
 // Return the maximum number of operations you can perform on the array.
 
- 
+
 
 // Example 1:
 
@@ -21,7 +29,7 @@
 // Explanation: Starting with nums = [3,1,3,4,3]:
 // - Remove the first two 3's, then nums = [1,4,3]
 // There are no more pairs that sum up to 6, hence a total of 1 operation.
- 
+
 
 // Constraints:
 

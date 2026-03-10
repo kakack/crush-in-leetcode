@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 235 - Lowest Common Ancestor of a Binary Search Tree
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+"""
+r"""
 @author: Kai Chen
 @file: 235-Lowest Common Ancestor of a Binary Search Tree.py
 @time: 2020/8/14 11:28
@@ -11,7 +19,7 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
 Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]
 
 
- 
+
 
 Example 1:
 
@@ -23,7 +31,7 @@ Example 2:
 Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
 Output: 2
 Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
- 
+
 
 Constraints:
 

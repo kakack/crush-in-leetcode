@@ -1,8 +1,16 @@
+/*
+LeetCode 215 - Kth Largest Element in an Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer array nums and an integer k, return the kth largest element in the array.
 
 // Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
- 
+
 
 // Example 1:
 
@@ -12,7 +20,7 @@
 
 // Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
 // Output: 4
- 
+
 
 // Constraints:
 

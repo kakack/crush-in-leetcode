@@ -1,3 +1,11 @@
+/*
+LeetCode 117 - Populating Next Right Pointers in Each Node II
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Given a binary tree
 
 // struct Node {
@@ -10,7 +18,7 @@
 
 // Initially, all next pointers are set to NULL.
 
- 
+
 
 // Example 1:
 
@@ -22,13 +30,13 @@
 
 // Input: root = []
 // Output: []
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [0, 6000].
 // -100 <= Node.val <= 100
- 
+
 
 // Follow-up:
 

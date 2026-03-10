@@ -1,4 +1,12 @@
 /*
+LeetCode 160 - Intersection of Two Linked Lists
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
+/*
 Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
 
 For example, the following two linked lists begin to intersect at node c1:
@@ -74,11 +82,11 @@ public:
         if (lenA > lenB) {
             for (int i = 0; i < dis; i++) {
                 pa = pa->next;
-            } 
+            }
         } else {
             for (int i = 0; i < dis; i++) {
                 pb = pb->next;
-            } 
+            }
         }
         while (pa != pb) {
             pa = pa->next;

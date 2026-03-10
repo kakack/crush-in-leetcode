@@ -1,3 +1,11 @@
+/*
+LeetCode 36 - Valid Sudoku
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
 // Each row must contain the digits 1-9 without repetition.
@@ -7,12 +15,12 @@
 
 // A Sudoku board (partially filled) could be valid but is not necessarily solvable.
 // Only the filled cells need to be validated according to the mentioned rules.
- 
+
 
 // Example 1:
 
 
-// Input: board = 
+// Input: board =
 // [["5","3",".",".","7",".",".",".","."]
 // ,["6",".",".","1","9","5",".",".","."]
 // ,[".","9","8",".",".",".",".","6","."]
@@ -25,7 +33,7 @@
 // Output: true
 // Example 2:
 
-// Input: board = 
+// Input: board =
 // [["8","3",".",".","7",".",".",".","."]
 // ,["6",".",".","1","9","5",".",".","."]
 // ,[".","9","8",".",".",".",".","6","."]
@@ -37,7 +45,7 @@
 // ,[".",".",".",".","8",".",".","7","9"]]
 // Output: false
 // Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
- 
+
 
 // Constraints:
 

@@ -1,8 +1,16 @@
+/*
+LeetCode 2 - Add Two Numbers
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
 // You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
- 
+
 
 // Example 1:
 
@@ -18,7 +26,7 @@
 
 // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 // Output: [8,9,9,9,0,0,0,1]
- 
+
 
 // Constraints:
 
@@ -28,7 +36,7 @@
 
 /**
  * 妈的C语言创建链表节点真恶心啊
- * 
+ *
  * pre->next = malloc(sizeof(struct ListNode));
  * pre->next->val = carry;
  * pre->next->next = NULL;

@@ -1,3 +1,11 @@
+/*
+LeetCode 328 - Odd Even Linked List
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
 
 // The first node is considered odd, and the second node is even, and so on.
@@ -6,7 +14,7 @@
 
 // You must solve the problem in O(1) extra space complexity and O(n) time complexity.
 
- 
+
 
 // Example 1:
 
@@ -18,7 +26,7 @@
 
 // Input: head = [2,1,3,5,6,4,7]
 // Output: [2,3,6,7,1,5,4]
- 
+
 
 // Constraints:
 

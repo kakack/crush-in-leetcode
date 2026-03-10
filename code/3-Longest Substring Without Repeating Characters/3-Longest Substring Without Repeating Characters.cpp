@@ -1,3 +1,11 @@
+/*
+LeetCode 3 - Longest Substring Without Repeating Characters
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 /*Longest Substring Without Repeating Characters
 Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 
@@ -13,7 +21,7 @@ public:
         for (int i = 0; i < n; i ++) {
             if (i != 0) {
                 mp.erase(s[i - 1]);
-            } 
+            }
             while (start + 1 < n && !mp.count(s[start + 1])) {
                 mp.emplace(s[start + 1]);
                 start ++;

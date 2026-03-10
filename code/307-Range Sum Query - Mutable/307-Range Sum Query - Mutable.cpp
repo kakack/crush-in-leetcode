@@ -1,3 +1,11 @@
+/*
+LeetCode 307 - Range Sum Query - Mutable
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer array nums, handle multiple queries of the following types:
 
 // Update the value of an element in nums.
@@ -7,7 +15,7 @@
 // NumArray(int[] nums) Initializes the object with the integer array nums.
 // void update(int index, int val) Updates the value of nums[index] to be val.
 // int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive (i.e. nums[left] + nums[left + 1] + ... + nums[right]).
- 
+
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 // numArray.sumRange(0, 2); // return 1 + 3 + 5 = 9
 // numArray.update(1, 2);   // nums = [1, 2, 5]
 // numArray.sumRange(0, 2); // return 1 + 2 + 5 = 8
- 
+
 
 // Constraints:
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 380 - Insert Delete GetRandom O(1)
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 Implement the RandomizedSet class:
 
 // RandomizedSet() Initializes the RandomizedSet object.
@@ -6,7 +14,7 @@ Implement the RandomizedSet class:
 // int getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.
 // You must implement the functions of the class such that each function works in average O(1) time complexity.
 
- 
+
 
 // Example 1:
 
@@ -25,7 +33,7 @@ Implement the RandomizedSet class:
 // randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
 // randomizedSet.insert(2); // 2 was already in the set, so return false.
 // randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
- 
+
 
 // Constraints:
 
@@ -105,10 +113,10 @@ void randomizedSetFree(RandomizedSet* obj) {
  * Your RandomizedSet struct will be instantiated and called as such:
  * RandomizedSet* obj = randomizedSetCreate();
  * bool param_1 = randomizedSetInsert(obj, val);
- 
+
  * bool param_2 = randomizedSetRemove(obj, val);
- 
+
  * int param_3 = randomizedSetGetRandom(obj);
- 
+
  * randomizedSetFree(obj);
 */

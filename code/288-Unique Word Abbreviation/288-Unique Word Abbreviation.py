@@ -1,3 +1,11 @@
+"""
+LeetCode 288 - Unique Word Abbreviation
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # The abbreviation of a word is a concatenation of its first letter, the number of characters between the first and last letter, and its last letter. If a word has only two characters, then it is an abbreviation of itself.
 
 # For example:
@@ -11,7 +19,7 @@
 # boolean isUnique(string word) Returns true if either of the following conditions are met (otherwise returns false):
 # There is no word in dictionary whose abbreviation is equal to word's abbreviation.
 # For any word in dictionary whose abbreviation is equal to word's abbreviation, that word and word are the same.
-#  
+#
 
 # Example 1:
 
@@ -28,7 +36,7 @@
 # validWordAbbr.isUnique("cane"); // return false, dictionary word "cake" and word "cane" have the same abbreviation  "c2e" but are not the same.
 # validWordAbbr.isUnique("make"); // return true, no words in the dictionary have the abbreviation "m2e".
 # validWordAbbr.isUnique("cake"); // return true, because "cake" is already in the dictionary and no other word in the dictionary has "c2e" abbreviation.
-#  
+#
 
 # Constraints:
 

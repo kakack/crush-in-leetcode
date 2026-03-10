@@ -1,6 +1,14 @@
+/*
+LeetCode 99 - Recover Binary Search Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // You are given the root of a binary search tree (BST), where the values of exactly two nodes of the tree were swapped by mistake. Recover the tree without changing its structure.
 
- 
+
 
 // Example 1:
 
@@ -14,13 +22,13 @@
 // Input: root = [3,1,4,null,null,2]
 // Output: [2,1,4,null,null,3]
 // Explanation: 2 cannot be in the right subtree of 3 because 2 < 3. Swapping 2 and 3 makes the BST valid.
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [2, 1000].
 // -231 <= Node.val <= 231 - 1
- 
+
 
 // Follow up: A solution using O(n) space is pretty straight-forward. Could you devise a constant O(1) space solution?
 

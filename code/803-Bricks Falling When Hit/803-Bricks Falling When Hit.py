@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 803 - Bricks Falling When Hit
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kai Chen
 @file: 803. Bricks Falling When Hit
 @time: 2021/1/16 9:31
@@ -14,7 +22,7 @@ Return an array result, where each result[i] is the number of bricks that will f
 
 Note that an erasure may refer to a location with no brick, and if it does, no bricks drop.
 
- 
+
 
 Example 1:
 
@@ -48,7 +56,7 @@ Next, we erase the underlined brick at (1,0), resulting in the grid:
  [0,0,0,0]]
 Once again, all remaining bricks are still stable, so no bricks fall.
 Hence the result is [0,0].
- 
+
 
 Constraints:
 
@@ -68,80 +76,80 @@ class UnionFind:
     def __init__(self):
         self.father = {}
         self.size_of_set = {}
-    
+
     def get_size_of_set(self,x):
         """
         获取所在连通块的大小
         """
         return self.size_of_set[self.find(x)]
-    
+
     def find(self,x):
         root = x
-        
+
         while self.father[root] != None:
             root = self.father[root]
-        
+
         # 路径压缩
         while x != root:
             original_father = self.father[x]
             self.father[x] = root
             x = original_father
-        
+
         return root
-    
+
     def is_connected(self,x,y):
         return self.find(x) == self.find(y)
-    
+
     def merge(self,x,y):
         root_x,root_y = self.find(x),self.find(y)
-        
+
         if root_x != root_y:
             self.father[root_x] = root_y
             # 更新根节点连通块数量
             self.size_of_set[root_y] += self.size_of_set[root_x]
             del self.size_of_set[root_x]
-    
+
     def add(self,x):
         if x not in self.father:
             self.father[x] = None
             self.size_of_set[x] = 1
-            
+
 
 class Solution:
     def __init__(self):
         self.CEILING = (-1,-1)
         self.DIRECTION = ((1,0),(-1,0),(0,1),(0,-1))
-    
+
     def initialize(self,uf,m,n,grid,hits):
         """
         初始化
         """
         # 添加天花板
         uf.add(self.CEILING)
-        
+
         # 敲掉所有要敲掉的砖块
         for x,y in hits:
             grid[x][y] -= 1
-        
+
         # 连接，合并剩余的砖块
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == 1:
                     uf.add((i,j))
-       
+
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == 1:
                     self.merge_neighbors(uf,m,n,grid,i,j)
-        
+
         # 与天花板合并
         for j in range(n):
             if grid[0][j] == 1:
                 uf.merge((0,j),self.CEILING)
-    
+
     def is_valid(self,x,y,grid,m,n):
         return 0 <= x < m and 0 <= y < n and grid[x][y] == 1
-    
+
     def merge_neighbors(self,uf,m,n,grid,x,y):
         """
         与上下左右的砖块合并
@@ -151,34 +159,34 @@ class Solution:
             if not self.is_valid(nx,ny,grid,m,n):
                 continue
             uf.merge((x,y),(nx,ny))
-    
+
     def hitBricks(self, grid: List[List[int]], hits: List[List[int]]) -> List[int]:
         uf = UnionFind()
         m,n = len(grid),len(grid[0])
         res = [0] * len(hits)
-        
+
         # 初始化
         self.initialize(uf,m,n,grid,hits)
 
         for i in range(len(hits)-1,-1,-1):
             x,y = hits[i][0],hits[i][1]
-            
+
             # 还原敲击
             grid[x][y] += 1
-            
+
             # 敲的地方原本就不是砖块
             if grid[x][y] != 1:
                 continue
-            
+
             # 敲完以后与天花板连接的数量
             after_hit = uf.get_size_of_set(self.CEILING)
-            
+
             # 填回砖块，合并
             uf.add((x,y))
             self.merge_neighbors(uf,m,n,grid,x,y)
             if x == 0:
                 uf.merge((x,y),self.CEILING)
-            
+
             # 被敲的地方和天花板连接
             if uf.is_connected((x,y),self.CEILING):
                 # 敲之前和天花板连接的数量

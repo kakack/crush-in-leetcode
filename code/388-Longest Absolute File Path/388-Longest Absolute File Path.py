@@ -1,3 +1,11 @@
+"""
+LeetCode 388 - Longest Absolute File Path
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Suppose we have a file system that stores both files and directories. An example of one system is represented in the following picture:
 
 
@@ -19,7 +27,7 @@
 
 # Given a string input representing the file system in the explained format, return the length of the longest absolute path to a file in the abstracted file system. If there is no file in the system, return 0.
 
- 
+
 
 # Example 1:
 
@@ -41,7 +49,7 @@
 # Input: input = "a"
 # Output: 0
 # Explanation: We do not have any files, just a single directory named "a".
- 
+
 
 # Constraints:
 

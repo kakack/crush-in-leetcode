@@ -1,3 +1,11 @@
+/*
+LeetCode 284 - Peeking Iterator
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Design an iterator that supports the peek operation on an existing iterator in addition to the hasNext and the next operations.
 
 // Implement the PeekingIterator class:
@@ -8,7 +16,7 @@
 // int peek() Returns the next element in the array without moving the pointer.
 // Note: Each language may have a different implementation of the constructor and Iterator, but they all support the int next() and boolean hasNext() functions.
 
- 
+
 
 // Example 1:
 
@@ -25,7 +33,7 @@
 // peekingIterator.next();    // return 2, the pointer moves to the next element [1,2,3]
 // peekingIterator.next();    // return 3, the pointer moves to the next element [1,2,3]
 // peekingIterator.hasNext(); // return False
- 
+
 
 // Constraints:
 
@@ -33,7 +41,7 @@
 // 1 <= nums[i] <= 1000
 // All the calls to next and peek are valid.
 // At most 1000 calls will be made to next, hasNext, and peek.
- 
+
 
 // Follow up: How would you extend your design to be generic and work with all types, not just integer?
 
@@ -72,7 +80,7 @@ int next(struct PeekingIterator* obj) {
     if (obj->flag) {
         obj->flag = obj->iterator->hasNext();
         obj->nextElement = obj->iterator->next();
-    } 
+    }
     return ret;
 }
 

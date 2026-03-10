@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 230 - Kth Smallest Element in a BST
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+"""
+r"""
 @author: Kai Chen
 @file: 230-Kth Smallest Element in a BST.py
 @time: 2020/11/11 9:02

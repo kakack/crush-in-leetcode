@@ -1,3 +1,11 @@
+/*
+LeetCode 166 - Fraction to Recurring Decimal
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
 
 // If the fractional part is repeating, enclose the repeating part in parentheses.
@@ -6,7 +14,7 @@
 
 // It is guaranteed that the length of the answer string is less than 104 for all the given inputs.
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 
 // Input: numerator = 4, denominator = 333
 // Output: "0.(012)"
- 
+
 
 // Constraints:
 
@@ -41,7 +49,7 @@ public:
             res += "-";
         }
         // bit 是用来判断正负和0的
-        
+
         long long pre = num / den;
         res += to_string(pre);
         // 整数部分

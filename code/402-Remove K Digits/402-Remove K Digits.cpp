@@ -1,4 +1,12 @@
 /*
+LeetCode 402 - Remove K Digits
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
 
 Note:
@@ -49,5 +57,5 @@ public:
             ans += digits[i];
         }
         return ans == "" ? "0": ans;
-    }  
+    }
 };

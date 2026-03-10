@@ -1,7 +1,15 @@
+"""
+LeetCode 1122 - Relative Sort Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Given two arrays arr1 and arr2, the elements of arr2 are distinct,
 # and all elements in arr2 are also in arr1.
 #
-# Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2. 
+# Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2.
 # Elements that don't appear in arr2 should be placed at the end of arr1 in ascending order.
 #
 # Example 1:

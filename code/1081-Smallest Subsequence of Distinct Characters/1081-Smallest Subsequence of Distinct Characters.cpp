@@ -1,9 +1,17 @@
 /*
+LeetCode 1081 - Smallest Subsequence of Distinct Characters
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 Return the lexicographically smallest subsequence of s that contains all the distinct characters of s exactly once.
 
 Note: This question is the same as 316: https://leetcode.com/problems/remove-duplicate-letters/
 
- 
+
 
 Example 1:
 
@@ -13,7 +21,7 @@ Example 2:
 
 Input: s = "cbacdcbc"
 Output: "acdb"
- 
+
 
 Constraints:
 

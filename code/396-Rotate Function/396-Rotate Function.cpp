@@ -1,3 +1,11 @@
+/*
+LeetCode 396 - Rotate Function
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given an integer array nums of length n.
 
 // Assume arrk to be an array obtained by rotating nums by k positions clock-wise. We define the rotation function F on nums as follow:
@@ -7,7 +15,7 @@
 
 // The test cases are generated so that the answer fits in a 32-bit integer.
 
- 
+
 
 // Example 1:
 
@@ -23,7 +31,7 @@
 
 // Input: nums = [100]
 // Output: 0
- 
+
 
 // Constraints:
 

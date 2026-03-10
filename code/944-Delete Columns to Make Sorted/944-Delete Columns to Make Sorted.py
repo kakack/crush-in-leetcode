@@ -1,3 +1,11 @@
+"""
+LeetCode 944 - Delete Columns to Make Sorted
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given an array of n strings strs, all of the same length.
 
 # The strings can be arranged such that there is one on each line, making a grid. For example, strs = ["abc", "bce", "cae"] can be arranged as:
@@ -9,7 +17,7 @@
 
 # Return the number of columns that you will delete.
 
- 
+
 
 # Example 1:
 
@@ -37,7 +45,7 @@
 #   wvu
 #   tsr
 # All 3 columns are not sorted, so you will delete all 3.
- 
+
 
 # Constraints:
 

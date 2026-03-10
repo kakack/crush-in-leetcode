@@ -1,3 +1,11 @@
+/*
+LeetCode 202 - Happy Number
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Write an algorithm to determine if a number n is happy.
 
 // A happy number is a number defined by the following process:
@@ -7,7 +15,7 @@
 // Those numbers for which this process ends in 1 are happy.
 // Return true if n is a happy number, and false if not.
 
- 
+
 
 // Example 1:
 
@@ -22,7 +30,7 @@
 
 // Input: n = 2
 // Output: false
- 
+
 
 // Constraints:
 

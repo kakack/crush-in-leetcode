@@ -1,3 +1,11 @@
+/*
+LeetCode 288 - Unique Word Abbreviation
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 The abbreviation of a word is a concatenation of its first letter, the number of characters between the first and last letter, and its last letter. If a word has only two characters, then it is an abbreviation of itself.
 
 // For example:
@@ -11,7 +19,7 @@ The abbreviation of a word is a concatenation of its first letter, the number of
 // boolean isUnique(string word) Returns true if either of the following conditions are met (otherwise returns false):
 // There is no word in dictionary whose abbreviation is equal to word's abbreviation.
 // For any word in dictionary whose abbreviation is equal to word's abbreviation, that word and word are the same.
-//  
+//
 
 // Example 1:
 
@@ -28,7 +36,7 @@ The abbreviation of a word is a concatenation of its first letter, the number of
 // validWordAbbr.isUnique("cane"); // return false, dictionary word "cake" and word "cane" have the same abbreviation  "c2e" but are not the same.
 // validWordAbbr.isUnique("make"); // return true, no words in the dictionary have the abbreviation "m2e".
 // validWordAbbr.isUnique("cake"); // return true, because "cake" is already in the dictionary and no other word in the dictionary has "c2e" abbreviation.
-//  
+//
 
 // Constraints:
 
@@ -116,6 +124,6 @@ void validWordAbbrFree(ValidWordAbbr* obj) {
  * Your ValidWordAbbr struct will be instantiated and called as such:
  * ValidWordAbbr* obj = validWordAbbrCreate(dictionary, dictionarySize);
  * bool param_1 = validWordAbbrIsUnique(obj, word);
- 
+
  * validWordAbbrFree(obj);
 */

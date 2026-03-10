@@ -1,4 +1,12 @@
 /*
+LeetCode 993 - Cousins in Binary Tree
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/*
 In a binary tree, the root node is at depth 0, and children of each depth k node are at depth k+1.
 
 Two nodes of a binary tree are cousins if they have the same depth, but have different parents.
@@ -73,7 +81,7 @@ public:
             return;
         }
         dfs(node->right, depth + 1, node);
-    } 
+    }
     bool isCousins_(TreeNode* root, int x, int y) {
         this->x = x;
         this->y = y;

@@ -1,6 +1,14 @@
+/*
+LeetCode 812 - Largest Triangle Area
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an array of points on the X-Y plane points where points[i] = [xi, yi], return the area of the largest triangle that can be formed by any three different points. Answers within 10-5 of the actual answer will be accepted.
 
- 
+
 
 // Example 1:
 
@@ -12,7 +20,7 @@
 
 // Input: points = [[1,0],[0,0],[0,1]]
 // Output: 0.50000
- 
+
 
 // Constraints:
 

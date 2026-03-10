@@ -1,10 +1,18 @@
+/*
+LeetCode 398 - Random Pick Index
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Given an integer array nums with possible duplicates, randomly output the index of a given target number. You can assume that the given target number must exist in the array.
 
 // Implement the Solution class:
 
 // Solution(int[] nums) Initializes the object with the array nums.
 // int pick(int target) Picks a random index i from nums where nums[i] == target. If there are multiple valid i's, then each index should have an equal probability of returning.
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 // solution.pick(3); // It should return either index 2, 3, or 4 randomly. Each index should have equal probability of returning.
 // solution.pick(1); // It should return 0. Since in the array only nums[0] is equal to 1.
 // solution.pick(3); // It should return either index 2, 3, or 4 randomly. Each index should have equal probability of returning.
- 
+
 
 // Constraints:
 
@@ -36,7 +44,7 @@ public:
             pos[nums[i]].push_back(i);
         }
     }
-    
+
     int pick(int target) {
         auto &indices = pos[target];
         return indices[rand() % indices.size()];
@@ -48,7 +56,7 @@ class Solution {
     vector<int> &nums;
 public:
     Solution(vector<int>& nums) : nums(nums)  {}
-    
+
     int pick(int target) {
         int ans = 0, cnt = 0;
         for (int i = 0; i < nums.size(); i ++) {

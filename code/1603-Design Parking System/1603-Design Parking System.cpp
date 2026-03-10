@@ -1,4 +1,12 @@
 /*
+LeetCode 1603 - Design Parking System
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
 
 Implement the ParkingSystem class:
@@ -42,7 +50,7 @@ public:
         curMid = 0;
         curSml = 0;
     }
-    
+
     bool addCar(int carType) {
         if (carType == 1 && curBig < bigCar) {
             curBig ++;

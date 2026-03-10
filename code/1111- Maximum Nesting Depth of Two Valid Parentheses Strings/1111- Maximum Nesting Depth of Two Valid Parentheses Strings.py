@@ -1,3 +1,11 @@
+"""
+LeetCode 1111 - Maximum Nesting Depth of Two Valid Parentheses Strings
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # A string is a valid parentheses string (denoted VPS) if and only if it consists of "(" and ")" characters only, and:
 
 # It is the empty string, or
@@ -16,7 +24,7 @@
 # Now choose any such A and B such that max(depth(A),
 # depth(B)) is the minimum possible value.
 
-# Return an answer array (of length seq.length) that encodes such a choice of A and B:  answer[i] = 0 if seq[i] is part of A, else answer[i] = 1. 
+# Return an answer array (of length seq.length) that encodes such a choice of A and B:  answer[i] = 0 if seq[i] is part of A, else answer[i] = 1.
 # Note that even though multiple answers may exist, you may return any of them.
 
 

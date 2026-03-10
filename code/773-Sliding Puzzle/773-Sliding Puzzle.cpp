@@ -1,4 +1,12 @@
 /*
+LeetCode 773 - Sliding Puzzle
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/*
 On a 2x3 board, there are 5 tiles represented by the integers 1 through 5, and an empty square represented by 0.
 
 A move consists of choosing 0 and a 4-directionally adjacent number and swapping it.

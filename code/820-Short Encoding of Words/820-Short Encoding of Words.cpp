@@ -1,3 +1,11 @@
+/*
+LeetCode 820 - Short Encoding of Words
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // A valid encoding of an array of words is any reference string s and array of indices indices such that:
 
 // words.length == indices.length
@@ -5,7 +13,7 @@
 // For each index indices[i], the substring of s starting from indices[i] and up to (but not including) the next '#' character is equal to words[i].
 // Given an array of words, return the length of the shortest reference string s possible of any valid encoding of words.
 
- 
+
 
 // Example 1:
 
@@ -20,7 +28,7 @@
 // Input: words = ["t"]
 // Output: 2
 // Explanation: A valid encoding would be s = "t#" and indices = [0].
- 
+
 
 // Constraints:
 

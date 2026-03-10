@@ -1,3 +1,11 @@
+"""
+LeetCode 146 - LRU Cache
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
 # Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
 #
 # get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.

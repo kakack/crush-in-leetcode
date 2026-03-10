@@ -1,3 +1,11 @@
+/*
+LeetCode 2043 - Simple Bank System
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You have been tasked with writing a program for a popular bank that will automate all its incoming transactions (transfer, deposit, and withdraw). The bank has n accounts numbered from 1 to n. The initial balance of each account is stored in a 0-indexed integer array balance, with the (i + 1)th account having an initial balance of balance[i].
 
 // Execute all the valid transactions. A transaction is valid if:
@@ -10,7 +18,7 @@
 // boolean transfer(int account1, int account2, long money) Transfers money dollars from the account numbered account1 to the account numbered account2. Return true if the transaction was successful, false otherwise.
 // boolean deposit(int account, long money) Deposit money dollars into the account numbered account. Return true if the transaction was successful, false otherwise.
 // boolean withdraw(int account, long money) Withdraw money dollars from the account numbered account. Return true if the transaction was successful, false otherwise.
- 
+
 
 // Example 1:
 
@@ -31,7 +39,7 @@
 // bank.transfer(3, 4, 15); // return false, the current balance of account 3 is $10,
 //                          // so it is invalid to transfer $15 from it.
 // bank.withdraw(10, 50);   // return false, it is invalid because account 10 does not exist.
- 
+
 
 // Constraints:
 
@@ -92,10 +100,10 @@ void bankFree(Bank* obj) {
  * Your Bank struct will be instantiated and called as such:
  * Bank* obj = bankCreate(balance, balanceSize);
  * bool param_1 = bankTransfer(obj, account1, account2, money);
- 
+
  * bool param_2 = bankDeposit(obj, account, money);
- 
+
  * bool param_3 = bankWithdraw(obj, account, money);
- 
+
  * bankFree(obj);
 */

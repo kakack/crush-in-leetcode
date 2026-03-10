@@ -1,4 +1,12 @@
 /*
+LeetCode 26 - Remove Duplicates from Sorted Array
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -19,7 +27,7 @@ int len = removeDuplicates(nums);
 for (int i = 0; i < len; i++) {
     print(nums[i]);
 }
- 
+
 
 Example 1:
 
@@ -31,7 +39,7 @@ Example 2:
 Input: nums = [0,0,1,1,1,2,2,3,3,4]
 Output: 5, nums = [0,1,2,3,4]
 Explanation: Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively. It doesn't matter what values are set beyond the returned length.
- 
+
 
 Constraints:
 
@@ -51,7 +59,7 @@ public:
         if(n==0){
             return 0;
         }
-         int index=0; 
+         int index=0;
          for(int i=1;i<n;i++){
             if(nums[index]!=nums[i]){
                 nums[++index]=nums[i];

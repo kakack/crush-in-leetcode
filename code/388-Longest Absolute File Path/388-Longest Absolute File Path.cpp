@@ -1,3 +1,11 @@
+/*
+LeetCode 388 - Longest Absolute File Path
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Suppose we have a file system that stores both files and directories. An example of one system is represented in the following picture:
 
 
@@ -19,7 +27,7 @@
 
 // Given a string input representing the file system in the explained format, return the length of the longest absolute path to a file in the abstracted file system. If there is no file in the system, return 0.
 
- 
+
 
 // Example 1:
 
@@ -41,7 +49,7 @@
 // Input: input = "a"
 // Output: 0
 // Explanation: We do not have any files, just a single directory named "a".
- 
+
 
 // Constraints:
 
@@ -63,9 +71,9 @@ public:
                 pos++;
                 depth++;
             }
-            /* 统计当前文件名的长度 */   
-            int len = 0; 
-            bool isFile = false;     
+            /* 统计当前文件名的长度 */
+            int len = 0;
+            bool isFile = false;
             while (pos < n && input[pos] != '\n') {
                 if (input[pos] == '.') {
                     isFile = true;
@@ -106,9 +114,9 @@ public:
                 pos++;
                 depth++;
             }
-            /* 统计当前文件名的长度 */   
-            int len = 0; 
-            bool isFile = false;     
+            /* 统计当前文件名的长度 */
+            int len = 0;
+            bool isFile = false;
             while (pos < n && input[pos] != '\n') {
                 if (input[pos] == '.') {
                     isFile = true;

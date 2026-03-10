@@ -1,3 +1,11 @@
+/*
+LeetCode 871 - Minimum Number of Refueling Stops
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // A car travels from a starting position to a destination which is target miles east of the starting position.
 
 // There are gas stations along the way. The gas stations are represented as an array stations where stations[i] = [positioni, fueli] indicates that the ith gas station is positioni miles east of the starting position and has fueli liters of gas.
@@ -8,7 +16,7 @@
 
 // Note that if the car reaches a gas station with 0 fuel left, the car can still refuel there. If the car reaches the destination with 0 fuel left, it is still considered to have arrived.
 
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 // Then, we drive from position 10 to position 60 (expending 50 liters of fuel),
 // and refuel from 10 liters to 50 liters of gas.  We then drive to and reach the target.
 // We made 2 refueling stops along the way, so we return 2.
- 
+
 
 // Constraints:
 

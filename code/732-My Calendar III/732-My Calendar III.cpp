@@ -1,3 +1,11 @@
+/*
+LeetCode 732 - My Calendar III
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // A k-booking happens when k events have some non-empty intersection (i.e., there is some time that is common to all k events.)
 
 // You are given some events [start, end), after each given event, return an integer k representing the maximum k-booking between all the previous events.
@@ -6,7 +14,7 @@
 
 // MyCalendarThree() Initializes the object.
 // int book(int start, int end) Returns an integer k representing the largest integer such that there exists a k-booking in the calendar.
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 // myCalendarThree.book(5, 15); // return 3, The remaining events cause the maximum K-booking to be only a 3-booking.
 // myCalendarThree.book(5, 10); // return 3
 // myCalendarThree.book(25, 55); // return 3
- 
+
 
 // Constraints:
 
@@ -34,9 +42,9 @@
 class MyCalendarThree {
 public:
     MyCalendarThree() {
-        
+
     }
-    
+
     int book(int start, int end) {
         int ans = 0;
         int maxBook = 0;

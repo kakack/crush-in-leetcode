@@ -1,10 +1,18 @@
+/*
+LeetCode 88 - Merge Sorted Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
 // Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
 // The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
- 
+
 
 // Example 1:
 
@@ -25,7 +33,7 @@
 // Explanation: The arrays we are merging are [] and [1].
 // The result of the merge is [1].
 // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
- 
+
 
 // Constraints:
 
@@ -34,7 +42,7 @@
 // 0 <= m, n <= 200
 // 1 <= m + n <= 200
 // -10^9 <= nums1[i], nums2[j] <= 10^9
- 
+
 
 // Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 

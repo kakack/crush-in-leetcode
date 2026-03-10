@@ -1,8 +1,16 @@
+/*
+LeetCode 508 - Most Frequent Subtree Sum
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
 // Given the root of a binary tree, return the most frequent subtree sum. If there is a tie, return all the values with the highest frequency in any order.
 
 // The subtree sum of a node is defined as the sum of all the node values formed by the subtree rooted at that node (including the node itself).
 
- 
+
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 
 // Input: root = [5,2,-5]
 // Output: [2]
- 
+
 
 // Constraints:
 

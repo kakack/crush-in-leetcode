@@ -1,3 +1,11 @@
+"""
+LeetCode 190 - Reverse Bits
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # Reverse bits of a given 32 bits unsigned integer.
 # Example 1:
 #
@@ -9,13 +17,13 @@
 # Input: 11111111111111111111111111111101
 # Output: 10111111111111111111111111111111
 # Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
-#  
+#
 #
 # Note:
 #
 # Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as signed integer type and should not affect your implementation, as the internal binary representation of the integer is the same whether it is signed or unsigned.
 # In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above the input represents the signed integer -3 and the output represents the signed integer -1073741825.
-#  
+#
 #
 # Follow up:
 #

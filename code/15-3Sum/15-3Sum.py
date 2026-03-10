@@ -1,3 +1,11 @@
+"""
+LeetCode 15 - 3Sum
+
+解题步骤（自动整理）
+1. 先排序以便利用有序性缩小搜索空间
+2. 使用双指针从两端/区间收缩，按比较结果移动指针
+3. 在遍历过程中维护最优解并处理重复元素（如需要）
+"""
 # Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 #
 # Note:

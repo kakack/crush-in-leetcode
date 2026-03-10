@@ -1,27 +1,35 @@
+"""
+LeetCode 241 - Different Ways to Add Parentheses
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # Given a string expression of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. You may return the answer in any order.
 
 # The test cases are generated such that the output values fit in a 32-bit integer and the number of different results does not exceed 104.
 
- 
+
 
 # Example 1:
 
 # Input: expression = "2-1-1"
 # Output: [0,2]
 # Explanation:
-# ((2-1)-1) = 0 
+# ((2-1)-1) = 0
 # (2-(1-1)) = 2
 # Example 2:
 
 # Input: expression = "2*3-4*5"
 # Output: [-34,-14,-10,-10,10]
 # Explanation:
-# (2*(3-(4*5))) = -34 
-# ((2*3)-(4*5)) = -14 
-# ((2*(3-4))*5) = -10 
-# (2*((3-4)*5)) = -10 
+# (2*(3-(4*5))) = -34
+# ((2*3)-(4*5)) = -14
+# ((2*(3-4))*5) = -10
+# (2*((3-4)*5)) = -10
 # (((2*3)-4)*5) = 10
- 
+
 
 # Constraints:
 
@@ -71,4 +79,3 @@ class Solution:
                                 dp[l][r].append(x * y)
         return dp[0][-1]
 
-        

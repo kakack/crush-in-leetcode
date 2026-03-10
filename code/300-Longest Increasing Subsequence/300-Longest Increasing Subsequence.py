@@ -1,8 +1,16 @@
+"""
+LeetCode 300 - Longest Increasing Subsequence
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # Given an integer array nums, return the length of the longest strictly increasing subsequence.
 
 # A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, [3,6,2,7] is a subsequence of the array [0,3,1,6,2,2,7].
 
- 
+
 
 # Example 1:
 
@@ -17,13 +25,13 @@
 
 # Input: nums = [7,7,7,7,7,7,7]
 # Output: 1
- 
+
 
 # Constraints:
 
 # 1 <= nums.length <= 2500
 # -10^4 <= nums[i] <= 10^4
- 
+
 
 # Follow up: Can you come up with an algorithm that runs in O(n log(n)) time complexity?
 

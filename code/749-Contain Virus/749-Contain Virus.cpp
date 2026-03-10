@@ -1,3 +1,11 @@
+/*
+LeetCode 749 - Contain Virus
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // A virus is spreading rapidly, and your task is to quarantine the infected area by installing walls.
 
 // The world is modeled as an m x n binary grid isInfected, where isInfected[i][j] == 0 represents uninfected cells, and isInfected[i][j] == 1 represents cells contaminated with the virus. A wall (and only one wall) can be installed between any two 4-directionally adjacent cells, on the shared boundary.
@@ -6,7 +14,7 @@
 
 // Return the number of walls used to quarantine all the infected regions. If the world will become fully infected, return the number of walls used.
 
- 
+
 
 // Example 1:
 
@@ -30,7 +38,7 @@
 // Input: isInfected = [[1,1,1,0,0,0,0,0,0],[1,0,1,0,1,1,1,1,1],[1,1,1,0,0,0,0,0,0]]
 // Output: 13
 // Explanation: The region on the left only builds two new walls.
- 
+
 
 // Constraints:
 
@@ -86,7 +94,7 @@ public:
                     }
                 }
             }
-            
+
             if (neighbors.empty()) {
                 break;
             }

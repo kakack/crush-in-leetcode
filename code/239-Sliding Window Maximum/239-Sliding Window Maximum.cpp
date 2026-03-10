@@ -1,15 +1,23 @@
 /*
+LeetCode 239 - Sliding Window Maximum
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/*
 You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
 
 Return the max sliding window.
 
- 
+
 
 Example 1:
 
 Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
 Output: [3,3,5,5,6,7]
-Explanation: 
+Explanation:
 Window position                Max
 ---------------               -----
 [1  3  -1] -3  5  3  6  7       3
@@ -34,7 +42,7 @@ Example 5:
 
 Input: nums = [4,-2], k = 2
 Output: [4]
- 
+
 
 Constraints:
 

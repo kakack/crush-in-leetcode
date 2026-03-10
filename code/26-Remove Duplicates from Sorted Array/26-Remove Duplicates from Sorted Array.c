@@ -1,3 +1,11 @@
+/*
+LeetCode 26 - Remove Duplicates from Sorted Array
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 
 // Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
@@ -21,7 +29,7 @@
 // }
 // If all assertions pass, then your solution will be accepted.
 
- 
+
 
 // Example 1:
 
@@ -35,7 +43,7 @@
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
- 
+
 
 // Constraints:
 

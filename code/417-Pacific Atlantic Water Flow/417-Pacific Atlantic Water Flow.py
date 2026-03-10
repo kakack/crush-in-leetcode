@@ -1,3 +1,11 @@
+"""
+LeetCode 417 - Pacific Atlantic Water Flow
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # There is an m x n rectangular island that borders both the Pacific Ocean and Atlantic Ocean. The Pacific Ocean touches the island's left and top edges, and the Atlantic Ocean touches the island's right and bottom edges.
 
 # The island is partitioned into a grid of square cells. You are given an m x n integer matrix heights where heights[r][c] represents the height above sea level of the cell at coordinate (r, c).
@@ -6,7 +14,7 @@
 
 # Return a 2D list of grid coordinates result where result[i] = [ri, ci] denotes that rain water can flow from cell (ri, ci) to both the Pacific and Atlantic oceans.
 
- 
+
 
 # Example 1:
 
@@ -17,7 +25,7 @@
 
 # Input: heights = [[2,1],[1,2]]
 # Output: [[0,0],[0,1],[1,0],[1,1]]
- 
+
 
 # Constraints:
 
@@ -32,20 +40,19 @@ class Solution:
         m, n = len(heights), len(heights[0])
         def search(starts: List[Tuple[int, int]]) -> Set[Tuple[int, int]]:
             visited = set()
-            
+
             def dfs(x: int, y: int):
                 if (x, y) in visited:
-                    return 
+                    return
                 visited.add((x, y))
                 for direction in directions:
                     nx, ny = x + direction[0], y + direction[1]
                     if 0 <= x < m and 0 <= y < n and height[nx][ny] >= height[x][y]:
                         dfs(nx, ny)
-            
+
             for x, y in starts:
                 dfs(x, y)
             return visited
         pacific = [(0, i) for i in range(n)] + [(i, 0) for i in range(1, m)]
         atlantic = [(m - 1, i) for i in range(n)] + [(i, n - 1) for i in range(m - 1)]
-        return list(map(list, search(pacific) & seach(atlantic)))       
-            
+        return list(map(list, search(pacific) & seach(atlantic)))

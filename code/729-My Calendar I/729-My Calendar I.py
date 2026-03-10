@@ -1,3 +1,11 @@
+"""
+LeetCode 729 - My Calendar I
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a double booking.
 
 # A double booking happens when two events have some non-empty intersection (i.e., some moment is common to both events.).
@@ -8,7 +16,7 @@
 
 # MyCalendar() Initializes the calendar object.
 # boolean book(int start, int end) Returns true if the event can be added to the calendar successfully without causing a double booking. Otherwise, return false and do not add the event to the calendar.
- 
+
 
 # Example 1:
 
@@ -23,7 +31,7 @@
 # myCalendar.book(10, 20); // return True
 # myCalendar.book(15, 25); // return False, It can not be booked because time 15 is already booked by another event.
 # myCalendar.book(20, 30); // return True, The event can be booked, as the first event takes every time less than 20, but not including 20.
- 
+
 
 # Constraints:
 

@@ -1,10 +1,18 @@
+/*
+LeetCode 430 - Flatten a Multilevel Doubly Linked List
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // You are given a doubly linked list, which contains nodes that have a next pointer, a previous pointer, and an additional child pointer. This child pointer may or may not point to a separate doubly linked list, also containing these special nodes. These child lists may have one or more children of their own, and so on, to produce a multilevel data structure as shown in the example below.
 
 // Given the head of the first level of the list, flatten the list so that all the nodes appear in a single-level, doubly linked list. Let curr be a node with a child list. The nodes in the child list should appear after curr and before curr.next in the flattened list.
 
 // Return the head of the flattened list. The nodes in the list must have all of their child pointers set to null.
 
- 
+
 
 // Example 1:
 
@@ -27,13 +35,13 @@
 // Input: head = []
 // Output: []
 // Explanation: There could be empty list in the input.
- 
+
 
 // Constraints:
 
 // The number of Nodes will not exceed 1000.
 // 1 <= Node.val <= 105
- 
+
 
 // How the multilevel linked list is represented in test cases:
 
@@ -74,22 +82,22 @@ public:
 class Solution {
 public:
     Node* flatten(Node* head) {
-        Node *cur = head; 
+        Node *cur = head;
         Node *next;
         while(cur) {
             next = cur->next;
             if (cur->child) {
                 cur->next = flatten(cur->child);
-                cur->next->prev = cur; 
+                cur->next->prev = cur;
                 cur->child = NULL;
                 while (cur->next) { cur = cur->next; }
             }
             cur->next = next;
-            if (next) { 
-                next->prev = cur; 
+            if (next) {
+                next->prev = cur;
             }
             cur = next;
         }
-        return head; 
+        return head;
     }
 };

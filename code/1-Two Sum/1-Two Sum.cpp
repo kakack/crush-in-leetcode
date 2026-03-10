@@ -1,4 +1,12 @@
 /*
+LeetCode 1 - Two Sum
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 Two Sum
 Given an array of integers, find two numbers such that they add up to a specific target number.
 

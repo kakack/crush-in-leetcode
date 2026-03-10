@@ -1,3 +1,11 @@
+/*
+LeetCode 249 - Group Shifted Strings
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // We can shift a string by shifting each of its letters to its successive letter.
 
 // For example, "abc" can be shifted to be "bcd".
@@ -6,7 +14,7 @@
 // For example, we can keep shifting "abc" to form the sequence: "abc" -> "bcd" -> ... -> "xyz".
 // Given an array of strings strings, group all strings[i] that belong to the same shifting sequence. You may return the answer in any order.
 
-//  
+//
 
 // Example 1:
 
@@ -16,7 +24,7 @@
 
 // Input: strings = ["a"]
 // Output: [["a"]]
-//  
+//
 
 // Constraints:
 
@@ -38,7 +46,7 @@ char * processStr(char * str) {
         res[i] = 'a' + (str[i] -'a' + 26 - diff) % 26;
     }
     res[n] = '\0';
-    return res; 
+    return res;
 }
 
 typedef struct {
@@ -57,7 +65,7 @@ char *** groupStrings(char ** strings, int stringsSize, int* returnSize, int** r
         char * keyStr = processStr(strings[i]);
         int len = strlen(strings[i]);
         HashItem * pEntry = NULL;
-        HASH_FIND_STR(strMap, keyStr, pEntry); 
+        HASH_FIND_STR(strMap, keyStr, pEntry);
         if (pEntry == NULL) {
             res[*returnSize] = (char**)malloc(sizeof(char*) * stringsSize);
             (*returnColumnSizes)[*returnSize] = malloc(sizeof(int) * stringsSize);

@@ -1,3 +1,11 @@
+"""
+LeetCode 1217 - Minimum Cost to Move Chips to The Same Position
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # We have n chips, where the position of the ith chip is position[i].
 
 # We need to move all the chips to the same position. In one step, we can change the position of the ith chip from position[i] to:
@@ -6,7 +14,7 @@
 # position[i] + 1 or position[i] - 1 with cost = 1.
 # Return the minimum cost needed to move all the chips to the same position.
 
- 
+
 
 # Example 1:
 
@@ -26,7 +34,7 @@
 
 # Input: position = [1,1000000000]
 # Output: 1
- 
+
 
 # Constraints:
 

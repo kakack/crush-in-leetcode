@@ -1,3 +1,11 @@
+/*
+LeetCode 359 - Logger Rate Limiter
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // Design a logger system that receives a stream of messages along with their timestamps. Each unique message should only be printed at most every 10 seconds (i.e. a message printed at timestamp t will prevent other identical messages from being printed until timestamp t + 10).
 
 // All messages will come in chronological order. Several messages may arrive at the same timestamp.
@@ -6,7 +14,7 @@
 
 // Logger() Initializes the logger object.
 // bool shouldPrintMessage(int timestamp, string message) Returns true if the message should be printed in the given timestamp, otherwise returns false.
-//  
+//
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 // logger.shouldPrintMessage(8, "bar");  // 8 < 12, return false
 // logger.shouldPrintMessage(10, "foo"); // 10 < 11, return false
 // logger.shouldPrintMessage(11, "foo"); // 11 >= 11, return true, next allowed timestamp for "foo" is 11 + 10 = 21
-//  
+//
 
 // Constraints:
 
@@ -40,7 +48,7 @@ public:
     Logger() {
 
     }
-    
+
     bool shouldPrintMessage(int timestamp, string message) {
         if (msgMap.find(message) == msgMap.end()) {
             msgMap[message] = timestamp;

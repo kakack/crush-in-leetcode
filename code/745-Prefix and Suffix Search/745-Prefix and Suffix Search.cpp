@@ -1,10 +1,18 @@
+/*
+LeetCode 745 - Prefix and Suffix Search
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
 // Design a special dictionary that searches the words in it by a prefix and a suffix.
 
 // Implement the WordFilter class:
 
 // WordFilter(string[] words) Initializes the object with the words in the dictionary.
 // f(string pref, string suff) Returns the index of the word in the dictionary, which has the prefix pref and the suffix suff. If there is more than one valid index, return the largest of them. If there is no such word in the dictionary, return -1.
- 
+
 
 // Example 1:
 
@@ -16,7 +24,7 @@
 // Explanation
 // WordFilter wordFilter = new WordFilter(["apple"]);
 // wordFilter.f("a", "e"); // return 0, because the word at index 0 has prefix = "a" and suffix = "e".
- 
+
 
 // Constraints:
 
@@ -42,7 +50,7 @@ public:
             }
         }
     }
-    
+
     int f(string pref, string suff) {
         string target = pref + '#' + suff;
         return dict.count(target) ? dict[target] : -1;

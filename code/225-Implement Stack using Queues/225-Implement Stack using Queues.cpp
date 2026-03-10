@@ -1,3 +1,11 @@
+/*
+LeetCode 225 - Implement Stack using Queues
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
 
 // Implement the MyStack class:
@@ -10,7 +18,7 @@
 
 // You must use only standard operations of a queue, which means that only push to back, peek/pop from front, size and is empty operations are valid.
 // Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue) as long as you use only a queue's standard operations.
- 
+
 
 // Example 1:
 
@@ -27,14 +35,14 @@
 // myStack.top(); // return 2
 // myStack.pop(); // return 2
 // myStack.empty(); // return False
- 
+
 
 // Constraints:
 
 // 1 <= x <= 9
 // At most 100 calls will be made to push, pop, top, and empty.
 // All the calls to pop and top are valid.
- 
+
 
 // Follow-up: Can you implement the stack using only one queue?
 
@@ -56,20 +64,20 @@ public:
             q.pop();
         }
     }
-    
+
     /** Removes the element on top of the stack and returns that element. */
     int pop() {
         int r = q.front();
         q.pop();
         return r;
     }
-    
+
     /** Get the top element. */
     int top() {
         int r = q.front();
         return r;
     }
-    
+
     /** Returns whether the stack is empty. */
     bool empty() {
         return q.empty();

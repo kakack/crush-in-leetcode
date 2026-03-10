@@ -1,4 +1,12 @@
 /*
+LeetCode 33 - Search in Rotated Sorted Array
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Search in Rotated Sorted Array
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 
@@ -13,16 +21,16 @@ class Solution {
 public:
     int search(int A[], int n, int target) {
         int first=0,end=n;
-        
+
         if(n==1&&A[0]==target) return 0;
-        
-        
-        
+
+
+
         while(first!=end){
             int mid=(first+end)/2;
-            
+
             if(A[mid]==target) return mid;
-            
+
             if(A[first]<=A[mid]){
                 if(A[mid]>target&&A[first]<=target){
                     end=mid;
@@ -37,12 +45,12 @@ public:
                 else
                    end=mid;
             }
-           
+
         }
-        
+
         return -1;
-          
-        
-        
+
+
+
     }
 };

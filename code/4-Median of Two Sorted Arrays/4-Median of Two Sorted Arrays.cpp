@@ -1,8 +1,16 @@
+/*
+LeetCode 4 - Median of Two Sorted Arrays
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
 // The overall run time complexity should be O(log (m+n)).
 
- 
+
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 // Input: nums1 = [1,2], nums2 = [3,4]
 // Output: 2.50000
 // Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
- 
+
 
 // Constraints:
 
@@ -51,7 +59,7 @@ public:
                 index2 = newIndex2 + 1;
             }
         }
-    } 
+    }
 
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int totalLength = nums1.size() + nums2.size();

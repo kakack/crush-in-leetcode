@@ -1,34 +1,42 @@
+/*
+LeetCode 1342 - Number of Steps to Reduce a Number to Zero
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 Given an integer num, return the number of steps to reduce it to zero.
 
 // In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
 
- 
+
 
 // Example 1:
 
 // Input: num = 14
 // Output: 6
-// Explanation: 
-// Step 1) 14 is even; divide by 2 and obtain 7. 
+// Explanation:
+// Step 1) 14 is even; divide by 2 and obtain 7.
 // Step 2) 7 is odd; subtract 1 and obtain 6.
-// Step 3) 6 is even; divide by 2 and obtain 3. 
-// Step 4) 3 is odd; subtract 1 and obtain 2. 
-// Step 5) 2 is even; divide by 2 and obtain 1. 
+// Step 3) 6 is even; divide by 2 and obtain 3.
+// Step 4) 3 is odd; subtract 1 and obtain 2.
+// Step 5) 2 is even; divide by 2 and obtain 1.
 // Step 6) 1 is odd; subtract 1 and obtain 0.
 // Example 2:
 
 // Input: num = 8
 // Output: 4
-// Explanation: 
-// Step 1) 8 is even; divide by 2 and obtain 4. 
-// Step 2) 4 is even; divide by 2 and obtain 2. 
-// Step 3) 2 is even; divide by 2 and obtain 1. 
+// Explanation:
+// Step 1) 8 is even; divide by 2 and obtain 4.
+// Step 2) 4 is even; divide by 2 and obtain 2.
+// Step 3) 2 is even; divide by 2 and obtain 1.
 // Step 4) 1 is odd; subtract 1 and obtain 0.
 // Example 3:
 
 // Input: num = 123
 // Output: 12
- 
+
 
 // Constraints:
 

@@ -1,4 +1,12 @@
 /*
+LeetCode 1423 - Maximum Points You Can Obtain from Cards
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
+/*
 There are several cards arranged in a row, and each card has an associated number of points The points are given in the integer array cardPoints.
 
 In one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.

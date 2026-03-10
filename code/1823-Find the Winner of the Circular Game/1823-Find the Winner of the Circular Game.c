@@ -1,3 +1,11 @@
+/*
+LeetCode 1823 - Find the Winner of the Circular Game
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // There are n friends that are playing a game. The friends are sitting in a circle and are numbered from 1 to n in clockwise order. More formally, moving clockwise from the ith friend brings you to the (i+1)th friend for 1 <= i < n, and moving clockwise from the nth friend brings you to the 1st friend.
 
 // The rules of the game are as follows:
@@ -9,7 +17,7 @@
 // Else, the last friend in the circle wins the game.
 // Given the number of friends, n, and an integer k, return the winner of the game.
 
- 
+
 
 // Example 1:
 
@@ -31,7 +39,7 @@
 // Input: n = 6, k = 5
 // Output: 1
 // Explanation: The friends leave in this order: 5, 4, 6, 2, 3. The winner is friend 1.
- 
+
 
 // Constraints:
 

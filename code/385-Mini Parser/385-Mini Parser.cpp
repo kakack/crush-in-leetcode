@@ -1,8 +1,16 @@
+/*
+LeetCode 385 - Mini Parser
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a string s represents the serialization of a nested list, implement a parser to deserialize it and return the deserialized NestedInteger.
 
 // Each element is either an integer or a list whose elements may also be integers or other lists.
 
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 //     i.  An integer containing value 456.
 //     ii. A nested list with one element:
 //          a. An integer containing value 789
- 
+
 
 // Constraints:
 
@@ -59,7 +67,7 @@
  */
 class Solution {
 public:
-    int index = 0; 
+    int index = 0;
     NestedInteger deserialize(string s) {
         if (s[index] == '[') {
             index ++;

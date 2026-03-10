@@ -1,4 +1,12 @@
 /*
+LeetCode 71 - Simplify Path
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
+/*
 Simplify Path
 Given an absolute path for a file (Unix-style), simplify it.
 
@@ -20,7 +28,7 @@ public:
     string simplifyPath(string path) {
         stack<string> s;
 	string str;
-	
+
 	for (int i=0;i<path.size();i++) {
 		if(path[i]=='/'){
 			if(str==".."){
@@ -29,14 +37,14 @@ public:
 			}
 			else if (str!="."&&str!="") {
 				s.push(str);
-				
+
 			}
 			str="";
 		}
 		else{
 			str+=path[i];
 		}
-		
+
 	}
 	 if (str == "..")//处理最后一截的字串
         {
@@ -47,7 +55,7 @@ public:
             s.push(str);
 
      if(s.empty())
-        
+
          return "/";
 
       string result;

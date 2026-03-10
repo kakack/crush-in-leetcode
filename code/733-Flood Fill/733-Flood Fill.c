@@ -1,3 +1,11 @@
+/*
+LeetCode 733 - Flood Fill
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image.
 
 // You are also given three integers sr, sc, and newColor. You should perform a flood fill on the image starting from the pixel image[sr][sc].
@@ -6,7 +14,7 @@
 
 // Return the modified image after performing the flood fill.
 
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 
 // Input: image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2
 // Output: [[2,2,2],[2,2,2]]
- 
+
 
 // Constraints:
 
@@ -54,7 +62,7 @@ int** floodFill(int** image, int imageSize, int* imageColSize, int sr, int sc, i
     }
 
     int originColor = image[sr][sc];
-    
+
     if (originColor != newColor){
         int queue[m * n + 1][2];
         int head = 0;
@@ -65,7 +73,7 @@ int** floodFill(int** image, int imageSize, int* imageColSize, int sr, int sc, i
         while (head < tail) {
             int r = queue[head][0];
             int c = queue[head ++][1];
-            
+
             for (int i = 0; i < 4; i ++) {
                 int nr = r + directions[i][0];
                 int nc = c + directions[i][1];

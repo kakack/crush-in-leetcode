@@ -1,11 +1,19 @@
 /*
+LeetCode 452 - Minimum Number of Arrows to Burst Balloons
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.
 
 An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps traveling up infinitely.
 
 Given an array points where points[i] = [xstart, xend], return the minimum number of arrows that must be shot to burst all balloons.
 
- 
+
 
 Example 1:
 
@@ -28,7 +36,7 @@ Example 5:
 
 Input: points = [[2,3],[2,3]]
 Output: 1
- 
+
 
 Constraints:
 

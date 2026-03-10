@@ -1,10 +1,18 @@
+"""
+LeetCode 1268 - Search Suggestions System
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+"""
 # You are given an array of strings products and a string searchWord.
 
 # Design a system that suggests at most three product names from products after each character of searchWord is typed. Suggested products should have common prefix with searchWord. If there are more than three products with a common prefix return the three lexicographically minimums products.
 
 # Return a list of lists of the suggested products after each character of searchWord is typed.
 
- 
+
 
 # Example 1:
 
@@ -27,7 +35,7 @@
 
 # Input: products = ["bags","baggage","banner","box","cloths"], searchWord = "bags"
 # Output: [["baggage","bags","banner"],["baggage","bags","banner"],["baggage","bags"],["bags"]]
- 
+
 
 # Constraints:
 
@@ -73,4 +81,4 @@ class Solution:
             if char not in root.child:
                 root.child[char] = TrieNode()
             root = root.child[char]
-            root.words.append(word)    
+            root.words.append(word)

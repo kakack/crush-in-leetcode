@@ -1,3 +1,11 @@
+/*
+LeetCode 150 - Evaluate Reverse Polish Notation
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 
 // Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
@@ -6,7 +14,7 @@
 
 // It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
 
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 // = (0 + 17) + 5
 // = 17 + 5
 // = 22
- 
+
 
 // Constraints:
 

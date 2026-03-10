@@ -1,3 +1,11 @@
+/*
+LeetCode 43 - Multiply Strings
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 /*Multiply Strings
 Given two numbers represented as strings, return multiplication of the numbers as a string.
 
@@ -6,10 +14,10 @@ Note: The numbers can be arbitrarily large and are non-negative.
 
 class Solution {
 public:
-    
+
 string add(string a, string b){
 	string res;
-	
+
 	if(a.length()==0&&b.length()==0)
 	   return "0";
 	if(a.length()<b.length()){
@@ -20,14 +28,14 @@ string add(string a, string b){
 		int len=a.length()-b.length();
 		for(;len>0;len--)
 		  b = '0'+b;
-	
-	
+
+
 	int carry = 0;
 	for (int i=a.length()-1;i>=0;i--) {
 		int tmp = (a[i]-'0') + (b[i]-'0') + carry;
 		if(tmp>=10){
 			tmp-=10;
-			carry=1; 
+			carry=1;
 		}
 		else{
 			tmp =tmp;
@@ -40,14 +48,14 @@ string add(string a, string b){
 	   return '1'+res;
 	else
 	   return res;
-	
+
 }
 
 
 string multi_single(string a, char b){
 	int b_i = b-'0',carry = 0;
 	string res;
-	
+
 	for (int i=a.length()-1;i>=0;i--) {
 		int tmp = (b_i*(a[i]-'0')+carry)%10;
 		carry = (b_i*(a[i]-'0')+carry)/10;
@@ -58,20 +66,20 @@ string multi_single(string a, char b){
 		char carry_c = carry+'0';
 		return carry_c+res;
 	}
-	   
+
 	else
 	   return res;
 }
 
     string multiply(string num1, string num2) {
      string res;
-     	
+
 	if(num1=="0"||num2=="0")
 	  return "0";
-	  
+
 	int count = 0;
 	for (int i=num2.length()-1;i>=0;i--) {
-		
+
 		string tmp_res = multi_single(num1, num2[i]);
 		int tmp_c = count;
 		while (tmp_c--) {
@@ -80,7 +88,7 @@ string multi_single(string a, char b){
 		count++;
 		res = add(res,tmp_res);
 	}
-	
-	return res;   
+
+	return res;
     }
 };

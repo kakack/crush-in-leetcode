@@ -1,4 +1,12 @@
 /*
+LeetCode 703 - Kth Largest Element in a Stream
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Design a class to find the kth largest element in a stream. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 Implement KthLargest class:
@@ -50,7 +58,7 @@ bool cmp(int a, int b) {
 }
 
 void swap(int *a, int *b) {
-    int tmp = *a; 
+    int tmp = *a;
     *a = *b;
     *b = tmp;
 }
@@ -124,6 +132,6 @@ void kthLargestFree(KthLargest* obj) {
  * Your KthLargest struct will be instantiated and called as such:
  * KthLargest* obj = kthLargestCreate(k, nums, numsSize);
  * int param_1 = kthLargestAdd(obj, val);
- 
+
  * kthLargestFree(obj);
 */

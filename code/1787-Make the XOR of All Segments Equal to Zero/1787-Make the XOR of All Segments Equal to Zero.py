@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 1787 - Make the XOR of All Segments Equal to Zero
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
+r"""
 @author: Kai Chen
 @file: 1787-Make the XOR of All Segments Equal to Zero.py
 @time: 2021/5/25 20:31

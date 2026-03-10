@@ -1,6 +1,14 @@
+/*
+LeetCode 16 - 3Sum Closest
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 
 /*
-3Sum Closest 
+3Sum Closest
 Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
     For example, given array S = {-1 2 1 -4}, and target = 1.
@@ -62,21 +70,21 @@ public:
         int ans,min=INT_MAX;
         if(num.size()<3) return ans;
         sort(num.begin(),num.end());
-        
-        
+
+
           for (auto a = num.begin(); a != prev(num.end(), 2);a = upper_bound(a, prev(num.end(), 2), *a)){
               auto b = next(a);
               auto c = prev(num.end());
-              
+
               while(b<c){
                   int sum=*a+*b+*c;
                   int distance=abs(target-sum);
-                  
+
                   if(distance<min){
                       ans=sum;
                       min=distance;
                   }
-                  
+
                   if(sum<target)
                      b++;
                   else

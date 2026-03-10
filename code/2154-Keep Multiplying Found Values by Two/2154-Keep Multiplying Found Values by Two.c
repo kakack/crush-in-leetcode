@@ -1,3 +1,11 @@
+/*
+LeetCode 2154 - Keep Multiplying Found Values by Two
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given an array of integers nums. You are also given an integer original which is the first number that needs to be searched for in nums.
 
 // You then do the following steps:
@@ -7,13 +15,13 @@
 // Repeat this process with the new number as long as you keep finding the number.
 // Return the final value of original.
 
- 
+
 
 // Example 1:
 
 // Input: nums = [5,3,6,1,12], original = 3
 // Output: 24
-// Explanation: 
+// Explanation:
 // - 3 is found in nums. 3 is multiplied by 2 to obtain 6.
 // - 6 is found in nums. 6 is multiplied by 2 to obtain 12.
 // - 12 is found in nums. 12 is multiplied by 2 to obtain 24.
@@ -24,7 +32,7 @@
 // Output: 4
 // Explanation:
 // - 4 is not found in nums. Thus, 4 is returned.
- 
+
 
 // Constraints:
 

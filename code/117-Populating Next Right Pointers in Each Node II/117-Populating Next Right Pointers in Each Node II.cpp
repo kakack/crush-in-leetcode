@@ -1,4 +1,12 @@
-/**Populating Next Right Pointers in Each Node II 
+/*
+LeetCode 117 - Populating Next Right Pointers in Each Node II
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
+/**Populating Next Right Pointers in Each Node II
  * Definition for binary tree with next pointer.
  * struct TreeLinkNode {
  *  int val;
@@ -19,7 +27,7 @@
 
 // Initially, all next pointers are set to NULL.
 
- 
+
 
 // Example 1:
 
@@ -31,13 +39,13 @@
 
 // Input: root = []
 // Output: []
- 
+
 
 // Constraints:
 
 // The number of nodes in the tree is in the range [0, 6000].
 // -100 <= Node.val <= 100
- 
+
 
 // Follow-up:
 
@@ -48,35 +56,35 @@ class Solution {
 public:
     void connect(TreeLinkNode *root) {
         //我日你先人真的需要广度优先搜索啊！妈的一点偷懒都不给啊！跟某一个按层遍历树的那个题一样，先撸出那个题的结论，然后把vector里的东西处理一下
-        
+
         vector<vector<TreeLinkNode*> > nodes;
         if(root==NULL) return;
-        
+
         travel(root, 1, nodes);
-    //这里和我自己写的循环是两种一样的处理方式    
+    //这里和我自己写的循环是两种一样的处理方式
     //     for(auto level:nodes){
     //         for(auto iter=level.begin();iter!=prev(level.end());iter++){
     //             (*iter)->next=*next(iter);
     //         }
     //  //       (*prev(level.end()))->next = NULL;
     //     }
-    
+
        for(int i=0;i<nodes.size();i++){
            for(int j=0;j<nodes[i].size()-1;j++){
                nodes[i][j]->next=nodes[i][j+1];
            }
        }
-        
-        
-        
+
+
+
     }
-    
+
     void travel(TreeLinkNode* root, int level, vector<vector<TreeLinkNode*> > &nodes){
         if(root==NULL) return;
-        
+
         if(level>nodes.size())
           nodes.push_back(vector<TreeLinkNode*>());
-          
+
          nodes[level-1].push_back(root);
          travel(root->left, level+1, nodes);
          travel(root->right, level+1, nodes);

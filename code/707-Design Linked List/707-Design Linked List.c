@@ -1,3 +1,11 @@
+/*
+LeetCode 707 - Design Linked List
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // Design your implementation of the linked list. You can choose to use a singly or doubly linked list.
 // A node in a singly linked list should have two attributes: val and next. val is the value of the current node, and next is a pointer/reference to the next node.
 // If you want to use the doubly linked list, you will need one more attribute prev to indicate the previous node in the linked list. Assume all nodes in the linked list are 0-indexed.
@@ -10,7 +18,7 @@
 // void addAtTail(int val) Append a node of value val as the last element of the linked list.
 // void addAtIndex(int index, int val) Add a node of value val before the indexth node in the linked list. If index equals the length of the linked list, the node will be appended to the end of the linked list. If index is greater than the length, the node will not be inserted.
 // void deleteAtIndex(int index) Delete the indexth node in the linked list, if the index is valid.
- 
+
 
 // Example 1:
 
@@ -28,7 +36,7 @@
 // myLinkedList.get(1);              // return 2
 // myLinkedList.deleteAtIndex(1);    // now the linked list is 1->3
 // myLinkedList.get(1);              // return 3
- 
+
 
 // Constraints:
 
@@ -126,14 +134,14 @@ void myLinkedListFree(MyLinkedList* obj) {
  * Your MyLinkedList struct will be instantiated and called as such:
  * MyLinkedList* obj = myLinkedListCreate();
  * int param_1 = myLinkedListGet(obj, index);
- 
+
  * myLinkedListAddAtHead(obj, val);
- 
+
  * myLinkedListAddAtTail(obj, val);
- 
+
  * myLinkedListAddAtIndex(obj, index, val);
- 
+
  * myLinkedListDeleteAtIndex(obj, index);
- 
+
  * myLinkedListFree(obj);
 */

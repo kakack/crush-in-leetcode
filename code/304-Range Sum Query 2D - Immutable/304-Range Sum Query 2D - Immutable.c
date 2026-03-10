@@ -1,4 +1,12 @@
 /*
+LeetCode 304 - Range Sum Query 2D - Immutable
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 Given a 2D matrix matrix, find the sum of the elements inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
 
 Range Sum Query 2D
@@ -60,6 +68,6 @@ void numMatrixFree(NumMatrix* obj) {
  * Your NumMatrix struct will be instantiated and called as such:
  * NumMatrix* obj = numMatrixCreate(matrix, matrixSize, matrixColSize);
  * int param_1 = numMatrixSumRegion(obj, row1, col1, row2, col2);
- 
+
  * numMatrixFree(obj);
 */

@@ -1,3 +1,11 @@
+/*
+LeetCode 622 - Design Circular Queue
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // Design your implementation of the circular queue. The circular queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle and the last position is connected back to the first position to make a circle. It is also called "Ring Buffer".
 
 // One of the benefits of the circular queue is that we can make use of the spaces in front of the queue. In a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. But using the circular queue, we can use the space to store new values.
@@ -11,9 +19,9 @@
 // boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful.
 // boolean isEmpty() Checks whether the circular queue is empty or not.
 // boolean isFull() Checks whether the circular queue is full or not.
-// You must solve the problem without using the built-in queue data structure in your programming language. 
+// You must solve the problem without using the built-in queue data structure in your programming language.
 
- 
+
 
 // Example 1:
 
@@ -34,7 +42,7 @@
 // myCircularQueue.deQueue();  // return True
 // myCircularQueue.enQueue(4); // return True
 // myCircularQueue.Rear();     // return 4
- 
+
 
 // Constraints:
 
@@ -86,7 +94,7 @@ bool myCircularQueueDeQueue(MyCircularQueue* obj) {
         obj->head = -1;
         obj->tail = -1;
     } else {
-        obj->head = (obj->head + 1) % obj->size; 
+        obj->head = (obj->head + 1) % obj->size;
     }
     return true;
 }
@@ -116,16 +124,16 @@ void myCircularQueueFree(MyCircularQueue* obj) {
  * Your MyCircularQueue struct will be instantiated and called as such:
  * MyCircularQueue* obj = myCircularQueueCreate(k);
  * bool param_1 = myCircularQueueEnQueue(obj, value);
- 
+
  * bool param_2 = myCircularQueueDeQueue(obj);
- 
+
  * int param_3 = myCircularQueueFront(obj);
- 
+
  * int param_4 = myCircularQueueRear(obj);
- 
+
  * bool param_5 = myCircularQueueIsEmpty(obj);
- 
+
  * bool param_6 = myCircularQueueIsFull(obj);
- 
+
  * myCircularQueueFree(obj);
 */

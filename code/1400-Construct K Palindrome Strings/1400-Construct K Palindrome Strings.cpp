@@ -1,6 +1,14 @@
+/*
+LeetCode 1400 - Construct K Palindrome Strings
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a string s and an integer k, return true if you can use all the characters in s to construct k palindrome strings or false otherwise.
 
- 
+
 
 // Example 1:
 
@@ -18,7 +26,7 @@
 // Input: s = "true", k = 4
 // Output: true
 // Explanation: The only possible solution is to put each character in a separate string.
- 
+
 
 // Constraints:
 
@@ -38,8 +46,8 @@ public:
         for (int al : alphs) {
             if (al % 2) {
                 odd ++;
-            } 
-        } 
+            }
+        }
         odd = max(odd, 1);
         return odd <= k && k <= n;
     }

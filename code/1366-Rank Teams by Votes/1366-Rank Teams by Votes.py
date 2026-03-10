@@ -1,3 +1,11 @@
+"""
+LeetCode 1366 - Rank Teams by Votes
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # In a special ranking system, each voter gives a rank from highest to lowest to all teams participated in the competition.
 
 # The ordering of teams is decided by who received the most position-one votes. If two or more teams tie in the first position, we consider the second position to resolve the conflict, if they tie again, we continue this process until the ties are resolved. If two or more teams are still tied after considering all positions, we rank them alphabetically based on their team letter.
@@ -6,7 +14,7 @@
 
 # Return a string of all teams sorted by the ranking system.
 
- 
+
 
 # Example 1:
 
@@ -20,13 +28,13 @@
 
 # Input: votes = ["WXYZ","XYZW"]
 # Output: "XWYZ"
-# Explanation: X is the winner due to tie-breaking rule. X has same votes as W for the first position but X has one vote as second position while W doesn't have any votes as second position. 
+# Explanation: X is the winner due to tie-breaking rule. X has same votes as W for the first position but X has one vote as second position while W doesn't have any votes as second position.
 # Example 3:
 
 # Input: votes = ["ZMNAGUEDSJYLBOPHRQICWFXTVK"]
 # Output: "ZMNAGUEDSJYLBOPHRQICWFXTVK"
 # Explanation: Only one voter so his votes are used for the ranking.
- 
+
 
 # Constraints:
 

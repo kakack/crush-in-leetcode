@@ -1,10 +1,18 @@
+/*
+LeetCode 2044 - Count Number of Maximum Bitwise-OR Subsets
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an integer array nums, find the maximum possible bitwise OR of a subset of nums and return the number of different non-empty subsets with the maximum bitwise OR.
 
 // An array a is a subset of an array b if a can be obtained from b by deleting some (possibly zero) elements of b. Two subsets are considered different if the indices of the elements chosen are different.
 
 // The bitwise OR of an array a is equal to a[0] OR a[1] OR ... OR a[a.length - 1] (0-indexed).
 
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 // - [3,2,1,5]
 // - [2,5]
 // - [2,1,5]
- 
+
 
 // Constraints:
 

@@ -1,9 +1,17 @@
 /*
+LeetCode 1672 - Richest Customer Wealth
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 
 A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
 
- 
+
 
 Example 1:
 
@@ -17,16 +25,16 @@ Example 2:
 
 Input: accounts = [[1,5],[7,3],[3,5]]
 Output: 10
-Explanation: 
+Explanation:
 1st customer has wealth = 6
-2nd customer has wealth = 10 
+2nd customer has wealth = 10
 3rd customer has wealth = 8
 The 2nd customer is the richest with a wealth of 10.
 Example 3:
 
 Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
 Output: 17
- 
+
 
 Constraints:
 

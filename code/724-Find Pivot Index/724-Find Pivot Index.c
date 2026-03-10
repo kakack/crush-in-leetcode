@@ -1,3 +1,11 @@
+/*
+LeetCode 724 - Find Pivot Index
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given an array of integers nums, calculate the pivot index of this array.
 
 // The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
@@ -6,7 +14,7 @@
 
 // Return the leftmost pivot index. If no such index exists, return -1.
 
- 
+
 
 // Example 1:
 
@@ -30,13 +38,13 @@
 // The pivot index is 0.
 // Left sum = 0 (no elements to the left of index 0)
 // Right sum = nums[1] + nums[2] = 1 + -1 = 0
- 
+
 
 // Constraints:
 
 // 1 <= nums.length <= 10^4
 // -1000 <= nums[i] <= 1000
- 
+
 
 // Note: This question is the same as 1991: https://leetcode.com/problems/find-the-middle-index-in-array/
 

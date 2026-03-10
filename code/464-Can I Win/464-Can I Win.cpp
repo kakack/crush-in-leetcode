@@ -1,3 +1,11 @@
+/*
+LeetCode 464 - Can I Win
+
+解题步骤（自动整理）
+1. 定义状态（dp[i] 或 dp[i][j]）来表示子问题的最优解/可行性
+2. 写出状态转移方程，并处理边界初始化
+3. 按依赖顺序递推（必要时滚动数组优化空间），得到最终答案
+*/
 // In the "100 game" two players take turns adding, to a running total, any integer from 1 to 10. The player who first causes the running total to reach or exceed 100 wins.
 
 // What if we change the game so that players cannot re-use integers?
@@ -6,7 +14,7 @@
 
 // Given two integers maxChoosableInteger and desiredTotal, return true if the first player to move can force a win, otherwise, return false. Assume both players play optimally.
 
- 
+
 
 // Example 1:
 
@@ -26,7 +34,7 @@
 
 // Input: maxChoosableInteger = 10, desiredTotal = 1
 // Output: true
- 
+
 
 // Constraints:
 

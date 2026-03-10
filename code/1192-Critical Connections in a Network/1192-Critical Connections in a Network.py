@@ -1,10 +1,18 @@
+"""
+LeetCode 1192 - Critical Connections in a Network
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # There are n servers numbered from 0 to n - 1 connected by undirected server-to-server connections forming a network where connections[i] = [ai, bi] represents a connection between servers ai and bi. Any server can reach other servers directly or indirectly through the network.
 
 # A critical connection is a connection that, if removed, will make some servers unable to reach some other server.
 
 # Return all critical connections in the network in any order.
 
- 
+
 
 # Example 1:
 
@@ -16,7 +24,7 @@
 
 # Input: n = 2, connections = [[0,1]]
 # Output: [[0,1]]
- 
+
 
 # Constraints:
 
@@ -38,7 +46,7 @@ class Solution:
         graph = makeGraph(connections)
         connections = set(map(tuple, (map(sorted, connections))))
         rank = [-2] * n
-        
+
         def dfs(node, depth):
             if rank[node] >= 0:
                 return rank[node]
@@ -53,6 +61,6 @@ class Solution:
                 min_back_depth = min(min_back_depth, back_depth)
             rank[node] = n  # this line is not necessary. see the "brain teaser" section below
             return min_back_depth
-        
+
         dfs(0, 0)
         return list(connections)

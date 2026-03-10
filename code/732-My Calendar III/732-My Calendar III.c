@@ -1,3 +1,11 @@
+/*
+LeetCode 732 - My Calendar III
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 A k-booking happens when k events have some non-empty intersection (i.e., there is some time that is common to all k events.)
 
 // You are given some events [start, end), after each given event, return an integer k representing the maximum k-booking between all the previous events.
@@ -6,7 +14,7 @@ A k-booking happens when k events have some non-empty intersection (i.e., there 
 
 // MyCalendarThree() Initializes the object.
 // int book(int start, int end) Returns an integer k representing the largest integer such that there exists a k-booking in the calendar.
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@ A k-booking happens when k events have some non-empty intersection (i.e., there 
 // myCalendarThree.book(5, 15); // return 3, The remaining events cause the maximum K-booking to be only a 3-booking.
 // myCalendarThree.book(5, 10); // return 3
 // myCalendarThree.book(25, 55); // return 3
- 
+
 
 // Constraints:
 
@@ -96,6 +104,6 @@ void myCalendarThreeFree(MyCalendarThree* obj) {
  * Your MyCalendarThree struct will be instantiated and called as such:
  * MyCalendarThree* obj = myCalendarThreeCreate();
  * int param_1 = myCalendarThreeBook(obj, start, end);
- 
+
  * myCalendarThreeFree(obj);
 */

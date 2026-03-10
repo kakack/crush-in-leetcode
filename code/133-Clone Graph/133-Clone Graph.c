@@ -1,3 +1,11 @@
+/*
+LeetCode 133 - Clone Graph
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+*/
 // Given a reference of a node in a connected undirected graph.
 
 // Return a deep copy (clone) of the graph.
@@ -8,7 +16,7 @@
 //     public int val;
 //     public List<Node> neighbors;
 // }
- 
+
 
 // Test case format:
 
@@ -18,7 +26,7 @@
 
 // The given node will always be the first node with val = 1. You must return the copy of the given node as a reference to the cloned graph.
 
- 
+
 
 // Example 1:
 
@@ -41,7 +49,7 @@
 // Input: adjList = []
 // Output: []
 // Explanation: This an empty graph, it does not have any nodes.
- 
+
 
 // Constraints:
 

@@ -1,3 +1,11 @@
+"""
+LeetCode 695 - Max Area of Island
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
 #
 # Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)

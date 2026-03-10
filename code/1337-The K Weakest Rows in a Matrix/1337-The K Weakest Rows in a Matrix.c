@@ -1,3 +1,11 @@
+/*
+LeetCode 1337 - The K Weakest Rows in a Matrix
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 You are given an m x n binary matrix mat of 1's (representing soldiers) and 0's (representing civilians). The soldiers are positioned in front of the civilians. That is, all the 1's will appear to the left of all the 0's in each row.
 
 // A row i is weaker than a row j if one of the following is true:
@@ -6,43 +14,43 @@ You are given an m x n binary matrix mat of 1's (representing soldiers) and 0's 
 // Both rows have the same number of soldiers and i < j.
 // Return the indices of the k weakest rows in the matrix ordered from weakest to strongest.
 
- 
+
 
 // Example 1:
 
-// Input: mat = 
+// Input: mat =
 // [[1,1,0,0,0],
 //  [1,1,1,1,0],
 //  [1,0,0,0,0],
 //  [1,1,0,0,0],
-//  [1,1,1,1,1]], 
+//  [1,1,1,1,1]],
 // k = 3
 // Output: [2,0,3]
-// Explanation: 
-// The number of soldiers in each row is: 
-// - Row 0: 2 
-// - Row 1: 4 
-// - Row 2: 1 
-// - Row 3: 2 
-// - Row 4: 5 
+// Explanation:
+// The number of soldiers in each row is:
+// - Row 0: 2
+// - Row 1: 4
+// - Row 2: 1
+// - Row 3: 2
+// - Row 4: 5
 // The rows ordered from weakest to strongest are [2,0,3,1,4].
 // Example 2:
 
-// Input: mat = 
+// Input: mat =
 // [[1,0,0,0],
 //  [1,1,1,1],
 //  [1,0,0,0],
-//  [1,0,0,0]], 
+//  [1,0,0,0]],
 // k = 2
 // Output: [0,2]
-// Explanation: 
-// The number of soldiers in each row is: 
-// - Row 0: 1 
-// - Row 1: 4 
-// - Row 2: 1 
-// - Row 3: 1 
+// Explanation:
+// The number of soldiers in each row is:
+// - Row 0: 1
+// - Row 1: 4
+// - Row 2: 1
+// - Row 3: 1
 // The rows ordered from weakest to strongest are [0,2,3,1].
- 
+
 
 // Constraints:
 

@@ -1,12 +1,20 @@
+"""
+LeetCode 124 - Binary Tree Maximum Path Sum
 
-#     A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. 
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+"""
+
+#     A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them.
 #     A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
 
 # The path sum of a path is the sum of the node's values in the path.
 
 # Given the root of a binary tree, return the maximum path sum of any non-empty path.
 
- 
+
 
 # Example 1:
 
@@ -20,7 +28,7 @@
 # Input: root = [-10,9,20,null,null,15,7]
 # Output: 42
 # Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
- 
+
 
 # Constraints:
 
@@ -50,8 +58,7 @@ class Solution:
             return max(l, r) + root.val
         else:
             return root.val
-        
+
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
         self.dfs(root)
         return self.max_Path
-        

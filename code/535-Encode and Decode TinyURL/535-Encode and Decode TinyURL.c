@@ -1,3 +1,11 @@
+/*
+LeetCode 535 - Encode and Decode TinyURL
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Note: This is a companion problem to the System Design problem: Design TinyURL.
 // TinyURL is a URL shortening service where you enter a URL such as https://leetcode.com/problems/design-tinyurl and it returns a short URL such as http://tinyurl.com/4e9iAk. Design a class to encode a URL and decode a tiny URL.
 
@@ -8,7 +16,7 @@
 // Solution() Initializes the object of the system.
 // String encode(String longUrl) Returns a tiny URL for the given longUrl.
 // String decode(String shortUrl) Returns the original long URL for the given shortUrl. It is guaranteed that the given shortUrl was encoded by the same object.
- 
+
 
 // Example 1:
 
@@ -19,7 +27,7 @@
 // Solution obj = new Solution();
 // string tiny = obj.encode(url); // returns the encoded tiny url.
 // string ans = obj.decode(tiny); // returns the original url after deconding it.
- 
+
 
 // Constraints:
 
@@ -41,7 +49,7 @@ bool find(char *url) {
     Hash *p;
     HASH_FIND(hh, hash_table, url, strlen(url), p);
     return p;
-} 
+}
 
 
 void getRandomURL(char *tiny) {
@@ -66,7 +74,7 @@ char* encode(char* longUrl) {
 char* decode(char* shortUrl) {
     Hash *p;
     HASH_FIND(hh, hash_table, shortUrl, strlen(shortUrl), p);
-    return p->original;   
+    return p->original;
 }
 
 // Your functions will be called as such:

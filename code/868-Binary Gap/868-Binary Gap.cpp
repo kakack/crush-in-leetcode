@@ -1,8 +1,16 @@
+/*
+LeetCode 868 - Binary Gap
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a positive integer n, find and return the longest distance between any two adjacent 1's in the binary representation of n. If there are no two adjacent 1's, return 0.
 
 // Two 1's are adjacent if there are only 0's separating them (possibly no 0's). The distance between two 1's is the absolute difference between their bit positions. For example, the two 1's in "1001" have a distance of 3.
 
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 // Input: n = 5
 // Output: 2
 // Explanation: 5 in binary is "101".
- 
+
 
 // Constraints:
 

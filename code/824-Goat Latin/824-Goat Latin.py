@@ -1,3 +1,11 @@
+"""
+LeetCode 824 - Goat Latin
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 # You are given a string sentence that consist of words separated by spaces. Each word consists of lowercase and uppercase letters only.
 
 # We would like to convert the sentence to "Goat Latin" (a made-up language similar to Pig Latin.) The rules of Goat Latin are as follows:
@@ -10,7 +18,7 @@
 # For example, the first word gets "a" added to the end, the second word gets "aa" added to the end, and so on.
 # Return the final sentence representing the conversion from sentence to Goat Latin.
 
- 
+
 
 # Example 1:
 
@@ -20,7 +28,7 @@
 
 # Input: sentence = "The quick brown fox jumped over the lazy dog"
 # Output: "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa"
- 
+
 
 # Constraints:
 
@@ -39,4 +47,4 @@ class Solution:
                 res += word + "ma" + "a" * (i + 1) + " "
             else:
                 res += word[1:] + word[0] + "ma" + "a" * (i + 1) + " "
-        return res[: -1]     
+        return res[: -1]

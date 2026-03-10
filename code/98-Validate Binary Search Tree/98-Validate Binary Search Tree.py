@@ -1,3 +1,11 @@
+"""
+LeetCode 98 - Validate Binary Search Tree
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+"""
 # Given a binary tree, determine if it is a valid binary search tree (BST).
 #
 # Assume a BST is defined as follows:
@@ -5,7 +13,7 @@
 # The left subtree of a node contains only nodes with keys less than the node's key.
 # The right subtree of a node contains only nodes with keys greater than the node's key.
 # Both the left and right subtrees must also be binary search trees.
-#  
+#
 #
 # Example 1:
 #

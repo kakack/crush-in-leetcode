@@ -1,3 +1,11 @@
+/*
+LeetCode 1723 - Find Minimum Time to Finish All Jobs
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
 /*You are given an integer array jobs, where jobs[i] is the amount of time it takes to complete the ith job.
 
 There are k workers that you can assign jobs to. Each job should be assigned to exactly one worker. The working time of a worker is the sum of the time it takes to complete all jobs assigned to them. Your goal is to devise an optimal assignment such that the maximum working time of any worker is minimized.

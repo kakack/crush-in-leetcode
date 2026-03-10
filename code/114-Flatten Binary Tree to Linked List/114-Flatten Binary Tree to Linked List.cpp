@@ -1,4 +1,12 @@
-/**Flatten Binary Tree to Linked List 
+/*
+LeetCode 114 - Flatten Binary Tree to Linked List
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
+/**Flatten Binary Tree to Linked List
 Given a binary tree, flatten it to a linked list in-place.
 
 For example,
@@ -35,21 +43,21 @@ The flattened tree should look like:
 class Solution {
 public:
     void flatten(TreeNode *root) {
-        
+
         if(root==NULL) return;
-        
+
         flatten(root->left);
         flatten(root->right);
-        
+
         if(root->left==NULL) return;
-        
+
         TreeNode* ptr=root->left;
         while(ptr->right!=NULL)
           ptr=ptr->right;//到达左树的最底端
-          
+
         ptr->right=root->right;
         root->right=root->left;
         root->left=nullptr;
-        
+
     }
 };

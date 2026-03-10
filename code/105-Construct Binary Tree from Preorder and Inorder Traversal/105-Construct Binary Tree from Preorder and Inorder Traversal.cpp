@@ -1,4 +1,12 @@
 /*
+LeetCode 105 - Construct Binary Tree from Preorder and Inorder Traversal
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
+/*
 Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is
 the inorder traversal of the same tree, construct and return the binary tree.
 

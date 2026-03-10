@@ -1,10 +1,18 @@
+"""
+LeetCode 1221 - Split a String in Balanced Strings
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+"""
 # Balanced strings are those who have equal quantity of 'L' and 'R' characters.
 #
 # Given a balanced string s split it in the maximum amount of balanced strings.
 #
 # Return the maximum amount of splitted balanced strings.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -26,7 +34,7 @@
 # Input: s = "RLRRRLLRLL"
 # Output: 2
 # Explanation: s can be split into "RL", "RRRLLRLL", since each substring contains an equal number of 'L' and 'R'
-#  
+#
 #
 # Constraints:
 #

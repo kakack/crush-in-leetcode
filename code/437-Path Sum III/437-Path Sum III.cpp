@@ -1,8 +1,16 @@
+/*
+LeetCode 437 - Path Sum III
+
+解题步骤（自动整理）
+1. 根据题意选择前序/中序/后序遍历方式遍历二叉树
+2. 在遍历过程中维护需要的状态（路径和、深度、父子关系等）
+3. 遍历完成后返回答案
+*/
 // Given the root of a binary tree and an integer targetSum, return the number of paths where the sum of the values along the path equals targetSum.
 
 // The path does not need to start or end at the root or a leaf, but it must go downwards (i.e., traveling only from parent nodes to child nodes).
 
- 
+
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 
 // Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 // Output: 3
- 
+
 
 // Constraints:
 
@@ -47,7 +55,7 @@ public:
         res += travel(root->right, target - root->val);
         return res;
 
-    } 
+    }
     int pathSum(TreeNode* root, int targetSum) {
         if (root == NULL) {
             return 0;

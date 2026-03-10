@@ -1,3 +1,11 @@
+"""
+LeetCode 987 - Vertical Order Traversal of a Binary Tree
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+"""
 # Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
 #
 # For each node at position (row, col), its left and right children will be at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. The root of the tree is at (0, 0).
@@ -6,7 +14,7 @@
 #
 # Return the vertical order traversal of the binary tree.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -39,7 +47,7 @@
 # Explanation:
 # This case is the exact same as example 2, but with nodes 5 and 6 swapped.
 # Note that the solution remains the same since 5 and 6 are in the same location and should be ordered by their values.
-#  
+#
 #
 # Constraints:
 #

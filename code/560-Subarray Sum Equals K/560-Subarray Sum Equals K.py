@@ -1,10 +1,18 @@
+"""
+LeetCode 560 - Subarray Sum Equals K
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
 #
 # Example 1:
 #
 # Input:nums = [1,1,1], k = 2
 # Output: 2
-#  
+#
 #
 # Constraints:
 #

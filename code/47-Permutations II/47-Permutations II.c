@@ -1,5 +1,13 @@
+/*
+LeetCode 47 - Permutations II
 
-/*Permutations II 
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+*/
+
+/*Permutations II
 
 Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.
 
@@ -15,7 +23,7 @@ Example 2:
 
 Input: nums = [1,2,3]
 Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
- 
+
 
 Constraints:
 

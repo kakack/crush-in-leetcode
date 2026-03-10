@@ -1,3 +1,11 @@
+/*
+LeetCode 1022 - Sum of Root To Leaf Binary Numbers
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
 // You are given the root of a binary tree where each node has a value 0 or 1. Each root-to-leaf path represents a binary number starting with the most significant bit.
 
 // For example, if the path is 0 -> 1 -> 1 -> 0 -> 1, then this could represent 01101 in binary, which is 13.
@@ -5,7 +13,7 @@
 
 // The test cases are generated so that the answer fits in a 32-bits integer.
 
- 
+
 
 // Example 1:
 
@@ -17,7 +25,7 @@
 
 // Input: root = [0]
 // Output: 0
- 
+
 
 // Constraints:
 

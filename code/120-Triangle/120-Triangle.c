@@ -1,8 +1,16 @@
+/*
+LeetCode 120 - Triangle
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given a triangle array, return the minimum path sum from top to bottom.
 
 // For each step, you may move to an adjacent number of the row below. More formally, if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
 
- 
+
 
 // Example 1:
 
@@ -18,7 +26,7 @@
 
 // Input: triangle = [[-10]]
 // Output: -10
- 
+
 
 // Constraints:
 
@@ -26,7 +34,7 @@
 // triangle[0].length == 1
 // triangle[i].length == triangle[i - 1].length + 1
 // -10^4 <= triangle[i][j] <= 10^4
- 
+
 
 // Follow up: Could you do this using only O(n) extra space, where n is the total number of rows in the triangle?
 

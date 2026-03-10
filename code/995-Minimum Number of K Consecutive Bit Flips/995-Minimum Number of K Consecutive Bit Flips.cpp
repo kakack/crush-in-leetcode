@@ -1,4 +1,12 @@
 /*
+LeetCode 995 - Minimum Number of K Consecutive Bit Flips
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 In an array A containing only 0s and 1s, a K-bit flip consists of choosing a (contiguous) subarray of length K and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.
 
 Return the minimum number of K-bit flips required so that there is no 0 in the array.  If it is not possible, return -1.

@@ -1,4 +1,12 @@
 # # -*- coding: utf-8 -*
+"""
+LeetCode 1300 - Sum of Mutated Array Closest to Target
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
 #
 # Given an integer array arr and a target value target, return the integer value such that when we change all the integers larger than value in the given array to be equal to value, the sum of the array gets as close as possible (in absolute difference) to target.
 #
@@ -6,7 +14,7 @@
 #
 # Notice that the answer is not neccesarilly a number from arr.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -21,7 +29,7 @@
 #
 # Input: arr = [60864,25176,27249,21296,20204], target = 56803
 # Output: 11361
-#  
+#
 #
 # Constraints:
 #

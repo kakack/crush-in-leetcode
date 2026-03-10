@@ -1,3 +1,11 @@
+/*
+LeetCode 699 - Falling Squares
+
+解题步骤（自动整理）
+1. 维护栈（或单调栈）保存候选元素的下标/值
+2. 遍历序列时根据出栈条件更新答案，再将当前元素入栈
+3. 遍历结束后处理剩余元素（如需要）并返回结果
+*/
 // There are several squares being dropped onto the X-axis of a 2D plane.
 
 // You are given a 2D integer array positions where positions[i] = [lefti, sideLengthi] represents the ith square with a side length of sideLengthi that is dropped with its left edge aligned with X-coordinate lefti.
@@ -8,7 +16,7 @@
 
 // Return an integer array ans where ans[i] represents the height described above after dropping the ith square.
 
- 
+
 
 // Example 1:
 
@@ -29,7 +37,7 @@
 // After the second drop, the tallest stack is either square 1 or square 2, both with heights of 100.
 // Thus, we return an answer of [100, 100].
 // Note that square 2 only brushes the right side of square 1, which does not count as landing on it.
- 
+
 
 // Constraints:
 

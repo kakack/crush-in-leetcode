@@ -1,4 +1,12 @@
 /*
+LeetCode 1074 - Number of Submatrices That Sum to Target
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+*/
+/*
 Given a matrix and a target, return the number of non-empty submatrices that sum to target.
 
 A submatrix x1, y1, x2, y2 is the set of all cells matrix[x][y] with x1 <= x <= x2 and y1 <= y <= y2.

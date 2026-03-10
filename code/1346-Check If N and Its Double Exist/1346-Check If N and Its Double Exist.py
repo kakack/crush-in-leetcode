@@ -1,3 +1,11 @@
+"""
+LeetCode 1346 - Check If N and Its Double Exist
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # Given an array arr of integers, check if there exists two integers N and M such that N is the double of M ( i.e. N = 2 * M).
 
 # More formally check if there exists two indices i and j such that :
@@ -5,7 +13,7 @@
 # i != j
 # 0 <= i, j < arr.length
 # arr[i] == 2 * arr[j]
-#  
+#
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 # Input: arr = [3,1,7,11]
 # Output: false
 # Explanation: In this case does not exist N and M, such that N = 2 * M.
-#  
+#
 
 # Constraints:
 

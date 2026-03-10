@@ -1,3 +1,11 @@
+/*
+LeetCode 707 - Design Linked List
+
+解题步骤（自动整理）
+1. 用快慢指针/虚拟头节点等技巧处理链表边界
+2. 按题意进行遍历、反转、合并或断链等操作
+3. 返回处理后的链表头节点或计算结果
+*/
 // Design your implementation of the linked list. You can choose to use a singly or doubly linked list.
 // A node in a singly linked list should have two attributes: val and next. val is the value of the current node, and next is a pointer/reference to the next node.
 // If you want to use the doubly linked list, you will need one more attribute prev to indicate the previous node in the linked list. Assume all nodes in the linked list are 0-indexed.
@@ -10,7 +18,7 @@
 // void addAtTail(int val) Append a node of value val as the last element of the linked list.
 // void addAtIndex(int index, int val) Add a node of value val before the indexth node in the linked list. If index equals the length of the linked list, the node will be appended to the end of the linked list. If index is greater than the length, the node will not be inserted.
 // void deleteAtIndex(int index) Delete the indexth node in the linked list, if the index is valid.
- 
+
 
 // Example 1:
 
@@ -28,7 +36,7 @@
 // myLinkedList.get(1);              // return 2
 // myLinkedList.deleteAtIndex(1);    // now the linked list is 1->3
 // myLinkedList.get(1);              // return 3
- 
+
 
 // Constraints:
 
@@ -52,7 +60,7 @@ public:
         head = new Node();
         n = 0;
     }
-    
+
     int get(int index) {
         if (index < 0 || index >= n) {
             return -1;
@@ -63,14 +71,14 @@ public:
         }
         return p->val;
     }
-    
+
     void addAtHead(int val) {
         Node* q = new Node(val);
         q->next = head->next;
         head->next = q;
         n++;
     }
-    
+
     void addAtTail(int val) {
         Node* p = head;
         while(p->next) {
@@ -79,7 +87,7 @@ public:
         p->next = new Node(val);
         n ++;
     }
-    
+
     void addAtIndex(int index, int val) {
         if (index == n) {
             addAtTail(val);
@@ -98,7 +106,7 @@ public:
             n ++;
         }
     }
-    
+
     void deleteAtIndex(int index) {
         if (index < 0 || index >= n) {
             return;

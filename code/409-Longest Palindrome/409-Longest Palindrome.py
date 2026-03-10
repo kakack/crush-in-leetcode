@@ -1,3 +1,11 @@
+"""
+LeetCode 409 - Longest Palindrome
+
+解题步骤（自动整理）
+1. 使用哈希表记录已遍历元素（或频次/索引）以支持 O(1) 查询
+2. 遍历输入并在哈希表中查找所需互补/状态，命中时更新答案
+3. 遍历结束后返回答案或默认值
+"""
 # Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.
 #
 # This is case sensitive, for example "Aa" is not considered a palindrome here.

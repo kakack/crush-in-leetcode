@@ -1,10 +1,18 @@
+/*
+LeetCode 2049 - Count Nodes With the Highest Score
+
+解题步骤（自动整理）
+1. 用 DFS/递归遍历二叉树，在递归返回值中携带子树信息
+2. 在当前节点聚合左右子树结果并完成题目要求的判断/更新
+3. 递归结束后返回根节点对应的结果
+*/
 // There is a binary tree rooted at 0 consisting of n nodes. The nodes are labeled from 0 to n - 1. You are given a 0-indexed integer array parents representing the tree, where parents[i] is the parent of node i. Since node 0 is the root, parents[0] == -1.
 
 // Each node has a score. To find the score of a node, consider if the node and the edges connected to it were removed. The tree would become one or more non-empty subtrees. The size of a subtree is the number of the nodes in it. The score of the node is the product of the sizes of all those subtrees.
 
 // Return the number of nodes that have the highest score.
 
- 
+
 
 // Example 1:
 
@@ -28,7 +36,7 @@
 // - The score of node 1 is: 2 = 2
 // - The score of node 2 is: 1 * 1 = 1
 // The highest score is 2, and two nodes (node 0 and node 1) have the highest score.
- 
+
 
 // Constraints:
 
@@ -44,7 +52,7 @@ public:
     int cnt = 0;
     int n;
     vector<vector<int>> children;
-    
+
     // 使用深度优先搜索来计算以每个节点为根结点的子树的大小，
     // 同时计算每个节点的大小，作为深度优先搜索的返回值，
     // 最后统计最大分数出现的次数

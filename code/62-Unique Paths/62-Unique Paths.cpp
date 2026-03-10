@@ -1,11 +1,19 @@
 /*
+LeetCode 62 - Unique Paths
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
+/*
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
 The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 
 How many possible unique paths are there?
 
- 
+
 
 Example 1:
 
@@ -29,7 +37,7 @@ Example 4:
 
 Input: m = 3, n = 3
 Output: 6
- 
+
 
 Constraints:
 

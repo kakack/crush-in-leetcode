@@ -1,3 +1,11 @@
+/*
+LeetCode 165 - Compare Version Numbers
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Given two version numbers, version1 and version2, compare them.
 
 // Version numbers consist of one or more revisions joined by a dot '.'. Each revision consists of digits and may contain leading zeros. Every revision contains at least one character. Revisions are 0-indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on. For example 2.5.33 and 0.1 are valid version numbers.
@@ -9,7 +17,7 @@
 // If version1 < version2, return -1.
 // If version1 > version2, return 1.
 // Otherwise, return 0.
- 
+
 
 // Example 1:
 
@@ -26,7 +34,7 @@
 // Input: version1 = "0.1", version2 = "1.1"
 // Output: -1
 // Explanation: version1's revision 0 is "0", while version2's revision 0 is "1". 0 < 1, so version1 < version2.
- 
+
 
 // Constraints:
 

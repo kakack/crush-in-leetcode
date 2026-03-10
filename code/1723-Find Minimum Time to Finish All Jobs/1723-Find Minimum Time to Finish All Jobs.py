@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 1723 - Find Minimum Time to Finish All Jobs
+
+解题步骤（自动整理）
+1. 先排序以便利用有序性缩小搜索空间
+2. 使用双指针从两端/区间收缩，按比较结果移动指针
+3. 在遍历过程中维护最优解并处理重复元素（如需要）
+"""
+r"""
 @author: Kai Chen
 @file: 1723-Find Minimum Time to Finish All Jobs.py
 @time: 2021/5/8 10:38

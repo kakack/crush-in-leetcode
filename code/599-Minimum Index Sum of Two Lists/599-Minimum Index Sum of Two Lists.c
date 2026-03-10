@@ -1,8 +1,16 @@
+/*
+LeetCode 599 - Minimum Index Sum of Two Lists
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings.
 
 // You need to help them find out their common interest with the least list index sum. If there is a choice tie between answers, output all of them with no order requirement. You could assume there always exists an answer.
 
- 
+
 
 // Example 1:
 
@@ -14,7 +22,7 @@
 // Input: list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["KFC","Shogun","Burger King"]
 // Output: ["Shogun"]
 // Explanation: The restaurant they both like and have the least index sum is "Shogun" with index sum 1 (0+1).
- 
+
 
 // Constraints:
 
@@ -39,7 +47,7 @@ void freeHash(HashItem ** obj) {
     HASH_ITER(hh, *obj, curr, next) {
       HASH_DEL(*obj, curr);
       free(curr);
-    } 
+    }
 }
 
 char ** findRestaurant(char ** list1, int list1Size, char ** list2, int list2Size, int* returnSize){

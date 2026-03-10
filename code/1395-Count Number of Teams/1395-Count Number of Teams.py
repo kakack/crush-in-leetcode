@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*
 """
+LeetCode 1395 - Count Number of Teams
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+"""
+r"""
 @author: Kaka Chen
 @license: (C) Copyright Personal Uncommercial Limited.
 @contact: kakachen1990@gmail.com
@@ -46,7 +54,7 @@ n == rating.length
 作战单位需满足： rating[i] < rating[j] < rating[k] 或者 rating[i] > rating[j] > rating[k] ，其中  0 <= i < j < k < n
 请你返回按上述条件可以组建的作战单位数量。每个士兵都可以是多个作战单位的一部分。
 
- 
+
 
 示例 1：
 
@@ -62,7 +70,7 @@ n == rating.length
 
 输入：rating = [1,2,3,4]
 输出：4
- 
+
 
 提示：
 

@@ -1,3 +1,11 @@
+/*
+LeetCode 883 - Projection Area of 3D Shapes
+
+解题步骤（自动整理）
+1. 先把题目目标拆成可操作的子任务（比较/统计/构造等）
+2. 选择合适的数据结构并按一次遍历或分治步骤实现核心逻辑
+3. 补齐边界条件（空输入、单元素、重复元素等）并返回结果
+*/
 // You are given an n x n grid where we place some 1 x 1 x 1 cubes that are axis-aligned with the x, y, and z axes.
 
 // Each value v = grid[i][j] represents a tower of v cubes placed on top of the cell (i, j).
@@ -8,7 +16,7 @@
 
 // Return the total area of all three projections.
 
- 
+
 
 // Example 1:
 
@@ -24,7 +32,7 @@
 
 // Input: grid = [[1,0],[0,2]]
 // Output: 8
- 
+
 
 // Constraints:
 

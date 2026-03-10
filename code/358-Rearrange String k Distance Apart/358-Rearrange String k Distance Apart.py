@@ -1,6 +1,14 @@
+"""
+LeetCode 358 - Rearrange String k Distance Apart
+
+解题步骤（自动整理）
+1. 将起点/初始层入队，并用 visited 或原地标记避免重复访问
+2. 按层或按队列弹出元素扩展相邻节点，满足条件时更新答案
+3. 队列处理完毕后返回结果（或在首次到达目标时提前返回）
+"""
 # Given a string s and an integer k, rearrange s such that the same characters are at least distance k from each other. If it is not possible to rearrange the string, return an empty string "".
 
-#  
+#
 
 # Example 1:
 
@@ -17,7 +25,7 @@
 # Input: s = "aaadbbcc", k = 2
 # Output: "abacabcd"
 # Explanation: The same letters are at least a distance of 2 from each other.
-#  
+#
 
 # Constraints:
 
@@ -29,12 +37,12 @@ class Solution:
     def rearrangeString(self, s: str, k: int) -> str:
         if k == 0:
             return s
-        
+
         chr_freq = collections.Counter(s)
-        
+
         maxHeap = [(-1 * freq, chr) for chr, freq in chr_freq.items()]
         heapq.heapify(maxHeap)
-        
+
         Q = collections.deque()
         res = ""
         while maxHeap:
@@ -48,5 +56,5 @@ class Solution:
                 f, c = Q.popleft()
                 if f > 0:
                     heapq.heappush(maxHeap, (-1 * f, c))
-        
+
         return res if len(res) == len(s) else ""

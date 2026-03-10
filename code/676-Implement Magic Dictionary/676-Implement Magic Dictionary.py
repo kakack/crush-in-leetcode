@@ -1,3 +1,11 @@
+"""
+LeetCode 676 - Implement Magic Dictionary
+
+解题步骤（自动整理）
+1. 用 DFS/回溯枚举所有可能选择，并维护当前路径/状态
+2. 在递归过程中进行剪枝（如边界、重复、提前失败条件）
+3. 到达终止条件时收集结果或返回，并回溯撤销选择
+"""
 # Design a data structure that is initialized with a list of different words. Provided a string, you should determine if you can change exactly one character in this string to match any word in the data structure.
 
 # Implement the MagicDictionary class:
@@ -5,7 +13,7 @@
 # MagicDictionary() Initializes the object.
 # void buildDict(String[] dictionary) Sets the data structure with an array of distinct strings dictionary.
 # bool search(String searchWord) Returns true if you can change exactly one character in searchWord to match any string in the data structure, otherwise returns false.
- 
+
 
 # Example 1:
 
@@ -22,7 +30,7 @@
 # magicDictionary.search("hhllo"); // We can change the second 'h' to 'e' to match "hello" so we return True
 # magicDictionary.search("hell"); // return False
 # magicDictionary.search("leetcoded"); // return False
- 
+
 
 # Constraints:
 
@@ -59,20 +67,20 @@ class MagicDictionary:
         def dfs(node: Trie, pos: int, modified: bool) -> bool:
             if pos == len(searchWord):
                 return modified and node.is_finished
-            
+
             ch = searchWord[pos]
             if ch in node.child:
                 if dfs(node.child[ch], pos + 1, modified):
                     return True
-                
+
             if not modified:
                 for cnext in node.child:
                     if ch != cnext:
                         if dfs(node.child[cnext], pos + 1, True):
                             return True
-            
+
             return False
-        
+
         return dfs(self.root, 0, False)
 
 
